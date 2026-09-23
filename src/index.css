@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #1A3A6A;
+  --color-primary-rgb: 26, 58, 106;
+  --color-primary-light: #234c89;
+  --color-primary-dark: #122849;
+  --color-bg: #FFFFFF;
+  --font-main: 'League Spartan', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sub: 'Glacial Indifference', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Fallback local font-faces if external CDN is blocked or slow */
+@font-face {
+  font-family: 'Glacial Indifference';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Glacial Indifference'), local('GlacialIndifference-Regular');
+}
+
+@font-face {
+  font-family: 'Glacial Indifference';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Glacial Indifference Bold'), local('GlacialIndifference-Bold');
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: #1e293b;
+}
+
+body {
+  font-family: var(--font-main);
+  line-height: 1.6;
+}
+
+/* Typography Specific Hierarchy */
+h1 {
+  font-family: var(--font-main);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h2, h3, .sub-heading, .font-sub {
+  font-family: var(--font-sub), var(--font-main);
+  letter-spacing: -0.01em;
+}
+
+p, button, input, select, textarea, nav, .font-main {
+  font-family: var(--font-main);
+}
+
+/* Subtle Gradient Backgrounds */
+.bg-subtle-gradient {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F5F8FC 60%, #EBF1F9 100%);
+}
+
+.bg-hero-gradient {
+  background: linear-gradient(165deg, #FFFFFF 0%, #F8FAFC 45%, #EEF4FB 85%, #E2EDFA 100%);
+}
+
+.bg-cta-primary {
+  background-color: var(--color-primary);
+}
+
+.text-primary-navy {
+  color: var(--color-primary);
+}
+
+.border-primary-navy {
+  border-color: var(--color-primary);
+}
+
+/* Font Awesome standard fine stroke styling */
+.fa, .fa-solid, .fa-regular, .fa-light, .fa-thin {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+/* Discreet transitions */
+.transition-subtle {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Marquee infinite animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Button & Card Subtle Hover */
+.card-hover {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(26, 58, 106, 0.08), 0 8px 10px -6px rgba(26, 58, 106, 0.04);
+}
+
+/* Accent Button & Round Action Arrow */
+.btn-round-action {
+  width: 42px;
+  height: 42px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-round-action:hover {
+  transform: scale(1.08) rotate(-15deg);
+}
+
+/* Navy Ticker Ribbon */
+.ticker-ribbon {
+  background: #1A3A6A;
+  color: #FFFFFF;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Permanent slow zoom-out animation for action buttons */
+@keyframes slowZoomOutPermanent {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.93);
+  }
+}
+
+.animate-zoom-arriere-slow {
+  animation: slowZoomOutPermanent 3s ease-in-out infinite;
+  will-change: transform;
+}
+
+

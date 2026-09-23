@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" width="100%" height="100%">
+  <!-- Blue rounded background matching Moov Africa's official branding -->
+  <rect width="420" height="240" rx="20" fill="#0062BD" />
+
+  <g transform="translate(15, -10)">
+    <!-- "Moov" bold sans-serif -->
+    <text x="75" y="128" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="52" fill="#FFFFFF" letter-spacing="-0.5">
+      Moov
+    </text>
+    <!-- "Africa" bold sans-serif -->
+    <text x="75" y="172" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="44" fill="#FFFFFF" letter-spacing="-0.2">
+      Africa
+    </text>
+
+    <!-- Orange swoosh dynamic arc -->
+    <path d="M 28 198 C 110 215 235 210 285 145 C 315 100 260 85 220 85 C 255 90 295 110 280 150 C 250 200 120 202 28 198 Z" fill="#FF7900" />
+
+    <!-- Diamond mosaic symbol -->
+    <g transform="translate(295, 145) rotate(-18)">
+      <!-- Central white diamond -->
+      <polygon points="0,-18 18,0 0,18 -18,0" fill="#FFFFFF" />
+      <!-- Surrounding orange diamond facets -->
+      <polygon points="21,-3 34,10 24,20 11,7" fill="#FF7900" />
+      <polygon points="-3,21 7,31 -3,41 -13,31" fill="#FF7900" />
+      <polygon points="10,24 23,37 13,47 0,34" fill="#FF7900" />
+    </g>
+  </g>
+</svg>

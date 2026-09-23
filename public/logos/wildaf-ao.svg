@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 440" width="100%" height="100%">
+  <!-- Flame & Candle -->
+  <g fill="#0062FF" stroke="#0062FF">
+    <!-- Radiant flame rays -->
+    <path d="M 200 40 C 196 50 196 58 200 68 C 204 58 204 50 200 40 Z" />
+    <path d="M 172 52 C 170 63 173 70 180 77 C 182 68 181 60 172 52 Z" />
+    <path d="M 228 52 C 237 60 236 68 238 77 C 230 70 227 63 228 52 Z" />
+    <path d="M 150 78 C 151 90 158 95 167 98 C 166 88 161 82 150 78 Z" />
+    <path d="M 250 78 C 239 82 234 88 233 98 C 242 95 249 90 250 78 Z" />
+    <path d="M 138 112 C 144 121 152 124 163 122 C 158 113 151 108 138 112 Z" />
+    <path d="M 262 112 C 249 108 242 113 237 122 C 248 124 256 121 262 112 Z" />
+
+    <!-- Central candle flame -->
+    <path d="M 200 78 C 194 92 193 105 200 120 C 207 105 206 92 200 78 Z" fill="#0062FF" />
+
+    <!-- Candle body -->
+    <rect x="193" y="122" width="14" height="28" rx="2" fill="#0062FF" />
+    <!-- Candle dish base -->
+    <path d="M 185 150 C 185 150 188 156 200 156 C 212 156 215 150 215 150 Z" />
+  </g>
+
+  <!-- Balance Scales Structure -->
+  <g fill="#0062FF" stroke="#0062FF">
+    <!-- Horizontal Crossbar -->
+    <rect x="85" y="152" width="230" height="12" rx="3" />
+    <!-- Outer pivots -->
+    <circle cx="95" cy="158" r="7" />
+    <circle cx="305" cy="158" r="7" />
+    <!-- Center pivot -->
+    <circle cx="200" cy="158" r="8" />
+
+    <!-- Main central A-frame column -->
+    <path d="M 194 162 L 158 318 L 174 318 L 197 186 L 203 186 L 226 318 L 242 318 L 206 162 Z" fill="#0062FF" stroke="none" />
+    <!-- Inner strut arch -->
+    <path d="M 175 285 C 190 260 210 260 225 285 L 234 318 L 166 318 Z" fill="#0062FF" />
+
+    <!-- Base stand pedestal -->
+    <path d="M 130 326 L 270 326 L 270 336 L 130 336 Z" />
+    <path d="M 145 316 C 170 310 230 310 255 316 L 260 326 L 140 326 Z" />
+  </g>
+
+  <!-- Left Scale: Chains, Pan & Open Book -->
+  <g stroke="#0062FF" stroke-width="3.5" stroke-linecap="round">
+    <line x1="95" y1="162" x2="48" y2="236" />
+    <line x1="95" y1="162" x2="95" y2="236" />
+    <line x1="95" y1="162" x2="142" y2="236" />
+  </g>
+  <!-- Left Pan -->
+  <path d="M 38 238 C 45 282 145 282 152 238 Z" fill="none" stroke="#0062FF" stroke-width="6" stroke-linejoin="round" />
+  <path d="M 40 238 L 150 238" stroke="#0062FF" stroke-width="5" />
+  <!-- Open Book inside Left Pan -->
+  <g fill="none" stroke="#0062FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Book pages contour -->
+    <path d="M 95 240 L 95 264" stroke-width="3" />
+    <path d="M 95 240 C 80 234 60 238 52 242 L 52 264 C 60 260 80 256 95 264 C 110 256 130 260 138 264 L 138 242 C 130 238 110 234 95 240 Z" fill="#FFFFFF" fill-opacity="0.9" stroke-width="3.5" />
+    <!-- Book text lines on left page -->
+    <line x1="60" y1="246" x2="88" y2="243" />
+    <line x1="60" y1="251" x2="88" y2="248" />
+    <line x1="60" y1="256" x2="85" y2="253" />
+    <!-- Book text lines on right page -->
+    <line x1="102" y1="243" x2="130" y2="246" />
+    <line x1="102" y1="248" x2="130" y2="251" />
+    <line x1="102" y1="253" x2="127" y2="256" />
+  </g>
+
+  <!-- Right Scale: Chains, Pan & Africa Map with Woman Silhouette -->
+  <g stroke="#0062FF" stroke-width="3.5" stroke-linecap="round">
+    <line x1="305" y1="162" x2="258" y2="236" />
+    <line x1="305" y1="162" x2="305" y2="236" />
+    <line x1="305" y1="162" x2="352" y2="236" />
+  </g>
+  <!-- Right Pan -->
+  <path d="M 248 238 C 255 282 355 282 362 238 Z" fill="none" stroke="#0062FF" stroke-width="6" stroke-linejoin="round" />
+  <path d="M 250 238 L 360 238" stroke="#0062FF" stroke-width="5" />
+  <!-- Africa Continent inside Right Pan -->
+  <g transform="translate(262, 175) scale(0.68)">
+    <!-- Africa map silhouette in solid blue -->
+    <path d="M 40 40 C 50 35 75 35 85 45 C 95 50 115 50 125 65 C 135 78 135 90 120 100 C 110 108 105 125 95 135 C 88 145 78 160 70 160 C 62 160 55 140 50 130 C 45 115 25 105 18 90 C 12 75 25 50 40 40 Z" fill="#0062FF" />
+    <!-- Woman's face & headscarf silhouette in white inside Africa -->
+    <path d="M 68 82 C 72 78 78 80 82 85 C 86 90 85 96 82 100 C 84 102 88 102 90 106 C 88 108 85 108 84 110 C 86 112 88 114 86 116 C 82 118 78 116 75 118 C 72 122 75 128 78 132 C 70 132 66 126 66 120 C 66 114 62 112 60 106 C 58 98 62 88 68 82 Z" fill="#FFFFFF" />
+    <path d="M 85 98 C 88 98 94 99 96 102 C 94 105 88 104 85 103 Z" fill="#FFFFFF" />
+  </g>
+
+  <!-- WiLDAF-AO Text in Bold Sans-serif -->
+  <text x="200" y="398" text-anchor="middle" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="52" fill="#0062FF" letter-spacing="1">
+    WiLDAF-AO
+  </text>
+</svg>

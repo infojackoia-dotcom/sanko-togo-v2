@@ -1,0 +1,6 @@
+{
+  "name": "SANKO TOGO",
+  "description": "Location de véhicules et gestion de parc automobile pour entreprises et organisations institutionnelles au Togo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

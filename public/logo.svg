@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="17 21.5 66 60" fill="none" aria-label="Logo SANKO TOGO">
+  <defs>
+    <!-- Face 1 (Top-Right) Gradient - Strict corporate #1A3A6A palette -->
+    <linearGradient id="sanko-navy-face-1" x1="40%" y1="20%" x2="80%" y2="65%">
+      <stop offset="0%" stop-color="#2D548F" />
+      <stop offset="55%" stop-color="#1A3A6A" />
+      <stop offset="100%" stop-color="#112442" />
+    </linearGradient>
+
+    <!-- Face 2 (Bottom) Gradient - Strict corporate #1A3A6A palette -->
+    <linearGradient id="sanko-navy-face-2" x1="80%" y1="60%" x2="30%" y2="80%">
+      <stop offset="0%" stop-color="#0E1E36" />
+      <stop offset="45%" stop-color="#1A3A6A" />
+      <stop offset="100%" stop-color="#24477A" />
+    </linearGradient>
+
+    <!-- Face 3 (Left) Gradient - Strict corporate #1A3A6A palette -->
+    <linearGradient id="sanko-navy-face-3" x1="20%" y1="75%" x2="50%" y2="30%">
+      <stop offset="0%" stop-color="#142B4E" />
+      <stop offset="50%" stop-color="#1A3A6A" />
+      <stop offset="100%" stop-color="#325D9B" />
+    </linearGradient>
+
+    <!-- Subtle corporate depth filter -->
+    <filter id="sanko-navy-depth" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0.5" dy="0.8" stdDeviation="0.7" flood-color="#0A1526" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Face 3: Left Slanted Band -->
+  <polygon
+    points="30,79 19,61 40,24 50,42 39,61"
+    fill="url(#sanko-navy-face-3)"
+  />
+
+  <!-- Face 2: Bottom Horizontal Band -->
+  <polygon
+    points="81,61 70,79 30,79 39,61 61,61"
+    fill="url(#sanko-navy-face-2)"
+    filter="url(#sanko-navy-depth)"
+  />
+
+  <!-- Face 1: Top-Right Overlapping Band -->
+  <polygon
+    points="40,24 60,24 81,61 61,61 50,42"
+    fill="url(#sanko-navy-face-1)"
+    filter="url(#sanko-navy-depth)"
+  />
+</svg>
