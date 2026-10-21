@@ -10,7 +10,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onNavigate }) 
   const projects = [
     {
       id: 'savanes-4x4',
-      title: 'Missions Humanitaires & Santé — Région des Savanes & Kara',
+      title: 'Missions Humanitaires & Santé : Région des Savanes & Kara',
       category: 'Flotte 4x4',
       image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80',
       description: 'Mise à disposition de 8 véhicules 4x4 équipés pour pistes difficiles, avec chauffeurs formés aux zones reculées et assistance technique permanente.',

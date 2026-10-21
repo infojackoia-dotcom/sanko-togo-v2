@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { PageId, BlogPost } from '../types';
 import { BLOG_POSTS, WHATSAPP_CONFIG } from '../data/content';
 import { FAIcon } from '../components/FAIcon';
+import { BrochureLeadModule } from '../components/BrochureLeadModule';
 
 interface BlogPageProps {
   onNavigate: (page: PageId, anchor?: string) => void;
@@ -44,27 +45,36 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigate }) => {
 
   return (
     <div className="w-full">
-      {/* 4.1 — HERO */}
-      <section className="bg-hero-gradient pt-12 pb-16 sm:pt-16 sm:pb-24 border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <span className="text-xs uppercase tracking-wider font-bold text-[#1A3A6A] bg-[#1A3A6A]/10 px-3.5 py-1 rounded-full">
-              Veille & Expertise
-            </span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mt-4 mb-6">
-              Actualités & conseils mobilité professionnelle
-            </h1>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-              Des ressources pensées pour les responsables logistique, achats et administration en charge de la mobilité de leur organisation.
-            </p>
-          </div>
+      {/* 4.1 — HERO CENTRÉ AVEC IMAGE EN FOND */}
+      <section className="relative pt-16 pb-20 sm:pt-24 sm:pb-28 text-white overflow-hidden border-b border-[#122849]">
+        {/* Image de fond avec overlay bleu marine translucide */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <img
+            src="/blog-hero.jpg"
+            alt="Veille stratégique et expertise logistique SANKO TOGO"
+            className="w-full h-full object-cover object-center hero-bg-img"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-[#0F2444]/45 bg-gradient-to-t from-[#0F2444]/80 via-[#1A3A6A]/45 to-[#0F2444]/60 backdrop-blur-[0.5px]" />
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+          <span className="inline-block text-xs uppercase tracking-wider font-bold text-white bg-[#0F2444]/80 backdrop-blur-md px-4 py-1.5 rounded-full shadow-sm border border-white/20 mb-4">
+            Veille & Expertise
+          </span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4 drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]">
+            Actualités & conseils mobilité professionnelle
+          </h1>
+          <p className="text-base sm:text-lg text-white/95 font-medium leading-relaxed max-w-2xl mx-auto drop-shadow-[0_1px_6px_rgba(0,0,0,0.7)]">
+            Des ressources pensées pour les responsables logistique, achats et administration en charge de la mobilité de leur organisation.
+          </p>
         </div>
       </section>
 
-      {/* 4.2 — CATÉGORIES (FILTRES) */}
+      {/* 4.2 — CATÉGORIES (FILTRES CENTRÉS) */}
       <section className="py-8 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+          <div className="flex items-center justify-center flex-wrap gap-2 pb-2">
             {categories.map((cat) => {
               const isSelected = selectedCategory === cat;
               return (
@@ -109,27 +119,25 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigate }) => {
                     </span>
                   </div>
 
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 text-xs text-slate-400 mb-3 font-medium">
+                  <div className="p-6 text-center flex flex-col items-center">
+                    <div className="flex items-center justify-center gap-3 text-xs text-slate-400 mb-3 font-medium">
                       <span>{post.date}</span>
                       <span>•</span>
                       <span>{post.readTime}</span>
                     </div>
 
-                    <h2 className="text-lg font-bold text-slate-900 leading-snug mb-3 hover:text-[#1A3A6A] transition-colors">
+                    <h2 className="text-lg font-bold text-slate-900 leading-snug hover:text-[#1A3A6A] transition-colors text-center">
                       {post.title}
                     </h2>
-
-                    <p className="text-sm text-slate-600 leading-relaxed line-clamp-3">
-                      {post.excerpt}
-                    </p>
                   </div>
                 </div>
 
-                <div className="p-6 pt-0 flex items-center justify-between border-t border-slate-100 mt-4">
-                  <span className="text-xs font-bold text-[#1A3A6A] inline-flex items-center gap-1.5">
+                <div className="px-6 py-4 flex items-center justify-center border-t border-slate-100 text-center">
+                  <span className="text-xs font-bold text-[#1A3A6A] inline-flex items-center gap-2 hover:underline">
                     Lire l'article complet
-                    <FAIcon name="fa-solid fa-arrow-right" size={12} color="#1A3A6A" />
+                    <span className="w-7 h-7 rounded-full bg-[#1A3A6A]/10 text-[#1A3A6A] flex items-center justify-center">
+                      <FAIcon name="fa-solid fa-arrow-right" size={10} color="#1A3A6A" />
+                    </span>
                   </span>
                 </div>
               </article>
@@ -137,6 +145,9 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigate }) => {
           </div>
         </div>
       </section>
+
+      {/* 4.2.1 — TÉLÉCHARGEMENT DE NOTRE BROCHURE INSTITUTIONNELLE */}
+      <BrochureLeadModule variant="compact" />
 
       {/* 4.3 — NEWSLETTER */}
       <section className="py-16 sm:py-20 bg-white border-t border-slate-100">

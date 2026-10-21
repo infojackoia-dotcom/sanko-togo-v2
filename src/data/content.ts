@@ -17,118 +17,250 @@ export const WHATSAPP_CONFIG = {
 };
 
 /**
- * SIMULATEUR DE BUDGET — TARIFS DE BASE & COEFFICIENTS
- * Ces variables peuvent être facilement modifiées selon votre grille tarifaire réelle.
- * Les montants sont exprimés en FCFA.
+/**
+ * SIMULATEUR DE BUDGET — GRILLE TARIFAIRE OFFICIELLE SANKO SARL
+ * Tarifs journaliers (F CFA) applicables à Lomé et Hors Lomé.
+ * Chauffeur professionnel inclus dans le forfait journalier.
  */
+export const CHAUFFEUR_OVERNIGHT_COST = 15000; // Hébergement / Nuitée chauffeur hors Lomé : 15 000 F CFA
+
 export const VEHICLE_OPTIONS: VehicleOption[] = [
   {
-    id: 'suv',
-    name: 'SUV',
-    categoryName: 'Polyvalent & Confortable',
-    description: 'Excellente visibilité et robustesse pour la ville et les axes régionaux.',
-    faIcon: 'fa-solid fa-car',
-    baseDailyRate: 65000,     // 65 000 FCFA / jour
-    baseMonthlyRate: 1200000, // 1 200 000 FCFA / mois
-  },
-  {
-    id: 'berline',
-    name: 'Berline',
-    categoryName: 'Confort & Exécutif',
-    description: 'Idéale pour le transport des directeurs de mission, cadres et délégations.',
+    id: 'berline-yaris',
+    name: 'Berline / Yaris ou similaires',
+    categoryName: 'Économique & Urbain (Lomé)',
+    description: 'Idéale pour les déplacements administratifs et courses urbaines dans le Grand Lomé.',
     faIcon: 'fa-solid fa-car-side',
-    baseDailyRate: 50000,    // 50 000 FCFA / jour
-    baseMonthlyRate: 950000, // 950 000 FCFA / mois
+    baseDailyRate: 35000,
+    baseMonthlyRate: 35000 * 30,
+    allowsHorsLome: false,
+    rates: {
+      lome: { tier1: 35000, tier2: 30000, tier3: 25000 },
+      horsLome: { tier1: null, tier2: null, tier3: null },
+    },
   },
   {
-    id: '4x4',
-    name: '4x4',
-    categoryName: 'Tout-terrain & Terrain difficile',
-    description: 'Indispensable pour les missions de terrain et les visites à l\'intérieur du pays.',
+    id: 'berline-corolla',
+    name: 'Berline / Corolla ou similaires',
+    categoryName: 'Confort & Affaires (Lomé)',
+    description: 'Confort climatisé éprouvé et standing sobre pour directeurs, cadres et consultants.',
+    faIcon: 'fa-solid fa-car-side',
+    baseDailyRate: 45000,
+    baseMonthlyRate: 45000 * 30,
+    allowsHorsLome: false,
+    rates: {
+      lome: { tier1: 45000, tier2: 40000, tier3: 35000 },
+      horsLome: { tier1: null, tier2: null, tier3: null },
+    },
+  },
+  {
+    id: 'berline-avensis',
+    name: 'Berline / Avensis',
+    categoryName: 'Exécutive & Protocole (Lomé)',
+    description: 'Espace intérieur haut de gamme pour délégations officielles et accueil de personnalités.',
+    faIcon: 'fa-solid fa-car-side',
+    baseDailyRate: 65000,
+    baseMonthlyRate: 65000 * 30,
+    allowsHorsLome: false,
+    rates: {
+      lome: { tier1: 65000, tier2: 50000, tier3: 40000 },
+      horsLome: { tier1: null, tier2: null, tier3: null },
+    },
+  },
+  {
+    id: 'suv-rav4',
+    name: 'SUV / RAV 4 ou RUSH',
+    categoryName: 'Polyvalent & Moderne',
+    description: 'Garde au sol surélevée, confort et adaptabilité aussi bien à Lomé qu\'en région.',
+    faIcon: 'fa-solid fa-car',
+    baseDailyRate: 45000,
+    baseMonthlyRate: 45000 * 30,
+    allowsHorsLome: true,
+    rates: {
+      lome: { tier1: 45000, tier2: 40000, tier3: 30000 },
+      horsLome: { tier1: 50000, tier2: 45000, tier3: 35000 },
+    },
+  },
+  {
+    id: 'suv-prado',
+    name: 'TOYOTA PRADO / FORTUNER',
+    categoryName: 'Grand 4x4 / Prestige & Tout-terrain',
+    description: 'Le standard d\'excellence pour chefs de mission, accès terrain et sécurité maximale.',
+    faIcon: 'fa-solid fa-shield-halved',
+    baseDailyRate: 75000,
+    baseMonthlyRate: 75000 * 30,
+    allowsHorsLome: true,
+    rates: {
+      lome: { tier1: 75000, tier2: 70000, tier3: 55000 },
+      horsLome: { tier1: 80000, tier2: 70000, tier3: 60000 },
+    },
+  },
+  {
+    id: 'pickup-hilux',
+    name: 'TOYOTA HILUX (Pick-up)',
+    categoryName: 'Pick-up 4x4 Tout-terrain',
+    description: 'Robustesse légendaire sur pistes difficiles, logistique d\'équipement et chantiers terrain.',
     faIcon: 'fa-solid fa-truck-pickup',
-    baseDailyRate: 85000,     // 85 000 FCFA / jour
-    baseMonthlyRate: 1650000, // 1 650 000 FCFA / mois
+    baseDailyRate: 55000,
+    baseMonthlyRate: 55000 * 30,
+    allowsHorsLome: true,
+    rates: {
+      lome: { tier1: 55000, tier2: 50000, tier3: 45000 },
+      horsLome: { tier1: 55000, tier2: 50000, tier3: 45000 },
+    },
   },
   {
-    id: 'minibus',
-    name: 'Minibus (15 places)',
-    categoryName: 'Transport de groupe / Délégation (15 places)',
-    description: 'Capacité exclusive de 15 places assises climatisées pour ateliers, conférences, transferts et missions d\'équipes.',
+    id: 'bus-15',
+    name: 'BUS _ 15 places',
+    categoryName: 'Minibus / Équipes & Ateliers (15 places)',
+    description: '15 places assises climatisées avec chauffeur pour ateliers régionaux et transferts d\'équipes.',
     faIcon: 'fa-solid fa-van-shuttle',
-    baseDailyRate: 95000,     // 95 000 FCFA / jour
-    baseMonthlyRate: 1850000, // 1 850 000 FCFA / mois
+    baseDailyRate: 70000,
+    baseMonthlyRate: 70000 * 30,
+    allowsHorsLome: true,
+    rates: {
+      lome: { tier1: 70000, tier2: 65000, tier3: 50000 },
+      horsLome: { tier1: 70000, tier2: 65000, tier3: 50000 },
+    },
+  },
+  {
+    id: 'bus-30',
+    name: 'BUS _ 30 places',
+    categoryName: 'Autocar / Conférences & Groupes (30 places)',
+    description: '30 places assises avec chauffeur pour grands séminaires, voyages d\'études et délégations.',
+    faIcon: 'fa-solid fa-bus',
+    baseDailyRate: 115000,
+    baseMonthlyRate: 115000 * 30,
+    allowsHorsLome: true,
+    rates: {
+      lome: { tier1: 115000, tier2: 110000, tier3: 105000 },
+      horsLome: { tier1: 120000, tier2: 115000, tier3: 110000 },
+    },
   },
 ];
 
 /**
- * LOGIQUE DU CALCUL DU SIMULATEUR
+ * Helper de compatibilité pour retrouver un véhicule même avec les anciens identifiants génériques
  */
-export const SIMULATOR_COEFFICIENTS = {
-  // Coefficient selon la zone d'utilisation
-  zone: {
-    ville: 1.0,        // Lomé : coefficient standard
-    interieur: 1.25,   // Intérieur du pays : +25% (usure, assistance renforcée)
-  },
-  // Coût du chauffeur
-  driverDailyCost: 15000,     // 15 000 FCFA / jour
-  driverMonthlyCost: 250000,  // 250 000 FCFA / mois
-  // Marge indicative de fourchette (+/- 10%)
-  rangeTolerance: 0.10,
-};
+export function resolveVehicle(vehicleId: VehicleOption['id']): VehicleOption {
+  if (vehicleId === 'berline') {
+    return VEHICLE_OPTIONS.find((v) => v.id === 'berline-corolla') || VEHICLE_OPTIONS[1];
+  }
+  if (vehicleId === 'suv') {
+    return VEHICLE_OPTIONS.find((v) => v.id === 'suv-rav4') || VEHICLE_OPTIONS[3];
+  }
+  if (vehicleId === '4x4') {
+    return VEHICLE_OPTIONS.find((v) => v.id === 'suv-prado') || VEHICLE_OPTIONS[4];
+  }
+  if (vehicleId === 'minibus') {
+    return VEHICLE_OPTIONS.find((v) => v.id === 'bus-15') || VEHICLE_OPTIONS[6];
+  }
+  return VEHICLE_OPTIONS.find((v) => v.id === vehicleId) || VEHICLE_OPTIONS[4]; // Default to Prado
+}
+
+export interface EstimateResult {
+  vehicle: VehicleOption;
+  tierKey: 'tier1' | 'tier2' | 'tier3';
+  tierLabel: string;
+  appliedDailyRate: number;
+  duration: number;
+  durationUnit: 'jours' | 'mois';
+  rentalTotal: number;
+  overnightStays: number;
+  overnightDailyRate: number;
+  overnightTotal: number;
+  totalAmount: number;
+  minPrice: number;
+  maxPrice: number;
+  formattedRange: string;
+  formattedTotal: string;
+  formattedDailyRate: string;
+  formattedMonthlyEquivalent?: string;
+  isHorsLomeNotRecommended: boolean;
+}
 
 /**
- * Calcul de l'estimation de budget
+ * Calcul exact du budget d'après la grille tarifaire officielle de SANKO SARL
+ * - Applique les forfaits journaliers selon la zone (Lomé vs Hors Lomé)
+ * - Tient compte de la dégressivité de durée (0 à 3 mois, 3 mois à 2 ans, Plus de 2 ans)
+ * - Calcule l'hébergement / nuitée du chauffeur si mission hors Lomé (15 000 F CFA / nuitée)
  */
 export function calculateEstimate(
   vehicleId: VehicleOption['id'],
   rentalType: 'courte' | 'moyenne' | 'longue',
   duration: number,
   zone: 'ville' | 'interieur',
-  withDriver: boolean
-) {
-  const vehicle = VEHICLE_OPTIONS.find((v) => v.id === vehicleId) || VEHICLE_OPTIONS[0];
-  const zoneCoeff = SIMULATOR_COEFFICIENTS.zone[zone] || 1.0;
+  withDriver: boolean = true,
+  overnightStays: number = 0
+): EstimateResult {
+  const vehicle = resolveVehicle(vehicleId);
+  const isHorsLome = zone === 'interieur';
+  const isHorsLomeNotRecommended = isHorsLome && !vehicle.allowsHorsLome;
 
-  let baseAmount = 0;
-  let driverTotal = 0;
+  let tierKey: 'tier1' | 'tier2' | 'tier3' = 'tier1';
+  let tierLabel = '0 à 3 mois';
 
   if (rentalType === 'courte') {
-    // Calcul au jour
-    const days = Math.max(1, duration);
-    baseAmount = vehicle.baseDailyRate * days * zoneCoeff;
-    if (withDriver) {
-      driverTotal = SIMULATOR_COEFFICIENTS.driverDailyCost * days;
-    }
+    tierKey = 'tier1';
+    tierLabel = '0 à 3 mois';
   } else if (rentalType === 'moyenne') {
-    // 1 à 6 mois : remise de volume 5%
-    const months = Math.max(1, duration);
-    const monthlyRateDiscounted = vehicle.baseMonthlyRate * 0.95;
-    baseAmount = monthlyRateDiscounted * months * zoneCoeff;
-    if (withDriver) {
-      driverTotal = SIMULATOR_COEFFICIENTS.driverMonthlyCost * months;
-    }
+    tierKey = 'tier2';
+    tierLabel = '3 mois à 2 ans';
   } else {
-    // Longue durée (6 mois et plus) : remise de volume 12%
-    const months = Math.max(6, duration);
-    const monthlyRateDiscounted = vehicle.baseMonthlyRate * 0.88;
-    baseAmount = monthlyRateDiscounted * months * zoneCoeff;
-    if (withDriver) {
-      driverTotal = SIMULATOR_COEFFICIENTS.driverMonthlyCost * months;
-    }
+    tierKey = 'tier3';
+    tierLabel = 'Plus de 2 ans';
   }
 
-  const medianAmount = baseAmount + driverTotal;
-  const minPrice = Math.round((medianAmount * (1 - SIMULATOR_COEFFICIENTS.rangeTolerance)) / 1000) * 1000;
-  const maxPrice = Math.round((medianAmount * (1 + SIMULATOR_COEFFICIENTS.rangeTolerance)) / 1000) * 1000;
+  // Tarif journalier appliqué d'après la grille officielle
+  let appliedDailyRate: number;
+  if (isHorsLome && vehicle.rates.horsLome[tierKey] !== null) {
+    appliedDailyRate = vehicle.rates.horsLome[tierKey]!;
+  } else {
+    appliedDailyRate = vehicle.rates.lome[tierKey];
+  }
+
+  let rentalTotal = 0;
+  let formattedMonthlyEquivalent: string | undefined = undefined;
+  const durationUnit: 'jours' | 'mois' = rentalType === 'courte' ? 'jours' : 'mois';
 
   const formatter = new Intl.NumberFormat('fr-FR');
-  const formattedRange = `${formatter.format(minPrice)} — ${formatter.format(maxPrice)} FCFA`;
+
+  if (rentalType === 'courte') {
+    const days = Math.max(1, duration);
+    rentalTotal = appliedDailyRate * days;
+  } else {
+    // Calcul mensuel sur base 30 jours (standard commercial)
+    const months = Math.max(1, duration);
+    const monthlyRate = appliedDailyRate * 30;
+    rentalTotal = monthlyRate * months;
+    formattedMonthlyEquivalent = `${formatter.format(monthlyRate)} FCFA / mois`;
+  }
+
+  // Hébergement chauffeur si hors Lomé
+  const validOvernightStays = isHorsLome ? Math.max(0, overnightStays) : 0;
+  const overnightTotal = validOvernightStays * CHAUFFEUR_OVERNIGHT_COST;
+
+  const totalAmount = rentalTotal + overnightTotal;
 
   return {
     vehicle,
-    minPrice,
-    maxPrice,
-    formattedRange,
+    tierKey,
+    tierLabel,
+    appliedDailyRate,
+    duration,
+    durationUnit,
+    rentalTotal,
+    overnightStays: validOvernightStays,
+    overnightDailyRate: CHAUFFEUR_OVERNIGHT_COST,
+    overnightTotal,
+    totalAmount,
+    minPrice: totalAmount,
+    maxPrice: totalAmount,
+    formattedRange: `${formatter.format(totalAmount)} FCFA`,
+    formattedTotal: `${formatter.format(totalAmount)} FCFA`,
+    formattedDailyRate: `${formatter.format(appliedDailyRate)} FCFA / jour`,
+    formattedMonthlyEquivalent,
+    isHorsLomeNotRecommended,
   };
 }
 
@@ -143,7 +275,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt: 'Comprendre les différences structurelles, financières et opérationnelles pour orienter la décision de vos comités de direction et services achats.',
     date: '14 Mai 2026',
     readTime: '6 min de lecture',
-    image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=900&q=80',
+    image: '/gallery/parc-automobile-sanko.jpg',
     content: [
       "Pour une organisation internationale, une ambassade ou une ONG opérant au Togo, la question de la mobilité dépasse le simple transport : elle touche à la pérennité budgétaire, à la sécurité du personnel et à la conformité administrative.",
       "La Location Longue Durée (LLD) permet de déléguer l'ensemble du risque matériel et financier au loueur : les véhicules sont récents, assurés tous risques, régulièrement renouvelés, et le budget mensuel reste constant tout au long du contrat sans immobilisation de trésorerie.",
@@ -158,7 +290,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt: 'Conformité aux audits bailleurs, réactivité en cas de panne terrain, flexibilité contractuelle : la grille d\'évaluation indispensable.',
     date: '28 Avril 2026',
     readTime: '5 min de lecture',
-    image: 'https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=900&q=80',
+    image: '/gallery/hilux-front-road.jpg',
     content: [
       "Les équipes d'achats et de logistique des ONG internationales répondent à des règles d'audit très strictes dictées par leurs bailleurs de fonds (USAID, Union Européenne, AFD, agences onusiennes). Choisir un prestataire local nécessite une vigilance accrue sur plusieurs points cardinaux.",
       "1. La conformité administrative et fiscale : disposer d'un RCCM valide, d'un NIF à jour, de factures aux normes et d'une traçabilité irréprochable des paiements.",
@@ -175,7 +307,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt: 'Trafic urbain, exigences protocolaires, réglementation locale et gestion de crise : le guide pratique pour vos équipes en poste.',
     date: '10 Avril 2026',
     readTime: '4 min de lecture',
-    image: 'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=900&q=80',
+    image: '/gallery/corolla-cross-road.jpg',
     content: [
       "Carrefour diplomatique et économique majeur en Afrique de l'Ouest, Lomé concentre de nombreuses représentations diplomatiques, sièges régionaux et délégations temporaires.",
       "Pour assurer une mobilité fluide entre le quartier administratif, la zone portuaire et les représentations consulaires, l'anticipation des pics de trafic et la parfaite connaissance des axes de délestage sont déterminantes.",

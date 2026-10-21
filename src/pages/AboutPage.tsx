@@ -3,6 +3,7 @@ import { PageId } from '../types';
 import { FAIcon } from '../components/FAIcon';
 import { PartnersCarousel } from '../components/PartnersCarousel';
 import { FleetShowcase } from '../components/FleetShowcase';
+import { BrochureLeadModule } from '../components/BrochureLeadModule';
 
 interface AboutPageProps {
   onNavigate: (page: PageId, anchor?: string) => void;
@@ -15,11 +16,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, targetAnchor }
       {/* 2.1 — HERO avec image en fond, informations centrées & durée mise à jour */}
       <section className="relative pt-16 pb-20 sm:pt-24 sm:pb-28 text-white overflow-hidden border-b border-[#122849]">
         {/* Background Image with Lighter Navy Overlay */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src="/chauffeur-pro.jpg"
             alt="Chauffeur professionnel Sanko Togo - Mobilité professionnelle au Togo"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center hero-bg-img"
             referrerPolicy="no-referrer"
           />
           {/* Lighter overlay with gradient so the chauffeur and vehicle are clearly visible */}
@@ -53,7 +54,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, targetAnchor }
             </h2>
             <div className="text-center text-slate-600 text-base sm:text-lg leading-relaxed bg-slate-50/70 p-8 sm:p-10 rounded-2xl border border-slate-200/70 w-full shadow-sm">
               <p>
-                Implanté au Togo depuis +10 ans, SANKO TOGO a une conviction simple : les organisations qui opèrent au Togo — qu'elles soient internationales, institutionnelles ou privées — ont besoin d'un partenaire de mobilité fiable, capable de s'adapter à leurs exigences opérationnelles et administratives. Année après année, nous avons construit notre expertise aux côtés d'agences des Nations Unies, d'ONG internationales et de grandes entreprises, en faisant de la rigueur et de la réactivité nos priorités.
+                Implanté au Togo depuis plus de 10 ans, SANKO TOGO a une conviction simple : les organisations qui opèrent au Togo, qu'elles soient internationales, institutionnelles ou privées, ont besoin d'un partenaire de mobilité fiable, capable de s'adapter à leurs exigences opérationnelles et administratives. Année après année, nous avons construit notre expertise aux côtés d'agences des Nations Unies, d'ONG internationales et de grandes entreprises, en faisant de la rigueur et de la réactivité nos priorités.
               </p>
             </div>
           </div>
@@ -65,27 +66,27 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, targetAnchor }
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Mission */}
-            <div className="bg-white p-8 rounded-2xl border border-slate-200/80 card-hover">
-              <div className="w-11 h-11 rounded-xl bg-[#1A3A6A] text-white flex items-center justify-center mb-5">
-                <FAIcon name="fa-regular fa-compass" size={18} color="#FFFFFF" />
+            <div className="bg-white p-8 rounded-2xl border border-slate-200/80 card-hover flex flex-col items-center text-center">
+              <div className="w-12 h-12 rounded-xl bg-[#1A3A6A] text-white flex items-center justify-center mb-5 shadow-xs">
+                <FAIcon name="fa-regular fa-compass" size={20} color="#FFFFFF" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">
+              <h3 className="text-xl font-bold text-slate-900 mb-3 text-center">
                 Mission
               </h3>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed text-center">
                 Garantir à chaque organisation une mobilité fiable, sécurisée et sans contrainte de gestion, pour qu'elle puisse se concentrer sur sa mission.
               </p>
             </div>
 
             {/* Vision */}
-            <div className="bg-white p-8 rounded-2xl border border-slate-200/80 card-hover">
-              <div className="w-11 h-11 rounded-xl bg-[#1A3A6A] text-white flex items-center justify-center mb-5">
-                <FAIcon name="fa-regular fa-eye" size={18} color="#FFFFFF" />
+            <div className="bg-white p-8 rounded-2xl border border-slate-200/80 card-hover flex flex-col items-center text-center">
+              <div className="w-12 h-12 rounded-xl bg-[#1A3A6A] text-white flex items-center justify-center mb-5 shadow-xs">
+                <FAIcon name="fa-regular fa-eye" size={20} color="#FFFFFF" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">
+              <h3 className="text-xl font-bold text-slate-900 mb-3 text-center">
                 Vision
               </h3>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed text-center">
                 Devenir le partenaire de référence en mobilité professionnelle pour les institutions opérant au Togo.
               </p>
             </div>
@@ -107,53 +108,53 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, targetAnchor }
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Fiabilité */}
-            <div className="p-6 rounded-2xl border border-slate-200/80 card-hover bg-white">
-              <div className="w-10 h-10 rounded-xl bg-[#1A3A6A]/10 text-[#1A3A6A] flex items-center justify-center mb-4">
-                <FAIcon name="fa-regular fa-handshake" size={18} color="#1A3A6A" />
+            <div className="p-6 rounded-2xl border border-slate-200/80 card-hover bg-white flex flex-col items-center text-center">
+              <div className="w-11 h-11 rounded-xl bg-[#1A3A6A]/10 text-[#1A3A6A] flex items-center justify-center mb-4">
+                <FAIcon name="fa-regular fa-handshake" size={19} color="#1A3A6A" />
               </div>
-              <h3 className="text-base font-bold text-slate-900 mb-2">
+              <h3 className="text-base font-bold text-slate-900 mb-2 text-center">
                 Fiabilité
               </h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <p className="text-sm text-slate-600 leading-relaxed text-center">
                 Des véhicules et un service sur lesquels vous pouvez compter, sans exception.
               </p>
             </div>
 
             {/* Sécurité */}
-            <div className="p-6 rounded-2xl border border-slate-200/80 card-hover bg-white">
-              <div className="w-10 h-10 rounded-xl bg-[#1A3A6A]/10 text-[#1A3A6A] flex items-center justify-center mb-4">
-                <FAIcon name="fa-regular fa-shield-halved" size={18} color="#1A3A6A" />
+            <div className="p-6 rounded-2xl border border-slate-200/80 card-hover bg-white flex flex-col items-center text-center">
+              <div className="w-11 h-11 rounded-xl bg-[#1A3A6A]/10 text-[#1A3A6A] flex items-center justify-center mb-4">
+                <FAIcon name="fa-solid fa-shield-halved" size={19} color="#1A3A6A" />
               </div>
-              <h3 className="text-base font-bold text-slate-900 mb-2">
+              <h3 className="text-base font-bold text-slate-900 mb-2 text-center">
                 Sécurité
               </h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <p className="text-sm text-slate-600 leading-relaxed text-center">
                 Un entretien rigoureux et un suivi constant de notre flotte.
               </p>
             </div>
 
             {/* Réactivité */}
-            <div className="p-6 rounded-2xl border border-slate-200/80 card-hover bg-white">
-              <div className="w-10 h-10 rounded-xl bg-[#1A3A6A]/10 text-[#1A3A6A] flex items-center justify-center mb-4">
-                <FAIcon name="fa-regular fa-bolt" size={18} color="#1A3A6A" />
+            <div className="p-6 rounded-2xl border border-slate-200/80 card-hover bg-white flex flex-col items-center text-center">
+              <div className="w-11 h-11 rounded-xl bg-[#1A3A6A]/10 text-[#1A3A6A] flex items-center justify-center mb-4">
+                <FAIcon name="fa-solid fa-bolt" size={19} color="#1A3A6A" />
               </div>
-              <h3 className="text-base font-bold text-slate-900 mb-2">
+              <h3 className="text-base font-bold text-slate-900 mb-2 text-center">
                 Réactivité
               </h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <p className="text-sm text-slate-600 leading-relaxed text-center">
                 Une équipe disponible et joignable, pour répondre vite à vos besoins.
               </p>
             </div>
 
             {/* Transparence */}
-            <div className="p-6 rounded-2xl border border-slate-200/80 card-hover bg-white">
-              <div className="w-10 h-10 rounded-xl bg-[#1A3A6A]/10 text-[#1A3A6A] flex items-center justify-center mb-4">
-                <FAIcon name="fa-regular fa-file-lines" size={18} color="#1A3A6A" />
+            <div className="p-6 rounded-2xl border border-slate-200/80 card-hover bg-white flex flex-col items-center text-center">
+              <div className="w-11 h-11 rounded-xl bg-[#1A3A6A]/10 text-[#1A3A6A] flex items-center justify-center mb-4">
+                <FAIcon name="fa-regular fa-file-lines" size={19} color="#1A3A6A" />
               </div>
-              <h3 className="text-base font-bold text-slate-900 mb-2">
+              <h3 className="text-base font-bold text-slate-900 mb-2 text-center">
                 Transparence
               </h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <p className="text-sm text-slate-600 leading-relaxed text-center">
                 Des conditions claires, sans surprise, du premier échange au contrat.
               </p>
             </div>
@@ -185,6 +186,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, targetAnchor }
           </div>
         </div>
       </section>
+
+      {/* 2.7 — MODULE BROCHURE INSTITUTIONNELLE (VERSION COMPACTE) */}
+      <BrochureLeadModule variant="compact" />
     </div>
   );
 };

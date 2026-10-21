@@ -6,8 +6,8 @@ import { FAIcon } from '../components/FAIcon';
 import { SpotlightAbout } from '../components/SpotlightAbout';
 import { FleetCategories } from '../components/FleetCategories';
 import { Simulator } from '../components/Simulator';
-import { TestimonialsSection } from '../components/TestimonialsSection';
 import { FAQAccordionDark } from '../components/FAQAccordionDark';
+import { BrochureLeadModule } from '../components/BrochureLeadModule';
 
 interface HomePageProps {
   onNavigate: (page: PageId, anchor?: string) => void;
@@ -60,7 +60,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             src="/hero-suv.jpg"
             alt="Véhicule de flotte Toyota Corolla Cross Sanko Togo"
             referrerPolicy="no-referrer"
-            className="w-full h-full object-cover object-center select-none"
+            className="w-full h-full object-cover object-center select-none hero-bg-img"
           />
           {/* White blur overlay directly on the image */}
           <div className="absolute inset-0 bg-white/70 backdrop-blur-sm" />
@@ -407,17 +407,17 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       <FleetCategories onNavigate={onNavigate} />
 
       {/* 10. INTERACTIVE SIMULATOR */}
-      <section id="simulateur" className="py-20 bg-slate-50/70 border-t border-slate-100">
+      <section id="simulateur" className="py-20 sm:py-24 bg-[#0F2444] text-white border-t border-[#1A3A6A]/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-xs uppercase tracking-widest font-bold text-[#1A3A6A] bg-[#1A3A6A]/10 px-3.5 py-1 rounded-full">
+            <span className="text-xs uppercase tracking-widest font-bold text-white bg-white/15 px-4 py-1.5 rounded-full inline-block">
               Outil d'Estimation Immédiate
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1A3A6A] mt-3">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mt-3">
               Estimez votre budget en 1 minute
             </h2>
-            <p className="text-slate-600 text-sm mt-2">
-              Choisissez votre véhicule, indiquez la durée et la zone d'utilisation, recevez immédiatement une estimation — sans engagement.
+            <p className="text-slate-300 text-sm sm:text-base mt-2">
+              Choisissez votre véhicule, indiquez la durée et la zone d'utilisation, et recevez immédiatement une estimation sans engagement.
             </p>
           </div>
 
@@ -425,9 +425,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           <Simulator />
         </div>
       </section>
-
-      {/* 11. CLIENT TESTIMONIALS */}
-      <TestimonialsSection />
 
       {/* 12. LATEST NEWS & BLOGS */}
       <section className="py-20 bg-slate-50/70 border-t border-slate-100">
@@ -463,29 +460,25 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                     </span>
                   </div>
 
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 text-xs text-slate-400 mb-3">
+                  <div className="p-6 text-center flex flex-col items-center">
+                    <div className="flex items-center justify-center gap-3 text-xs text-slate-400 mb-3 font-medium">
                       <span>{post.date}</span>
                       <span>•</span>
                       <span>{post.readTime}</span>
                     </div>
 
-                    <h3 className="font-bold text-slate-900 text-base group-hover:text-[#1A3A6A] transition-colors line-clamp-2 leading-snug mb-3">
+                    <h3 className="font-bold text-slate-900 text-base group-hover:text-[#1A3A6A] transition-colors line-clamp-2 leading-snug text-center">
                       {post.title}
                     </h3>
-
-                    <p className="text-xs sm:text-sm text-slate-600 line-clamp-3 leading-relaxed">
-                      {post.excerpt}
-                    </p>
                   </div>
                 </div>
 
-                <div className="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-100">
-                  <span className="text-xs font-bold text-[#1A3A6A] group-hover:underline">
+                <div className="px-6 py-4 flex items-center justify-center border-t border-slate-100 text-center">
+                  <span className="text-xs font-bold text-[#1A3A6A] inline-flex items-center gap-2 group-hover:underline">
                     Lire l'article
-                  </span>
-                  <span className="w-8 h-8 rounded-full bg-[#1A3A6A]/10 group-hover:bg-[#1A3A6A] group-hover:text-white text-[#1A3A6A] flex items-center justify-center transition-colors">
-                    <FAIcon name="fa-solid fa-arrow-right" size={11} />
+                    <span className="w-7 h-7 rounded-full bg-[#1A3A6A]/10 group-hover:bg-[#1A3A6A] group-hover:text-white text-[#1A3A6A] flex items-center justify-center transition-colors">
+                      <FAIcon name="fa-solid fa-arrow-right" size={10} />
+                    </span>
                   </span>
                 </div>
               </div>
@@ -509,6 +502,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
       {/* 13. FAQ SECTION — Navy Dark Container with White Active Accordion */}
       <FAQAccordionDark />
+
+      {/* 13.5 — TÉLÉCHARGEMENT DE LA BROCHURE INSTITUTIONNELLE (MODULE DE CONVERSION B2B) */}
+      <BrochureLeadModule variant="full" />
 
       {/* 14. CONTACT DIRECT */}
       <section id="contact-direct" className="py-20 bg-white">

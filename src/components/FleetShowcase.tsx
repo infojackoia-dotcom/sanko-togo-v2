@@ -3,190 +3,283 @@ import { PageId } from '../types';
 import { FAIcon } from './FAIcon';
 import { WHATSAPP_CONFIG } from '../data/content';
 
-// Vehicle images
-import hiluxImg from '../assets/images/flotte_hilux_sanko_1789053461544.jpg';
-import pradoImg from '../assets/images/land_cruiser_prado_4x4_1789143879189.jpg';
-import corollaCrossImg from '../assets/images/toyota_corolla_cross_lome_1788887555781.jpg';
-import redSuvImg from '../assets/images/hero_red_suv_lome_1788887160530.jpg';
-import camryBerlineImg from '../assets/images/berline_executive_lome_1789143862878.jpg';
-import chauffeurProImg from '../assets/images/chauffeur_pro_sanko_1789056920709.jpg';
-import hiaceMinibusImg from '../assets/images/toyota_hiace_minibus_lome_1789143847210.jpg';
+export type FleetCategoryKey = 'all' | '4x4' | 'pickup' | 'suv' | 'berline' | 'minibus';
 
-export type FleetCategoryKey = 'all' | '4x4' | 'suv' | 'berline' | 'minibus';
+export interface VehiclePhoto {
+  url: string;
+  label: string;
+}
 
 export interface FleetVehicleItem {
   id: string;
-  category: '4x4' | 'suv' | 'berline' | 'minibus';
+  category: 'berline' | 'suv' | '4x4' | 'pickup' | 'minibus';
   categoryLabel: string;
+  subLabel: string;
+  subIcon: string;
   name: string;
   badge: string;
-  image: string;
-  seats: string;
+  photos: VehiclePhoto[];
+  capacity: string;
+  ac: string;
   transmission: string;
-  airConditioning: string;
-  fuelOrEngine: string;
   description: string;
-  idealFor: string;
-  keyEquipments: string[];
+  highlights: string[];
 }
 
 export const FLEET_VEHICLES: FleetVehicleItem[] = [
-  // 4x4
+  // ================= 1. TOYOTA FORTUNER =================
   {
-    id: 'hilux-4x4',
+    id: 'toyota-fortuner',
     category: '4x4',
-    categoryLabel: '4x4',
-    name: 'Toyota Hilux Double Cabine 4x4',
+    categoryLabel: '4x4 Baroudeur & Prestige',
+    subLabel: '4x4',
+    subIcon: 'fa-solid fa-car-side',
+    name: 'Toyota Fortuner',
+    badge: '4x4 Baroudeur & Confort',
+    photos: [
+      { url: '/gallery/toyota-fortuner.jpg', label: 'Vue Réelle 3/4 Avant' },
+      { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
+      { url: '/vehicles/prado/side.jpg', label: 'Vue Profil Côté' },
+      { url: '/vehicles/prado/rear.jpg', label: 'Vue 3/4 Arrière' },
+    ],
+    capacity: '7 places modulables',
+    ac: 'Climatisation bizone grand froid',
+    transmission: '4x4 Automatique séquentielle',
+    description: 'SUV 4x4 robuste et élégant par excellence, offrant une garde au sol protectrice, un habitacle haut de gamme et un confort souverain en milieu urbain comme sur les pistes de l’intérieur du Togo.',
+    highlights: [
+      'Garde au sol élevée et motricité 4x4 tout-terrain permanente',
+      'Habitacle spacieux 7 places avec finitions premium et coffre modulable',
+      'Chauffeur professionnel qualifié pour missions de terrain et protocole',
+    ],
+  },
+
+  // ================= 2. TOYOTA HILUX =================
+  {
+    id: 'toyota-hilux',
+    category: 'pickup',
+    categoryLabel: 'Pick-up Double Cabine',
+    subLabel: 'Pick-up',
+    subIcon: 'fa-solid fa-truck-pickup',
+    name: 'Toyota Hilux',
     badge: 'Missions Terrain & Pistes',
-    image: hiluxImg,
-    seats: '5 places assises',
-    transmission: '4x4 Enclenchable avec boîte courte',
-    airConditioning: 'Tropicalisée grand froid renforcée',
-    fuelOrEngine: 'Diesel Turbo D-4D Robuste',
-    description: 'Le standard absolu des missions de terrain au Togo. Haute garde au sol, motricité irréprochable et benne spacieuse pour matériel d\'enquête et bagages d\'expédition.',
-    idealFor: 'Missions humanitaires, ONG, suivi de projets dans les Savanes, la Kara et les Plateaux, pistes non goudronnées.',
-    keyEquipments: [
-      'Transmission 4WD avec réducteur',
-      'Pneus mixtes tout-terrain renforcés',
-      'Benne sécurisée avec bâche étanche',
-      'Double roue de secours & outillage terrain',
-      'Extincteur & trousse de secours d\'urgence',
+    photos: [
+      { url: '/gallery/hilux-concession-togo.jpg', label: 'Vue Réelle Double Cabine Togo' },
+      { url: '/gallery/hilux-front-road.jpg', label: 'Vue Réelle Tout-Terrain Route' },
+      { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
+      { url: '/vehicles/hilux/rear.jpg', label: 'Vue 3/4 Arrière' },
+    ],
+    capacity: '5 places + Benne cargo',
+    ac: 'Clim grand froid renforcée',
+    transmission: '4x4 avec réducteur court',
+    description: 'Le standard absolu des missions de développement, ONG et projets en milieu rural dans les Savanes, la Kara et les Plateaux. Capacité de franchissement éprouvée et benne sécurisée.',
+    highlights: [
+      'Capacité de franchissement extrême sur toutes pistes togolaises',
+      'Grande benne avec bâche étanche pour transport de fret et outillage',
+      'Équipement de sécurité terrain complet et double roue de secours',
     ],
   },
+
+  // ================= 3. TOYOTA LAND CRUISER 250 =================
   {
-    id: 'prado-4x4',
+    id: 'toyota-land-cruiser-250',
     category: '4x4',
-    categoryLabel: '4x4',
-    name: 'Toyota Land Cruiser Prado 4x4',
-    badge: 'Exécutif & Prestige',
-    image: pradoImg,
-    seats: '7 places modulables',
-    transmission: 'Automatique 4x4 Permanent',
-    airConditioning: 'Climatisation multi-zone intégrale',
-    fuelOrEngine: 'Diesel Turbo Puissant & Fiable',
-    description: 'Allie le franchissement tout-terrain d\'un vrai 4x4 au confort feutré d\'un véhicule d\'apparat. Parfait pour les délégations exigeantes amenées à sillonner l\'ensemble du pays.',
-    idealFor: 'Chefs de mission, coordinateurs résidents, ambassadeurs, visites de bailleurs de fonds et comités de direction.',
-    keyEquipments: [
-      '4x4 permanent avec blocage de différentiel',
-      'Sellerie ergonomique grand confort',
-      'Suspension pilotée filtrant les pistes',
-      'Réservoir grande capacité pour longues liaisons',
-      'Système audio & connectivité Bluetooth',
+    categoryLabel: '4x4 Exécutif & Prestige',
+    subLabel: '4x4',
+    subIcon: 'fa-solid fa-car-side',
+    name: 'Toyota LAND CRUISER 250',
+    badge: 'Prestige Tout-Terrain',
+    photos: [
+      { url: '/gallery/landcruiser-prado-250-togo.jpg', label: 'Nouveau Toyota Land Cruiser 250 Togo' },
+      { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
+      { url: '/vehicles/landcruiser/side.jpg', label: 'Vue Profil Côté' },
+      { url: '/vehicles/landcruiser/rear.jpg', label: 'Vue 3/4 Arrière' },
+    ],
+    capacity: '7 places VIP',
+    ac: 'Clim multi-zone intégrale',
+    transmission: '4x4 Permanent Automatique',
+    description: 'Le sommet du prestige et du confort tout-terrain pour les chefs d’agences internationales, ambassadeurs, délégations ministérielles et missions de haut niveau au Togo.',
+    highlights: [
+      'Dernière génération Toyota Land Cruiser 250 avec design néo-rétro',
+      'Confort souverain sur bitume comme sur pistes dégradées',
+      'Chauffeur d’élite formé à la conduite sécuritaire et protocolaire',
     ],
   },
 
-  // SUV
+  // ================= 4. TOYOTA MINI BUS =================
   {
-    id: 'corolla-cross-suv',
-    category: 'suv',
-    categoryLabel: 'SUV Polyvalent',
-    name: 'Toyota Corolla Cross SUV',
-    badge: 'Moderne & Confort Urbain',
-    image: corollaCrossImg,
-    seats: '5 places spacieuses',
-    transmission: 'Automatique séquentielle souple',
-    airConditioning: 'Climatisation automatique régulée',
-    fuelOrEngine: 'Essence moderne économique',
-    description: 'SUV compact surélevé offrant une visibilité panoramique, une excellente maniabilité dans le trafic urbain de Lomé et une grande douceur sur les axes nationaux.',
-    idealFor: 'Cadres dirigeants, consultants, rendez-vous d\'affaires à Lomé et déplacements régionaux bitumés.',
-    keyEquipments: [
-      'Garde au sol surélevée protectrice',
-      'Caméra de recul & radars de stationnement',
-      'Apple CarPlay & Android Auto',
-      'Habitacle silencieux et climatisé',
-      'Airbags multiples & contrôle de stabilité',
-    ],
-  },
-  {
-    id: 'red-suv',
-    category: 'suv',
-    categoryLabel: 'SUV Polyvalent',
-    name: 'SUV Polyvalent Grand Confort',
-    badge: 'Polyvalence Route',
-    image: redSuvImg,
-    seats: '5 places',
-    transmission: 'Automatique confortable',
-    airConditioning: 'Tropicalisée avant & arrière',
-    fuelOrEngine: 'Motorisation dynamique',
-    description: 'Véhicule équilibré taillé pour les longues liaisons routières entre Lomé et les grandes villes de l\'intérieur (Kpalimé, Atakpamé, Sokodé). Coffre généreux pour les valises.',
-    idealFor: 'Missions de supervision, équipes de projet de 2 à 4 personnes, déplacements aéroport et séjours d\'affaires.',
-    keyEquipments: [
-      'Grand coffre à bagages sécurisé',
-      'Assise surélevée avec visibilité optimale',
-      'Prises de charge USB pour passagers',
-      'Freinage ABS & assistance d\'urgence',
-      'Régulateur de vitesse adapté autoroute',
-    ],
-  },
-
-  // Berline
-  {
-    id: 'camry-berline',
-    category: 'berline',
-    categoryLabel: 'Berline de Direction',
-    name: 'Toyota Camry Exécutive VIP',
-    badge: 'Prestige & Protocole',
-    image: camryBerlineImg,
-    seats: '5 places exécutives',
-    transmission: 'Automatique haut de gamme',
-    airConditioning: 'Climatisation bi-zone silencieuse',
-    fuelOrEngine: 'Essence silencieuse & prestigieuse',
-    description: 'L\'incarnation du prestige automobile pour les visites protocolaires et les personnalités. Espace aux jambes remarquable aux places arrière et insonorisation de premier ordre.',
-    idealFor: 'Directeurs généraux, ambassades, réceptions ministérielles, sommets internationaux et délégations officielles.',
-    keyEquipments: [
-      'Sellerie cuir confort supérieur',
-      'Espace aux jambes étendu à l\'arrière',
-      'Vitrage teinté athermique homologué',
-      'Confort acoustique feutré',
-      'Finition bois & inserts chromés élégants',
-    ],
-  },
-  {
-    id: 'chauffeur-pro-berline',
-    category: 'berline',
-    categoryLabel: 'Berline de Direction',
-    name: 'Berline Confort avec Chauffeur Dédié',
-    badge: 'Mobilité Professionnelle',
-    image: chauffeurProImg,
-    seats: '5 places',
-    transmission: 'Automatique ou manuelle',
-    airConditioning: 'Tropicalisée continue',
-    fuelOrEngine: 'Moteur efficient',
-    description: 'Berline soignée mise à disposition avec un chauffeur professionnel certifié en tenue. Ponctualité rigoureuse, discrétion absolue et sérénité totale lors de vos rendez-vous.',
-    idealFor: 'Déplacements quotidiens de travail à Lomé, navettes VIP aéroport Lomé-Tokoin et réunions professionnelles denses.',
-    keyEquipments: [
-      'Chauffeur formé à la conduite préventive',
-      'Véhicule désinfecté et nettoyé chaque matin',
-      'Eau minérale & lingettes à bord',
-      'Trajets optimisés évitant les congestions',
-      'Disponibilité 24/7 sur demande',
-    ],
-  },
-
-  // Minibus
-  {
-    id: 'hiace-minibus',
+    id: 'toyota-mini-bus',
     category: 'minibus',
-    categoryLabel: 'Minibus (15 places)',
-    name: 'Toyota HiAce Minibus (15 places)',
-    badge: 'Capacité Exclusive 15 Places',
-    image: hiaceMinibusImg,
-    seats: '15 places assises climatisées',
-    transmission: 'Boîte manuelle robuste',
-    airConditioning: 'Double compresseur multi-diffuseurs intégral',
-    fuelOrEngine: 'Diesel Turbo Haute Fiabilité',
-    description: 'Spécialement configuré pour le transport de groupe avec exactement 15 places assises individuelles. Chaque rangée bénéficie de diffuseurs d\'air frais dédiés pour un confort optimal en climat togolais.',
-    idealFor: 'Ateliers de formation, délégations d\'experts, missions conjointes d\'ONG, séminaires régionaux et navettes collectives.',
-    keyEquipments: [
-      '15 vraies places assises avec ceintures individuelles',
-      'Climatisation intégrale pour l\'ensemble des 15 passagers',
-      'Porte latérale coulissante à large ouverture',
-      'Soute à bagages arrière pratique',
-      'Microphone de bord pour guide / animateur',
-      'Marchepied d\'accès abaissé pour passagers',
+    categoryLabel: 'Minibus 15 Places',
+    subLabel: 'Bus et minibus',
+    subIcon: 'fa-solid fa-van-shuttle',
+    name: 'Toyota Mini Bus',
+    badge: 'Transport de Groupe',
+    photos: [
+      { url: '/gallery/parc-automobile-sanko.jpg', label: 'Flotte & Parc SANKO TOGO' },
+      { url: '/vehicles/hiace/front.jpg', label: 'Vue 3/4 Avant' },
+      { url: '/vehicles/hiace/side.jpg', label: 'Vue Profil Côté' },
+      { url: '/vehicles/hiace/interior.jpg', label: 'Habitacle & Confort' },
+    ],
+    capacity: '15 places assises',
+    ac: 'Clim multi-diffuseurs arrière',
+    transmission: 'Boîte mécanique renforcée',
+    description: 'Minibus grand confort doté de 15 vrais sièges individuels avec ceintures, idéal pour ateliers, délégations d’experts, séminaires régionaux et navettes aéroport.',
+    highlights: [
+      '15 vrais sièges individuels confortables avec ceintures de sécurité',
+      'Diffuseurs de climatisation dédiés pour chaque rangée de passagers',
+      'Chauffeur expérimenté dédié au transport collectif de personnes',
+    ],
+  },
+
+  // ================= 5. TOYOTA COROLLA CROSS SUV =================
+  {
+    id: 'toyota-corolla-cross',
+    category: 'suv',
+    categoryLabel: 'SUV Polyvalent',
+    subLabel: 'SUV',
+    subIcon: 'fa-solid fa-car',
+    name: 'Toyota Corolla Cross',
+    badge: 'Confort Urbain & Route',
+    photos: [
+      { url: '/gallery/corolla-cross-road.jpg', label: 'Vue Réelle en Mission' },
+      { url: '/gallery/corolla-cross-side.jpg', label: 'Vue Réelle Profil Côté' },
+      { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
+      { url: '/vehicles/cross/rear.jpg', label: 'Vue 3/4 Arrière' },
+    ],
+    capacity: '5 places',
+    ac: 'Clim auto régulée',
+    transmission: 'Boîte automatique',
+    description: 'SUV surélevé moderne offrant une excellente visibilité, très maniable en ville et très confortable sur les grands axes nationaux du Togo.',
+    highlights: [
+      'Position de conduite haute et garde au sol protectrice',
+      'Idéal pour missions de supervision et liaisons régionales',
+      'Coffre spacieux pour bagages volumineux et matériel',
+    ],
+  },
+
+  // ================= 6. TOYOTA PRADO TXL =================
+  {
+    id: 'toyota-prado-txl',
+    category: '4x4',
+    categoryLabel: '4x4 Tout-Terrain',
+    subLabel: '4x4',
+    subIcon: 'fa-solid fa-car-side',
+    name: 'Toyota Prado TXL',
+    badge: 'Confort & Robustesse',
+    photos: [
+      { url: '/vehicles/prado/side.jpg', label: 'Vue Profil Côté' },
+      { url: '/vehicles/prado/front.jpg', label: 'Vue 3/4 Avant' },
+      { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
+      { url: '/vehicles/prado/rear.jpg', label: 'Vue 3/4 Arrière' },
+    ],
+    capacity: '7 places',
+    ac: 'Climatisation intégrale',
+    transmission: 'Boîte automatique 4x4',
+    description: 'Allie une puissance de franchissement éprouvée à un espace intérieur modulable, idéal pour les missions de terrain de haut niveau.',
+    highlights: [
+      'Franchissement aisé des zones difficiles et pistes de l’intérieur',
+      'Habitacle spacieux pouvant accueillir confortablement 5 à 7 personnes',
+      'Réservoir grande capacité pour longues liaisons sans escale',
+    ],
+  },
+
+  // ================= 7. TOYOTA COROLLA BERLINE =================
+  {
+    id: 'toyota-corolla-l6',
+    category: 'berline',
+    categoryLabel: 'Berline Confort',
+    subLabel: 'Berline',
+    subIcon: 'fa-solid fa-car-side',
+    name: 'Toyota Corolla Berline',
+    badge: 'Mobilité Urbaine & Affaires',
+    photos: [
+      { url: '/gallery/corolla-champagne-side.jpg', label: 'Vue Réelle Profil Côté' },
+      { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
+      { url: '/vehicles/corolla/front.jpg', label: 'Vue 3/4 Avant' },
+      { url: '/vehicles/corolla/rear.jpg', label: 'Vue 3/4 Arrière' },
+    ],
+    capacity: '5 places',
+    ac: 'Clim automatique',
+    transmission: 'Boîte automatique',
+    description: 'La référence mondiale en matière de fiabilité et de sobriété, parfaite pour les cadres, consultants et transferts réguliers à Lomé.',
+    highlights: [
+      'Grande douceur de conduite et habitacle silencieux',
+      'Idéale pour missions d’experts et rendez-vous quotidiens',
+      'Excellente efficience et ponctualité exemplaire',
+    ],
+  },
+
+  // ================= 8. TOYOTA STARLET =================
+  {
+    id: 'toyota-starlet',
+    category: 'berline',
+    categoryLabel: 'Citadine & Compacte',
+    subLabel: 'Citadine',
+    subIcon: 'fa-solid fa-car-side',
+    name: 'Toyota Starlet',
+    badge: 'Agilité & Économie',
+    photos: [
+      { url: '/gallery/starlet-black-side.jpg', label: 'Vue Réelle Profil Côté' },
+      { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
+      { url: '/vehicles/starlet/front.jpg', label: 'Vue 3/4 Avant' },
+      { url: '/vehicles/starlet/rear.jpg', label: 'Vue 3/4 Arrière' },
+    ],
+    capacity: '5 places',
+    ac: 'Climatisation continue',
+    transmission: 'Automatique / Manuelle',
+    description: 'Véhicule compact moderne et agile, parfait pour naviguer aisément dans la circulation urbaine de Lomé à coût maîtrisé.',
+    highlights: [
+      'Ultra maniable pour les déplacements urbains denses',
+      'Consommation optimisée pour liaisons quotidiennes',
+      'Parfaite pour courses administratives et personnel d’appui',
     ],
   },
 ];
+
+interface VehicleCardItemProps {
+  vehicle: FleetVehicleItem;
+  onOpenDetails: (vehicle: FleetVehicleItem) => void;
+}
+
+const VehicleCardItem: React.FC<VehicleCardItemProps> = ({ vehicle, onOpenDetails }) => {
+  const primaryPhoto = vehicle.photos[0]?.url || '/gallery/toyota-fortuner.jpg';
+
+  return (
+    <div className="bg-[#F1F3F6] rounded-3xl p-2.5 sm:p-3 pb-3.5 sm:pb-4 flex flex-col justify-between group border border-slate-200/50 hover:shadow-md transition-all duration-300">
+      {/* Top Image Container */}
+      <div className="rounded-2xl overflow-hidden aspect-[4/3] w-full relative bg-slate-200">
+        <img
+          src={primaryPhoto}
+          alt={vehicle.name}
+          className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
+        />
+      </div>
+
+      {/* Floating White Content Card overlapping image */}
+      <div className="bg-white rounded-2xl p-4 sm:p-5 -mt-8 sm:-mt-10 relative z-10 mx-1 sm:mx-1.5 shadow-sm">
+        <h3 className="font-bold text-slate-900 text-base sm:text-[17px] mb-1.5 leading-tight tracking-tight">
+          {vehicle.name}
+        </h3>
+
+        {/* Subtitle / Category line with icon */}
+        <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-500 font-medium mb-4">
+          <FAIcon name={vehicle.subIcon} size={13} color="#1A3A6A" />
+          <span>{vehicle.subLabel}</span>
+        </div>
+
+        {/* Navy Blue Pill Button "Détails" */}
+        <button
+          type="button"
+          onClick={() => onOpenDetails(vehicle)}
+          className="w-full bg-[#1A3A6A] hover:bg-[#234c89] text-white font-bold py-2.5 sm:py-3 rounded-full text-xs sm:text-sm text-center shadow-xs transition-colors cursor-pointer block"
+        >
+          Détails
+        </button>
+      </div>
+    </div>
+  );
+};
 
 interface FleetShowcaseProps {
   onNavigate: (page: PageId, anchor?: string) => void;
@@ -195,12 +288,16 @@ interface FleetShowcaseProps {
 
 export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onNavigate, targetAnchor }) => {
   const [activeCategory, setActiveCategory] = useState<FleetCategoryKey>('all');
+  const [selectedVehicle, setSelectedVehicle] = useState<FleetVehicleItem | null>(null);
+  const [modalPhotoIndex, setModalPhotoIndex] = useState<number>(0);
 
   // Sync category with targetAnchor
   useEffect(() => {
     if (targetAnchor) {
       if (targetAnchor === 'flotte-4x4') {
         setActiveCategory('4x4');
+      } else if (targetAnchor === 'flotte-pickup') {
+        setActiveCategory('pickup');
       } else if (targetAnchor === 'flotte-suv') {
         setActiveCategory('suv');
       } else if (targetAnchor === 'flotte-berline') {
@@ -211,7 +308,6 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onNavigate, target
         setActiveCategory('all');
       }
 
-      // Smooth scroll into view
       setTimeout(() => {
         const el = document.getElementById('notre-flotte');
         if (el) {
@@ -221,16 +317,18 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onNavigate, target
     }
   }, [targetAnchor]);
 
-  const filteredVehicles = activeCategory === 'all'
-    ? FLEET_VEHICLES
-    : FLEET_VEHICLES.filter((v) => v.category === activeCategory);
+  const filteredVehicles =
+    activeCategory === 'all'
+      ? FLEET_VEHICLES
+      : FLEET_VEHICLES.filter((v) => v.category === activeCategory);
 
   const categoriesConfig: { key: FleetCategoryKey; label: string; icon: string; count: number }[] = [
     { key: 'all', label: 'Tous les modèles', icon: 'fa-solid fa-layer-group', count: FLEET_VEHICLES.length },
-    { key: '4x4', label: '4x4', icon: 'fa-solid fa-truck-pickup', count: FLEET_VEHICLES.filter(v => v.category === '4x4').length },
-    { key: 'suv', label: 'SUV', icon: 'fa-solid fa-car', count: FLEET_VEHICLES.filter(v => v.category === 'suv').length },
-    { key: 'berline', label: 'Berline', icon: 'fa-solid fa-car-side', count: FLEET_VEHICLES.filter(v => v.category === 'berline').length },
-    { key: 'minibus', label: 'Minibus (15 places)', icon: 'fa-solid fa-van-shuttle', count: FLEET_VEHICLES.filter(v => v.category === 'minibus').length },
+    { key: '4x4', label: '4x4', icon: 'fa-solid fa-car-side', count: FLEET_VEHICLES.filter((v) => v.category === '4x4').length },
+    { key: 'pickup', label: 'Pick-up', icon: 'fa-solid fa-truck-pickup', count: FLEET_VEHICLES.filter((v) => v.category === 'pickup').length },
+    { key: 'suv', label: 'SUV', icon: 'fa-solid fa-car', count: FLEET_VEHICLES.filter((v) => v.category === 'suv').length },
+    { key: 'berline', label: 'Berline', icon: 'fa-solid fa-car-side', count: FLEET_VEHICLES.filter((v) => v.category === 'berline').length },
+    { key: 'minibus', label: 'Bus et minibus', icon: 'fa-solid fa-van-shuttle', count: FLEET_VEHICLES.filter((v) => v.category === 'minibus').length },
   ];
 
   const handleWhatsAppInquiry = (vehicleName: string, category: string) => {
@@ -240,20 +338,28 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onNavigate, target
     window.open(`https://wa.me/${WHATSAPP_CONFIG.phone}?text=${text}`, '_blank');
   };
 
+  const handleOpenModal = (vehicle: FleetVehicleItem) => {
+    setSelectedVehicle(vehicle);
+    setModalPhotoIndex(0);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedVehicle(null);
+  };
+
   return (
-    <section id="notre-flotte" className="py-16 sm:py-24 bg-slate-50/70 border-t border-slate-200/80 scroll-mt-20">
+    <section id="notre-flotte" className="py-16 sm:py-24 bg-white border-t border-slate-200/80 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
           <span className="text-xs uppercase tracking-widest font-bold text-[#1A3A6A] bg-[#1A3A6A]/10 px-4 py-1.5 rounded-full inline-block">
             Galerie de la Flotte
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1A3A6A] mt-3 tracking-tight">
-            Découvrez nos modèles réels en photos
+            Nos différents modèles de véhicules
           </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
-            Véhicules récents, entièrement climatisés et maintenus selon des standards stricts pour garantir la sécurité et le confort de vos équipes au Togo.
+            Découvrez nos véhicules récents, parfaitement entretenus et disponibles avec chauffeur professionnel pour vos missions au Togo.
           </p>
         </div>
 
@@ -269,14 +375,14 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onNavigate, target
                 className={`inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer shadow-2xs ${
                   isActive
                     ? 'bg-[#1A3A6A] text-white shadow-md scale-102'
-                    : 'bg-white text-slate-700 hover:text-[#1A3A6A] hover:bg-slate-100 border border-slate-200/90'
+                    : 'bg-[#F1F3F6] text-slate-700 hover:text-[#1A3A6A] hover:bg-slate-200/70 border border-slate-200/80'
                 }`}
               >
                 <FAIcon name={cat.icon} size={14} color={isActive ? '#FFFFFF' : '#1A3A6A'} />
                 <span>{cat.label}</span>
                 <span
                   className={`text-[11px] px-2 py-0.5 rounded-full font-black ${
-                    isActive ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-600'
+                    isActive ? 'bg-white/20 text-white' : 'bg-white text-slate-600'
                   }`}
                 >
                   {cat.count}
@@ -286,133 +392,14 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onNavigate, target
           })}
         </div>
 
-        {/* Vehicles Grid - 2 per horizontal line */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        {/* Vehicles Grid - 4 per horizontal line on desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {filteredVehicles.map((vehicle) => (
-            <div
+            <VehicleCardItem
               key={vehicle.id}
-              className="bg-white rounded-3xl border border-slate-200/90 hover:border-[#1A3A6A]/50 shadow-xs hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col group"
-            >
-              {/* Vehicle Photo Banner - Format Carré */}
-              <div className="relative aspect-square w-full overflow-hidden bg-slate-100">
-                <img
-                  src={vehicle.image}
-                  alt={vehicle.name}
-                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
-
-                {/* Top Badges */}
-                <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-                  <span className="bg-[#1A3A6A] text-white text-xs font-bold px-3 py-1 rounded-full shadow-xs">
-                    {vehicle.categoryLabel}
-                  </span>
-                  <span className="bg-white/95 text-slate-900 text-xs font-semibold px-3 py-1 rounded-full shadow-xs backdrop-blur-xs">
-                    {vehicle.badge}
-                  </span>
-                </div>
-
-                {/* Bottom title on photo for quick read */}
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <h3 className="text-lg sm:text-xl font-extrabold drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
-                    {vehicle.name}
-                  </h3>
-                </div>
-              </div>
-
-              {/* Content Card Body */}
-              <div className="p-6 flex-1 flex flex-col justify-between">
-                <div>
-                  {/* Quick Specs Pills */}
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 mb-5 text-xs">
-                    <div className="bg-slate-50 border border-slate-100 rounded-xl p-2.5 flex items-center gap-2">
-                      <FAIcon name="fa-solid fa-users" size={13} color="#1A3A6A" />
-                      <div>
-                        <span className="text-[10px] uppercase text-slate-400 font-semibold block">Capacité</span>
-                        <span className="font-bold text-slate-800">{vehicle.seats}</span>
-                      </div>
-                    </div>
-
-                    <div className="bg-slate-50 border border-slate-100 rounded-xl p-2.5 flex items-center gap-2">
-                      <FAIcon name="fa-solid fa-snowflake" size={13} color="#1A3A6A" />
-                      <div>
-                        <span className="text-[10px] uppercase text-slate-400 font-semibold block">Climatisation</span>
-                        <span className="font-bold text-slate-800 truncate block max-w-[130px]" title={vehicle.airConditioning}>
-                          {vehicle.airConditioning}
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="bg-slate-50 border border-slate-100 rounded-xl p-2.5 flex items-center gap-2 col-span-2 sm:col-span-1">
-                      <FAIcon name="fa-solid fa-gears" size={13} color="#1A3A6A" />
-                      <div>
-                        <span className="text-[10px] uppercase text-slate-400 font-semibold block">Transmission</span>
-                        <span className="font-bold text-slate-800 truncate block max-w-[130px]" title={vehicle.transmission}>
-                          {vehicle.transmission}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
-                    {vehicle.description}
-                  </p>
-
-                  {/* Ideal For Highlight Box */}
-                  <div className="bg-[#1A3A6A]/5 border border-[#1A3A6A]/15 rounded-2xl p-3.5 mb-5">
-                    <div className="flex items-start gap-2.5">
-                      <FAIcon name="fa-solid fa-circle-check" size={14} color="#1A3A6A" className="mt-0.5 shrink-0" />
-                      <div>
-                        <span className="text-xs font-extrabold text-[#1A3A6A] block">
-                          Usage recommandé :
-                        </span>
-                        <p className="text-xs text-slate-700 leading-normal mt-0.5">
-                          {vehicle.idealFor}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Key Equipments List */}
-                  <div className="mb-6">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-2">
-                      Équipements & Sécurité embarquée :
-                    </span>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs text-slate-600">
-                      {vehicle.keyEquipments.map((eq, i) => (
-                        <li key={i} className="flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#1A3A6A]" />
-                          <span>{eq}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Card Action Buttons */}
-                <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center gap-3">
-                  <button
-                    type="button"
-                    onClick={() => onNavigate('services', 'simulateur')}
-                    className="w-full sm:flex-1 bg-[#1A3A6A] hover:bg-[#234c89] text-white py-2.5 px-4 rounded-xl text-xs font-bold transition-colors cursor-pointer flex items-center justify-center gap-2 shadow-2xs"
-                  >
-                    <FAIcon name="fa-solid fa-calculator" size={12} />
-                    <span>Estimer mon budget</span>
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => handleWhatsAppInquiry(vehicle.name, vehicle.categoryLabel)}
-                    className="w-full sm:flex-1 bg-white hover:bg-slate-50 text-[#1A3A6A] border border-[#1A3A6A] py-2.5 px-4 rounded-xl text-xs font-bold transition-colors cursor-pointer flex items-center justify-center gap-2 shadow-2xs"
-                  >
-                    <FAIcon name="fa-brands fa-whatsapp" size={14} color="#25D366" />
-                    <span>Demander disponibilité</span>
-                  </button>
-                </div>
-              </div>
-            </div>
+              vehicle={vehicle}
+              onOpenDetails={handleOpenModal}
+            />
           ))}
         </div>
 
@@ -453,8 +440,160 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onNavigate, target
             </div>
           </div>
         </div>
-
       </div>
+
+      {/* ================= MODAL DÉTAILS VÉHICULE ================= */}
+      {selectedVehicle && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/70 backdrop-blur-sm animate-fade-in"
+          onClick={handleCloseModal}
+        >
+          <div
+            className="bg-white rounded-3xl max-w-2xl w-full max-h-[92vh] overflow-y-auto shadow-2xl relative flex flex-col border border-slate-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="p-6 pb-4 border-b border-slate-100 flex items-center justify-between sticky top-0 bg-white/95 backdrop-blur-md z-20">
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="bg-[#1A3A6A] text-white text-[11px] font-bold px-3 py-0.5 rounded-full">
+                    {selectedVehicle.categoryLabel}
+                  </span>
+                  <span className="bg-slate-100 text-slate-700 text-[11px] font-semibold px-2.5 py-0.5 rounded-full">
+                    {selectedVehicle.badge}
+                  </span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
+                  {selectedVehicle.name}
+                </h3>
+              </div>
+
+              <button
+                type="button"
+                onClick={handleCloseModal}
+                className="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 flex items-center justify-center transition-colors cursor-pointer"
+                aria-label="Fermer"
+              >
+                <FAIcon name="fa-solid fa-xmark" size={16} />
+              </button>
+            </div>
+
+            {/* Modal Body */}
+            <div className="p-6 space-y-6">
+              {/* Photo Showcase with Angles */}
+              <div>
+                <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden bg-slate-100 shadow-inner">
+                  <img
+                    src={selectedVehicle.photos[modalPhotoIndex]?.url || selectedVehicle.photos[0].url}
+                    alt={`${selectedVehicle.name} - ${selectedVehicle.photos[modalPhotoIndex]?.label}`}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute bottom-3 left-3 bg-slate-900/80 text-white text-xs font-medium px-3 py-1 rounded-full backdrop-blur-xs">
+                    {selectedVehicle.photos[modalPhotoIndex]?.label}
+                  </div>
+                </div>
+
+                {/* Thumbnails */}
+                {selectedVehicle.photos.length > 1 && (
+                  <div className="grid grid-cols-4 gap-2 mt-3">
+                    {selectedVehicle.photos.map((p, idx) => (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => setModalPhotoIndex(idx)}
+                        className={`relative aspect-[4/3] rounded-xl overflow-hidden border-2 transition-all cursor-pointer ${
+                          idx === modalPhotoIndex
+                            ? 'border-[#1A3A6A] scale-102 shadow-xs'
+                            : 'border-transparent opacity-70 hover:opacity-100'
+                        }`}
+                      >
+                        <img src={p.url} alt={p.label} className="w-full h-full object-cover" />
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Quick Specs 3 Pills */}
+              <div className="grid grid-cols-3 gap-2.5">
+                <div className="bg-slate-50 border border-slate-200/80 rounded-xl py-2.5 px-2 flex flex-col items-center justify-center text-center">
+                  <FAIcon name="fa-solid fa-users" size={14} color="#1A3A6A" />
+                  <span className="font-bold text-slate-800 text-xs mt-1">
+                    {selectedVehicle.capacity}
+                  </span>
+                </div>
+
+                <div className="bg-slate-50 border border-slate-200/80 rounded-xl py-2.5 px-2 flex flex-col items-center justify-center text-center">
+                  <FAIcon name="fa-solid fa-snowflake" size={14} color="#1A3A6A" />
+                  <span className="font-bold text-slate-800 text-xs mt-1">
+                    {selectedVehicle.ac}
+                  </span>
+                </div>
+
+                <div className="bg-slate-50 border border-slate-200/80 rounded-xl py-2.5 px-2 flex flex-col items-center justify-center text-center">
+                  <FAIcon name="fa-solid fa-gears" size={14} color="#1A3A6A" />
+                  <span className="font-bold text-slate-800 text-xs mt-1">
+                    {selectedVehicle.transmission}
+                  </span>
+                </div>
+              </div>
+
+              {/* Description */}
+              <div>
+                <h4 className="text-xs uppercase tracking-wider font-extrabold text-slate-400 mb-2">
+                  Présentation du véhicule
+                </h4>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  {selectedVehicle.description}
+                </p>
+              </div>
+
+              {/* Highlights */}
+              <div className="bg-[#1A3A6A]/5 border border-[#1A3A6A]/15 rounded-2xl p-4">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#1A3A6A] block mb-2.5">
+                  Points forts pour votre mission :
+                </span>
+                <ul className="space-y-2 text-xs sm:text-sm text-slate-700">
+                  {selectedVehicle.highlights.map((point, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="w-4 h-4 rounded-full bg-[#1A3A6A]/15 text-[#1A3A6A] flex items-center justify-center shrink-0 mt-0.5">
+                        <FAIcon name="fa-solid fa-check" size={9} color="#1A3A6A" />
+                      </span>
+                      <span className="font-medium leading-relaxed">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Modal Actions Footer */}
+            <div className="p-6 pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center gap-3 bg-slate-50/70">
+              <button
+                type="button"
+                onClick={() => handleWhatsAppInquiry(selectedVehicle.name, selectedVehicle.categoryLabel)}
+                className="w-full sm:flex-1 bg-[#25D366] hover:bg-[#20BA5A] text-white py-3 px-4 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer flex items-center justify-center gap-2 shadow-sm"
+              >
+                <FAIcon name="fa-brands fa-whatsapp" size={16} color="#FFFFFF" />
+                <span>Demander disponibilité (WhatsApp)</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  handleCloseModal();
+                  onNavigate('services', 'simulateur');
+                }}
+                className="w-full sm:flex-1 bg-[#1A3A6A] hover:bg-[#234c89] text-white py-3 px-4 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer flex items-center justify-center gap-2 shadow-sm"
+              >
+                <FAIcon name="fa-solid fa-calculator" size={13} />
+                <span>Estimer mon budget</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

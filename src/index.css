@@ -6,8 +6,8 @@
   --color-primary-light: #234c89;
   --color-primary-dark: #122849;
   --color-bg: #FFFFFF;
-  --font-main: 'League Spartan', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-sub: 'Glacial Indifference', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-main: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sub: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 /* Fallback local font-faces if external CDN is blocked or slow */
@@ -103,10 +103,39 @@ p, button, input, select, textarea, nav, .font-main {
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee 35s linear infinite;
+  animation: marquee 38s linear infinite;
 }
 
 .animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-marquee-slow {
+  display: flex;
+  width: max-content;
+  animation: marquee 65s linear infinite;
+}
+
+.animate-marquee-slow:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-reverse 38s linear infinite;
+}
+
+.animate-marquee-reverse:hover {
   animation-play-state: paused;
 }
 
@@ -158,5 +187,59 @@ p, button, input, select, textarea, nav, .font-main {
   animation: slowZoomOutPermanent 3s ease-in-out infinite;
   will-change: transform;
 }
+
+/* ═══════════════════════════════════════════════════
+   HERO BACKGROUND — Animation Ken Burns (zoom + drift)
+   ═══════════════════════════════════════════════════ */
+@keyframes kenBurns {
+  0% {
+    transform: scale(1) translate(0%, 0%);
+  }
+  33% {
+    transform: scale(1.06) translate(-1.5%, -1%);
+  }
+  66% {
+    transform: scale(1.09) translate(1%, -0.5%);
+  }
+  100% {
+    transform: scale(1) translate(0%, 0%);
+  }
+}
+
+.hero-bg-img {
+  animation: kenBurns 18s ease-in-out infinite;
+  will-change: transform;
+  transform-origin: center center;
+}
+
+/* Modal Smooth Fade & Light Zoom (200-300ms) */
+@keyframes fadeInSubtle {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUpSubtle {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInSubtle 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-up {
+  animation: scaleUpSubtle 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 
 
