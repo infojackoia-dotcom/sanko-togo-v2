@@ -316,7 +316,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt: 'Conformité aux audits bailleurs, réactivité en cas de panne terrain, flexibilité contractuelle : la grille d\'évaluation indispensable.',
     date: '28 Avril 2026',
     readTime: '5 min de lecture',
-    image: '/gallery/hilux-front-road.jpg',
+    image: '/gallery/hilux-concession-togo.jpg',
     content: [
       "Les équipes d'achats et de logistique des ONG internationales répondent à des règles d'audit très strictes dictées par leurs bailleurs de fonds (USAID, Union Européenne, AFD, agences onusiennes). Choisir un prestataire local nécessite une vigilance accrue sur plusieurs points cardinaux.",
       "1. La conformité administrative et fiscale : disposer d'un RCCM valide, d'un NIF à jour, de factures aux normes et d'une traçabilité irréprochable des paiements.",

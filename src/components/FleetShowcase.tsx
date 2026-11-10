@@ -62,7 +62,6 @@ export const FLEET_VEHICLES: FleetVehicleItem[] = [
     badge: 'Missions Terrain & Pistes',
     photos: [
       { url: '/gallery/hilux-concession-togo.jpg', label: 'Vue RÃ©elle Double Cabine Togo' },
-      { url: '/gallery/hilux-front-road.jpg', label: 'Vue RÃ©elle Tout-Terrain Route' },
       { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
     ],
     capacity: '5 places + Benne cargo',
