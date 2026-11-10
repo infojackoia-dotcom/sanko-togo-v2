@@ -365,7 +365,7 @@ export const FAQ_ITEMS = [
   },
   {
     question: 'Quel est le délai de mise à disposition d\'un véhicule ?',
-    answer: '[à préciser] — en général, nous répondons rapidement aux demandes urgentes.'
+    answer: '-48H — en général, nous répondons rapidement aux demandes urgentes.'
   },
   {
     question: 'Quelles zones couvrez-vous ?',
@@ -374,10 +374,6 @@ export const FAQ_ITEMS = [
   {
     question: 'Proposez-vous des chauffeurs professionnels ?',
     answer: 'Oui, le chauffeur professionnel est obligatoire et systématiquement inclus pour l\'ensemble de nos offres de location.'
-  },
-  {
-    question: 'Quels documents sont nécessaires pour signer un contrat ?',
-    answer: '[à préciser selon vos process internes]'
   },
   {
     question: 'Travaillez-vous avec les procédures d\'achat des organisations internationales ?',
