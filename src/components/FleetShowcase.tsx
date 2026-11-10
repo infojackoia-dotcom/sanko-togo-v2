@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { PageId } from '../types';
 import { FAIcon } from './FAIcon';
 import { WHATSAPP_CONFIG } from '../data/content';
@@ -37,19 +37,17 @@ export const FLEET_VEHICLES: FleetVehicleItem[] = [
     name: 'Toyota Fortuner',
     badge: '4x4 Baroudeur & Confort',
     photos: [
-      { url: '/gallery/toyota-fortuner.jpg', label: 'Vue Réelle 3/4 Avant' },
+      { url: '/gallery/toyota-fortuner-real.jpg', label: 'Toyota Fortuner 4x4 Blanc' },
       { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
-      { url: '/vehicles/prado/side.jpg', label: 'Vue Profil Côté' },
-      { url: '/vehicles/prado/rear.jpg', label: 'Vue 3/4 Arrière' },
     ],
     capacity: '7 places modulables',
     ac: 'Climatisation bizone grand froid',
-    transmission: '4x4 Automatique séquentielle',
-    description: 'SUV 4x4 robuste et élégant par excellence, offrant une garde au sol protectrice, un habitacle haut de gamme et un confort souverain en milieu urbain comme sur les pistes de l’intérieur du Togo.',
+    transmission: '4x4 Automatique sÃ©quentielle',
+    description: 'SUV 4x4 robuste et Ã©lÃ©gant par excellence, offrant une garde au sol protectrice, un habitacle haut de gamme et un confort souverain en milieu urbain comme sur les pistes de lâ€™intÃ©rieur du Togo.',
     highlights: [
-      'Garde au sol élevée et motricité 4x4 tout-terrain permanente',
+      'Garde au sol Ã©levÃ©e et motricitÃ© 4x4 tout-terrain permanente',
       'Habitacle spacieux 7 places avec finitions premium et coffre modulable',
-      'Chauffeur professionnel qualifié pour missions de terrain et protocole',
+      'Chauffeur professionnel qualifiÃ© pour missions de terrain et protocole',
     ],
   },
 
@@ -63,19 +61,18 @@ export const FLEET_VEHICLES: FleetVehicleItem[] = [
     name: 'Toyota Hilux',
     badge: 'Missions Terrain & Pistes',
     photos: [
-      { url: '/gallery/hilux-concession-togo.jpg', label: 'Vue Réelle Double Cabine Togo' },
-      { url: '/gallery/hilux-front-road.jpg', label: 'Vue Réelle Tout-Terrain Route' },
+      { url: '/gallery/hilux-concession-togo.jpg', label: 'Vue RÃ©elle Double Cabine Togo' },
+      { url: '/gallery/hilux-front-road.jpg', label: 'Vue RÃ©elle Tout-Terrain Route' },
       { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
-      { url: '/vehicles/hilux/rear.jpg', label: 'Vue 3/4 Arrière' },
     ],
     capacity: '5 places + Benne cargo',
-    ac: 'Clim grand froid renforcée',
-    transmission: '4x4 avec réducteur court',
-    description: 'Le standard absolu des missions de développement, ONG et projets en milieu rural dans les Savanes, la Kara et les Plateaux. Capacité de franchissement éprouvée et benne sécurisée.',
+    ac: 'Clim grand froid renforcÃ©e',
+    transmission: '4x4 avec rÃ©ducteur court',
+    description: 'Le standard absolu des missions de dÃ©veloppement, ONG et projets en milieu rural dans les Savanes, la Kara et les Plateaux. CapacitÃ© de franchissement Ã©prouvÃ©e et benne sÃ©curisÃ©e.',
     highlights: [
-      'Capacité de franchissement extrême sur toutes pistes togolaises',
-      'Grande benne avec bâche étanche pour transport de fret et outillage',
-      'Équipement de sécurité terrain complet et double roue de secours',
+      'CapacitÃ© de franchissement extrÃªme sur toutes pistes togolaises',
+      'Grande benne avec bÃ¢che Ã©tanche pour transport de fret et outillage',
+      'Ã‰quipement de sÃ©curitÃ© terrain complet et double roue de secours',
     ],
   },
 
@@ -83,25 +80,25 @@ export const FLEET_VEHICLES: FleetVehicleItem[] = [
   {
     id: 'toyota-land-cruiser-250',
     category: '4x4',
-    categoryLabel: '4x4 Exécutif & Prestige',
+    categoryLabel: '4x4 ExÃ©cutif & Prestige',
     subLabel: '4x4',
     subIcon: 'fa-solid fa-car-side',
     name: 'Toyota LAND CRUISER 250',
     badge: 'Prestige Tout-Terrain',
     photos: [
       { url: '/gallery/landcruiser-prado-250-togo.jpg', label: 'Nouveau Toyota Land Cruiser 250 Togo' },
+      { url: '/gallery/landcruiser-250-front-angle.jpg', label: 'Calandre & Optiques Avant' },
+      { url: '/gallery/chauffeur-landcruiser-pro.jpg', label: 'Chauffeur Professionnel au Volant' },
       { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
-      { url: '/vehicles/landcruiser/side.jpg', label: 'Vue Profil Côté' },
-      { url: '/vehicles/landcruiser/rear.jpg', label: 'Vue 3/4 Arrière' },
     ],
     capacity: '7 places VIP',
-    ac: 'Clim multi-zone intégrale',
+    ac: 'Clim multi-zone intÃ©grale',
     transmission: '4x4 Permanent Automatique',
-    description: 'Le sommet du prestige et du confort tout-terrain pour les chefs d’agences internationales, ambassadeurs, délégations ministérielles et missions de haut niveau au Togo.',
+    description: 'Le sommet du prestige et du confort tout-terrain pour les chefs dâ€™agences internationales, ambassadeurs, dÃ©lÃ©gations ministÃ©rielles et missions de haut niveau au Togo.',
     highlights: [
-      'Dernière génération Toyota Land Cruiser 250 avec design néo-rétro',
-      'Confort souverain sur bitume comme sur pistes dégradées',
-      'Chauffeur d’élite formé à la conduite sécuritaire et protocolaire',
+      'DerniÃ¨re gÃ©nÃ©ration Toyota Land Cruiser 250 avec design nÃ©o-rÃ©tro',
+      'Confort souverain sur bitume comme sur pistes dÃ©gradÃ©es',
+      'Chauffeur dâ€™Ã©lite formÃ© Ã  la conduite sÃ©curitaire et protocolaire',
     ],
   },
 
@@ -119,13 +116,13 @@ export const FLEET_VEHICLES: FleetVehicleItem[] = [
       { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
     ],
     capacity: '15 places assises',
-    ac: 'Clim multi-diffuseurs arrière',
-    transmission: 'Boîte mécanique renforcée',
-    description: 'Minibus grand confort doté de 15 vrais sièges individuels avec ceintures, idéal pour ateliers, délégations d’experts, séminaires régionaux et navettes aéroport.',
+    ac: 'Clim multi-diffuseurs arriÃ¨re',
+    transmission: 'BoÃ®te mÃ©canique renforcÃ©e',
+    description: 'Minibus grand confort dotÃ© de 15 vrais siÃ¨ges individuels avec ceintures, idÃ©al pour ateliers, dÃ©lÃ©gations dâ€™experts, sÃ©minaires rÃ©gionaux et navettes aÃ©roport.',
     highlights: [
-      '15 vrais sièges individuels confortables avec ceintures de sécurité',
-      'Diffuseurs de climatisation dédiés pour chaque rangée de passagers',
-      'Chauffeur expérimenté dédié au transport collectif de personnes',
+      '15 vrais siÃ¨ges individuels confortables avec ceintures de sÃ©curitÃ©',
+      'Diffuseurs de climatisation dÃ©diÃ©s pour chaque rangÃ©e de passagers',
+      'Chauffeur expÃ©rimentÃ© dÃ©diÃ© au transport collectif de personnes',
     ],
   },
 
@@ -139,19 +136,22 @@ export const FLEET_VEHICLES: FleetVehicleItem[] = [
     name: 'Toyota Corolla Cross',
     badge: 'Confort Urbain & Route',
     photos: [
-      { url: '/gallery/corolla-cross-road.jpg', label: 'Vue Réelle en Mission' },
-      { url: '/gallery/corolla-cross-side.jpg', label: 'Vue Réelle Profil Côté' },
+      { url: '/gallery/corolla-cross-road.jpg', label: 'Vue RÃ©elle en Mission' },
+      { url: '/gallery/corolla-cross-white-front.jpg', label: 'Vue Avant 3/4' },
+      { url: '/gallery/corolla-cross-white-rear.jpg', label: 'Vue ArriÃ¨re & Coffre' },
+      { url: '/gallery/corolla-cross-gold-front.jpg', label: 'Ã‰dition Gold Face Avant' },
+      { url: '/gallery/corolla-cross-white-side.jpg', label: 'Vue Profil Blanc' },
+      { url: '/gallery/corolla-cross-white-front2.jpg', label: 'Vue Avant Blanc Lomé' },
       { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
-      { url: '/vehicles/cross/rear.jpg', label: 'Vue 3/4 Arrière' },
     ],
     capacity: '5 places',
-    ac: 'Clim auto régulée',
-    transmission: 'Boîte automatique',
-    description: 'SUV surélevé moderne offrant une excellente visibilité, très maniable en ville et très confortable sur les grands axes nationaux du Togo.',
+    ac: 'Clim auto rÃ©gulÃ©e',
+    transmission: 'BoÃ®te automatique',
+    description: 'SUV surÃ©levÃ© moderne offrant une excellente visibilitÃ©, trÃ¨s maniable en ville et trÃ¨s confortable sur les grands axes nationaux du Togo.',
     highlights: [
       'Position de conduite haute et garde au sol protectrice',
-      'Idéal pour missions de supervision et liaisons régionales',
-      'Coffre spacieux pour bagages volumineux et matériel',
+      'IdÃ©al pour missions de supervision et liaisons rÃ©gionales',
+      'Coffre spacieux pour bagages volumineux et matÃ©riel',
     ],
   },
 
@@ -165,19 +165,19 @@ export const FLEET_VEHICLES: FleetVehicleItem[] = [
     name: 'Toyota Prado TXL',
     badge: 'Confort & Robustesse',
     photos: [
-      { url: '/vehicles/prado/side.jpg', label: 'Vue Profil Côté' },
+      { url: '/vehicles/prado/side.jpg', label: 'Vue Profil CÃ´tÃ©' },
       { url: '/vehicles/prado/front.jpg', label: 'Vue 3/4 Avant' },
       { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
-      { url: '/vehicles/prado/rear.jpg', label: 'Vue 3/4 Arrière' },
+      { url: '/vehicles/prado/rear.jpg', label: 'Vue 3/4 ArriÃ¨re' },
     ],
     capacity: '7 places',
-    ac: 'Climatisation intégrale',
-    transmission: 'Boîte automatique 4x4',
-    description: 'Allie une puissance de franchissement éprouvée à un espace intérieur modulable, idéal pour les missions de terrain de haut niveau.',
+    ac: 'Climatisation intÃ©grale',
+    transmission: 'BoÃ®te automatique 4x4',
+    description: 'Allie une puissance de franchissement Ã©prouvÃ©e Ã  un espace intÃ©rieur modulable, idÃ©al pour les missions de terrain de haut niveau.',
     highlights: [
-      'Franchissement aisé des zones difficiles et pistes de l’intérieur',
-      'Habitacle spacieux pouvant accueillir confortablement 5 à 7 personnes',
-      'Réservoir grande capacité pour longues liaisons sans escale',
+      'Franchissement aisÃ© des zones difficiles et pistes de lâ€™intÃ©rieur',
+      'Habitacle spacieux pouvant accueillir confortablement 5 Ã  7 personnes',
+      'RÃ©servoir grande capacitÃ© pour longues liaisons sans escale',
     ],
   },
 
@@ -189,21 +189,21 @@ export const FLEET_VEHICLES: FleetVehicleItem[] = [
     subLabel: 'Berline',
     subIcon: 'fa-solid fa-car-side',
     name: 'Toyota Corolla Berline',
-    badge: 'Mobilité Urbaine & Affaires',
+    badge: 'MobilitÃ© Urbaine & Affaires',
     photos: [
-      { url: '/gallery/corolla-champagne-side.jpg', label: 'Vue Réelle Profil Côté' },
+      { url: '/gallery/corolla-champagne-side.jpg', label: 'Vue RÃ©elle Profil CÃ´tÃ©' },
       { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
       { url: '/vehicles/corolla/front.jpg', label: 'Vue 3/4 Avant' },
-      { url: '/vehicles/corolla/rear.jpg', label: 'Vue 3/4 Arrière' },
+      { url: '/vehicles/corolla/rear.jpg', label: 'Vue 3/4 ArriÃ¨re' },
     ],
     capacity: '5 places',
     ac: 'Clim automatique',
-    transmission: 'Boîte automatique',
-    description: 'La référence mondiale en matière de fiabilité et de sobriété, parfaite pour les cadres, consultants et transferts réguliers à Lomé.',
+    transmission: 'BoÃ®te automatique',
+    description: 'La rÃ©fÃ©rence mondiale en matiÃ¨re de fiabilitÃ© et de sobriÃ©tÃ©, parfaite pour les cadres, consultants et transferts rÃ©guliers Ã  LomÃ©.',
     highlights: [
       'Grande douceur de conduite et habitacle silencieux',
-      'Idéale pour missions d’experts et rendez-vous quotidiens',
-      'Excellente efficience et ponctualité exemplaire',
+      'IdÃ©ale pour missions dâ€™experts et rendez-vous quotidiens',
+      'Excellente efficience et ponctualitÃ© exemplaire',
     ],
   },
 
@@ -215,21 +215,21 @@ export const FLEET_VEHICLES: FleetVehicleItem[] = [
     subLabel: 'Citadine',
     subIcon: 'fa-solid fa-car-side',
     name: 'Toyota Starlet',
-    badge: 'Agilité & Économie',
+    badge: 'AgilitÃ© & Ã‰conomie',
     photos: [
-      { url: '/gallery/starlet-black-side.jpg', label: 'Vue Réelle Profil Côté' },
+      { url: '/gallery/starlet-black-side.jpg', label: 'Vue RÃ©elle Profil CÃ´tÃ©' },
       { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
       { url: '/vehicles/starlet/front.jpg', label: 'Vue 3/4 Avant' },
-      { url: '/vehicles/starlet/rear.jpg', label: 'Vue 3/4 Arrière' },
+      { url: '/vehicles/starlet/rear.jpg', label: 'Vue 3/4 ArriÃ¨re' },
     ],
     capacity: '5 places',
     ac: 'Climatisation continue',
     transmission: 'Automatique / Manuelle',
-    description: 'Véhicule compact moderne et agile, parfait pour naviguer aisément dans la circulation urbaine de Lomé à coût maîtrisé.',
+    description: 'VÃ©hicule compact moderne et agile, parfait pour naviguer aisÃ©ment dans la circulation urbaine de LomÃ© Ã  coÃ»t maÃ®trisÃ©.',
     highlights: [
-      'Ultra maniable pour les déplacements urbains denses',
-      'Consommation optimisée pour liaisons quotidiennes',
-      'Parfaite pour courses administratives et personnel d’appui',
+      'Ultra maniable pour les dÃ©placements urbains denses',
+      'Consommation optimisÃ©e pour liaisons quotidiennes',
+      'Parfaite pour courses administratives et personnel dâ€™appui',
     ],
   },
 ];
@@ -240,7 +240,7 @@ interface VehicleCardItemProps {
 }
 
 const VehicleCardItem: React.FC<VehicleCardItemProps> = ({ vehicle, onOpenDetails }) => {
-  const primaryPhoto = vehicle.photos[0]?.url || '/gallery/toyota-fortuner.jpg';
+  const primaryPhoto = vehicle.photos[0]?.url || '/gallery/corolla-cross-road.jpg';
 
   return (
     <div className="bg-[#F1F3F6] rounded-3xl p-2.5 sm:p-3 pb-3.5 sm:pb-4 flex flex-col justify-between group border border-slate-200/50 hover:shadow-md transition-all duration-300">
@@ -266,13 +266,13 @@ const VehicleCardItem: React.FC<VehicleCardItemProps> = ({ vehicle, onOpenDetail
           <span>{vehicle.subLabel}</span>
         </div>
 
-        {/* Navy Blue Pill Button "Détails" */}
+        {/* Navy Blue Pill Button "DÃ©tails" */}
         <button
           type="button"
           onClick={() => onOpenDetails(vehicle)}
           className="w-full bg-[#1A3A6A] hover:bg-[#234c89] text-white font-bold py-2.5 sm:py-3 rounded-full text-xs sm:text-sm text-center shadow-xs transition-colors cursor-pointer block"
         >
-          Détails
+          DÃ©tails
         </button>
       </div>
     </div>
@@ -321,7 +321,7 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onNavigate, target
       : FLEET_VEHICLES.filter((v) => v.category === activeCategory);
 
   const categoriesConfig: { key: FleetCategoryKey; label: string; icon: string; count: number }[] = [
-    { key: 'all', label: 'Tous les modèles', icon: 'fa-solid fa-layer-group', count: FLEET_VEHICLES.length },
+    { key: 'all', label: 'Tous les modÃ¨les', icon: 'fa-solid fa-layer-group', count: FLEET_VEHICLES.length },
     { key: '4x4', label: '4x4', icon: 'fa-solid fa-car-side', count: FLEET_VEHICLES.filter((v) => v.category === '4x4').length },
     { key: 'pickup', label: 'Pick-up', icon: 'fa-solid fa-truck-pickup', count: FLEET_VEHICLES.filter((v) => v.category === 'pickup').length },
     { key: 'suv', label: 'SUV', icon: 'fa-solid fa-car', count: FLEET_VEHICLES.filter((v) => v.category === 'suv').length },
@@ -331,7 +331,7 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onNavigate, target
 
   const handleWhatsAppInquiry = (vehicleName: string, category: string) => {
     const text = encodeURIComponent(
-      `Bonjour SANKO TOGO, je consulte votre flotte sur votre site et je souhaite obtenir des informations et un devis pour le modèle suivant :\n\n- Modèle : ${vehicleName} (${category})\n\nPouvez-vous m'indiquer les disponibilités et les conditions tarifaires ? Merci.`
+      `Bonjour SANKO TOGO, je consulte votre flotte sur votre site et je souhaite obtenir des informations et un devis pour le modÃ¨le suivant :\n\n- ModÃ¨le : ${vehicleName} (${category})\n\nPouvez-vous m'indiquer les disponibilitÃ©s et les conditions tarifaires ? Merci.`
     );
     window.open(`https://wa.me/${WHATSAPP_CONFIG.phone}?text=${text}`, '_blank');
   };
@@ -354,10 +354,10 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onNavigate, target
             Galerie de la Flotte
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1A3A6A] mt-3 tracking-tight">
-            Nos différents modèles de véhicules
+            Nos diffÃ©rents modÃ¨les de vÃ©hicules
           </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
-            Découvrez nos véhicules récents, parfaitement entretenus et disponibles avec chauffeur professionnel pour vos missions au Togo.
+            DÃ©couvrez nos vÃ©hicules rÃ©cents, parfaitement entretenus et disponibles avec chauffeur professionnel pour vos missions au Togo.
           </p>
         </div>
 
@@ -409,18 +409,18 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onNavigate, target
           <div>
             <p className="font-bold text-slate-800 text-base mb-1">Cette liste n'est pas exhaustive</p>
             <p className="text-sm text-slate-500 leading-relaxed">
-              Notre flotte comprend d'autres modèles disponibles selon vos besoins.<br />
-              Écrivez-nous pour en savoir plus et trouver le véhicule idéal pour votre mission.
+              Notre flotte comprend d'autres modÃ¨les disponibles selon vos besoins.<br />
+              Ã‰crivez-nous pour en savoir plus et trouver le vÃ©hicule idÃ©al pour votre mission.
             </p>
           </div>
           <a
-            href={`https://wa.me/${WHATSAPP_CONFIG.phone}?text=${encodeURIComponent('Bonjour SANKO TOGO, je souhaite en savoir plus sur les véhicules disponibles dans votre flotte.')}`}
+            href={`https://wa.me/${WHATSAPP_CONFIG.phone}?text=${encodeURIComponent('Bonjour SANKO TOGO, je souhaite en savoir plus sur les vÃ©hicules disponibles dans votre flotte.')}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20BA5A] text-white font-bold text-sm px-6 py-3 rounded-full shadow-sm transition-all hover:scale-[1.02] cursor-pointer"
           >
             <FAIcon name="fa-brands fa-whatsapp" size={17} color="#FFFFFF" />
-            <span>Nous écrire sur WhatsApp</span>
+            <span>Nous Ã©crire sur WhatsApp</span>
           </a>
         </div>
 
@@ -428,29 +428,29 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onNavigate, target
         <div className="mt-14 bg-[#0F2444] rounded-3xl p-8 sm:p-10 text-white shadow-sm border border-[#1A3A6A]/40">
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-xl sm:text-2xl font-bold mb-3">
-              Normes de maintenance & Sécurité garantie
+              Normes de maintenance & SÃ©curitÃ© garantie
             </h3>
             <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-8">
-              Chaque véhicule de notre flotte fait l'objet d'un contrôle rigoureux en 45 points avant chaque départ en mission. En cas d'imprévu technique, nous mobilisons immédiatement un véhicule relais partout au Togo.
+              Chaque vÃ©hicule de notre flotte fait l'objet d'un contrÃ´le rigoureux en 45 points avant chaque dÃ©part en mission. En cas d'imprÃ©vu technique, nous mobilisons immÃ©diatement un vÃ©hicule relais partout au Togo.
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
               <div className="bg-white/10 rounded-2xl p-4 border border-white/10">
                 <FAIcon name="fa-solid fa-shield-halved" size={20} className="text-emerald-400 mb-2" />
-                <span className="font-bold text-xs sm:text-sm block">Véhicules récents</span>
+                <span className="font-bold text-xs sm:text-sm block">VÃ©hicules rÃ©cents</span>
                 <span className="text-[11px] text-slate-300">Moins de 4 ans</span>
               </div>
 
               <div className="bg-white/10 rounded-2xl p-4 border border-white/10">
                 <FAIcon name="fa-solid fa-rotate" size={20} className="text-amber-400 mb-2" />
-                <span className="font-bold text-xs sm:text-sm block">Véhicule Relais</span>
-                <span className="text-[11px] text-slate-300">Garanti en cas d'aléa</span>
+                <span className="font-bold text-xs sm:text-sm block">VÃ©hicule Relais</span>
+                <span className="text-[11px] text-slate-300">Garanti en cas d'alÃ©a</span>
               </div>
 
               <div className="bg-white/10 rounded-2xl p-4 border border-white/10">
                 <FAIcon name="fa-solid fa-id-badge" size={20} className="text-cyan-400 mb-2" />
                 <span className="font-bold text-xs sm:text-sm block">Chauffeurs pro</span>
-                <span className="text-[11px] text-slate-300">Conduite défensive</span>
+                <span className="text-[11px] text-slate-300">Conduite dÃ©fensive</span>
               </div>
 
               <div className="bg-white/10 rounded-2xl p-4 border border-white/10">
@@ -463,7 +463,7 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onNavigate, target
         </div>
       </div>
 
-      {/* ================= MODAL DÉTAILS VÉHICULE ================= */}
+      {/* ================= MODAL DÃ‰TAILS VÃ‰HICULE ================= */}
       {selectedVehicle && (
         <div
           role="dialog"
@@ -564,7 +564,7 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onNavigate, target
               {/* Description */}
               <div>
                 <h4 className="text-xs uppercase tracking-wider font-extrabold text-slate-400 mb-2">
-                  Présentation du véhicule
+                  PrÃ©sentation du vÃ©hicule
                 </h4>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   {selectedVehicle.description}
@@ -597,7 +597,7 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onNavigate, target
                 className="w-full sm:flex-1 bg-[#25D366] hover:bg-[#20BA5A] text-white py-3 px-4 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer flex items-center justify-center gap-2 shadow-sm"
               >
                 <FAIcon name="fa-brands fa-whatsapp" size={16} color="#FFFFFF" />
-                <span>Demander disponibilité (WhatsApp)</span>
+                <span>Demander disponibilitÃ© (WhatsApp)</span>
               </button>
 
               <button
