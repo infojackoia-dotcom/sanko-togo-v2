@@ -163,8 +163,6 @@ export const FLEET_VEHICLES: FleetVehicleItem[] = [
     photos: [
       { url: '/gallery/corolla-champagne-side.jpg', label: 'Vue Réelle Profil Côté' },
       { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
-      { url: '/vehicles/corolla/front.jpg', label: 'Vue 3/4 Avant' },
-      { url: '/vehicles/corolla/rear.jpg', label: 'Vue 3/4 Arrière' },
     ],
     capacity: '5 places',
     ac: 'Clim automatique',
