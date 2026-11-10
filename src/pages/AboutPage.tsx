@@ -36,7 +36,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, targetAnchor }
               Une expertise reconnue en mobilité professionnelle au Togo
             </h1>
             <p className="text-base sm:text-lg text-white/95 font-medium leading-relaxed max-w-2xl mx-auto drop-shadow-[0_1px_6px_rgba(0,0,0,0.7)]">
-              Depuis +10 ans, nous mettons notre savoir-faire au service des organisations qui ne peuvent pas se permettre l'approximation.
+              Depuis +13 ans, nous mettons notre savoir-faire au service des organisations qui ne peuvent pas se permettre l'approximation.
             </p>
           </div>
         </div>
@@ -54,7 +54,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, targetAnchor }
             </h2>
             <div className="text-center text-slate-600 text-base sm:text-lg leading-relaxed bg-slate-50/70 p-8 sm:p-10 rounded-2xl border border-slate-200/70 w-full shadow-sm">
               <p>
-                Implanté au Togo depuis plus de 10 ans, SANKO TOGO a une conviction simple : les organisations qui opèrent au Togo, qu'elles soient internationales, institutionnelles ou privées, ont besoin d'un partenaire de mobilité fiable, capable de s'adapter à leurs exigences opérationnelles et administratives. Année après année, nous avons construit notre expertise aux côtés d'agences des Nations Unies, d'ONG internationales et de grandes entreprises, en faisant de la rigueur et de la réactivité nos priorités.
+                Implanté au Togo depuis +13 ans, SANKO TOGO a une conviction simple : les organisations qui opèrent au Togo, qu'elles soient internationales, institutionnelles ou privées, ont besoin d'un partenaire de mobilité fiable, capable de s'adapter à leurs exigences opérationnelles et administratives. Année après année, nous avons construit notre expertise aux côtés d'agences des Nations Unies, d'ONG internationales et de grandes entreprises, en faisant de la rigueur et de la réactivité nos priorités.
               </p>
             </div>
           </div>

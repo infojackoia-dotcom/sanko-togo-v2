@@ -75,7 +75,7 @@ export const SpotlightAbout: React.FC<SpotlightAboutProps> = ({ onNavigate }) =>
               {/* Text updated according to user instructions */}
               <div className="space-y-3.5 text-white/90 text-sm sm:text-base leading-relaxed font-normal max-w-xl mx-auto">
                 <p>
-                  Implanté au Togo depuis +10 ans, SANKO TOGO a une conviction simple : les organisations qui opèrent au Togo méritent un partenaire de mobilité à la hauteur de leurs exigences de rigueur, de ponctualité et de sécurité.
+                  Implanté au Togo depuis +13 ans, SANKO TOGO a une conviction simple : les organisations qui opèrent au Togo méritent un partenaire de mobilité à la hauteur de leurs exigences de rigueur, de ponctualité et de sécurité.
                 </p>
                 <p className="text-white/80">
                   Nous nous positionnons comme le tiers de confiance logistique des institutions, ambassades, ONG et entreprises, en proposant une offre clé en main alliant modernité de la flotte et excellence opérationnelle.

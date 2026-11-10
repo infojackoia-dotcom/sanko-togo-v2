@@ -83,7 +83,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             }}
             className="inline-flex items-center px-5 py-2 rounded-full bg-[#1A3A6A]/10 border border-[#1A3A6A]/20 text-[#1A3A6A] text-xs sm:text-sm font-bold mb-6 select-none"
           >
-            <span>Plus de 10 ans d'excellence au Togo</span>
+            <span>+13 ans d'excellence au Togo</span>
           </motion.div>
 
           {/* Display Headline on two lines */}
