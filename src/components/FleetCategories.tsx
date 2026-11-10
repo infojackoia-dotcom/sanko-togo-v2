@@ -34,7 +34,7 @@ export const FleetCategories: React.FC<FleetCategoriesProps> = ({ onNavigate }) 
       name: 'Minibus',
       subtitle: 'Équipes & Ateliers',
       icon: 'fa-solid fa-van-shuttle',
-      image: '/gallery/parc-automobile-sanko.jpg',
+      image: '/gallery/toyota-hiace-minibus.jpg',
     },
   ];
 
@@ -58,7 +58,7 @@ export const FleetCategories: React.FC<FleetCategoriesProps> = ({ onNavigate }) 
           {categories.map((cat) => (
             <div
               key={cat.id}
-              onClick={() => onNavigate('a-propos', `flotte-${cat.id}`)}
+              onClick={() => onNavigate('services', `flotte-${cat.id}`)}
               className="bg-white rounded-3xl p-4 sm:p-5 border border-slate-200/80 hover:border-[#1A3A6A] card-hover flex flex-col justify-between cursor-pointer shadow-2xs group"
             >
               <div>

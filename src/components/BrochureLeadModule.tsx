@@ -420,7 +420,7 @@ export const BrochureLeadModule: React.FC<BrochureLeadModuleProps> = ({
                       href={whatsappBrochureUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-3 w-full bg-[#1A3A6A] hover:bg-[#234c89] text-white px-6 py-4 rounded-full font-bold text-sm shadow-md transition-all hover:scale-[1.01]"
+                      className="inline-flex items-center justify-center gap-3 w-full bg-[#25D366] hover:bg-[#20BA5A] text-white px-6 py-4 rounded-full font-bold text-sm shadow-md transition-all hover:scale-[1.01]"
                     >
                       <FAIcon name="fa-brands fa-whatsapp" size={18} color="#FFFFFF" />
                       <span>Discuter sur WhatsApp</span>

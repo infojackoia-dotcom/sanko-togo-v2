@@ -115,10 +115,8 @@ export const FLEET_VEHICLES: FleetVehicleItem[] = [
     name: 'Toyota Mini Bus',
     badge: 'Transport de Groupe',
     photos: [
-      { url: '/gallery/parc-automobile-sanko.jpg', label: 'Flotte & Parc SANKO TOGO' },
-      { url: '/vehicles/hiace/front.jpg', label: 'Vue 3/4 Avant' },
-      { url: '/vehicles/hiace/side.jpg', label: 'Vue Profil Côté' },
-      { url: '/vehicles/hiace/interior.jpg', label: 'Habitacle & Confort' },
+      { url: '/gallery/toyota-hiace-minibus.jpg', label: 'Toyota HiAce Minibus (15 places)' },
+      { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
     ],
     capacity: '15 places assises',
     ac: 'Clim multi-diffuseurs arrière',
@@ -403,6 +401,29 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onNavigate, target
           ))}
         </div>
 
+        {/* Note liste non exhaustive + CTA WhatsApp */}
+        <div className="mt-10 text-center max-w-xl mx-auto flex flex-col items-center gap-4 bg-[#F8F9FB] border border-slate-200/80 rounded-2xl px-8 py-8">
+          <div className="w-11 h-11 rounded-full bg-[#1A3A6A]/10 flex items-center justify-center">
+            <FAIcon name="fa-solid fa-circle-info" size={20} className="text-[#1A3A6A]" />
+          </div>
+          <div>
+            <p className="font-bold text-slate-800 text-base mb-1">Cette liste n'est pas exhaustive</p>
+            <p className="text-sm text-slate-500 leading-relaxed">
+              Notre flotte comprend d'autres modèles disponibles selon vos besoins.<br />
+              Écrivez-nous pour en savoir plus et trouver le véhicule idéal pour votre mission.
+            </p>
+          </div>
+          <a
+            href={`https://wa.me/${WHATSAPP_CONFIG.phone}?text=${encodeURIComponent('Bonjour SANKO TOGO, je souhaite en savoir plus sur les véhicules disponibles dans votre flotte.')}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20BA5A] text-white font-bold text-sm px-6 py-3 rounded-full shadow-sm transition-all hover:scale-[1.02] cursor-pointer"
+          >
+            <FAIcon name="fa-brands fa-whatsapp" size={17} color="#FFFFFF" />
+            <span>Nous écrire sur WhatsApp</span>
+          </a>
+        </div>
+
         {/* Commitment Banner in Navy Blue */}
         <div className="mt-14 bg-[#0F2444] rounded-3xl p-8 sm:p-10 text-white shadow-sm border border-[#1A3A6A]/40">
           <div className="max-w-4xl mx-auto text-center">
@@ -497,13 +518,13 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onNavigate, target
 
                 {/* Thumbnails */}
                 {selectedVehicle.photos.length > 1 && (
-                  <div className="grid grid-cols-4 gap-2 mt-3">
+                  <div className="flex gap-2 mt-3 overflow-x-auto pb-1">
                     {selectedVehicle.photos.map((p, idx) => (
                       <button
                         key={idx}
                         type="button"
                         onClick={() => setModalPhotoIndex(idx)}
-                        className={`relative aspect-[4/3] rounded-xl overflow-hidden border-2 transition-all cursor-pointer ${
+                        className={`relative w-20 sm:w-24 shrink-0 aspect-[4/3] rounded-xl overflow-hidden border-2 transition-all cursor-pointer ${
                           idx === modalPhotoIndex
                             ? 'border-[#1A3A6A] scale-102 shadow-xs'
                             : 'border-transparent opacity-70 hover:opacity-100'

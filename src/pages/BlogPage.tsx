@@ -244,7 +244,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigate }) => {
                     href={whatsappArticleUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-[#1A3A6A] hover:bg-[#234c89] text-white px-5 py-2.5 rounded-lg text-xs sm:text-sm font-bold shadow-xs transition-colors"
+                    className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20BA5A] text-white px-5 py-2.5 rounded-lg text-xs sm:text-sm font-bold shadow-xs transition-colors"
                   >
                     <FAIcon name="fa-brands fa-whatsapp" size={16} color="#FFFFFF" />
                     <span>Discutons-en sur WhatsApp</span>

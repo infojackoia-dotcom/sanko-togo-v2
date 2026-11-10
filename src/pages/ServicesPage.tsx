@@ -3,7 +3,7 @@ import { PageId } from '../types';
 import { WHATSAPP_CONFIG, FAQ_ITEMS } from '../data/content';
 import { FAIcon } from '../components/FAIcon';
 import { Simulator } from '../components/Simulator';
-import { OffersGallerySlideshow } from '../components/OffersGallerySlideshow';
+import { FleetShowcase } from '../components/FleetShowcase';
 import { BrochureLeadModule } from '../components/BrochureLeadModule';
 
 interface ServicesPageProps {
@@ -20,12 +20,21 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
   useEffect(() => {
     if (targetAnchor) {
-      const el = document.getElementById(targetAnchor);
-      if (el) {
-        setTimeout(() => {
-          el.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      }
+      const tryScroll = (attemptsLeft: number) => {
+        const el = document.getElementById(targetAnchor);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else if (attemptsLeft > 0) {
+          setTimeout(() => tryScroll(attemptsLeft - 1), 80);
+        }
+      };
+
+      const timer1 = setTimeout(() => tryScroll(5), 100);
+      const timer2 = setTimeout(() => tryScroll(3), 450);
+      return () => {
+        clearTimeout(timer1);
+        clearTimeout(timer2);
+      };
     }
   }, [targetAnchor]);
 
@@ -138,6 +147,8 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
       {/* 3.3 — SERVICE 2 : Gestion de Parc Automobile */}
       <section id="service-gestion" className="py-16 sm:py-20 bg-slate-50/70 border-b border-slate-100 scroll-mt-24">
+        <span id="service-2" className="block -mt-24 pt-24 invisible pointer-events-none" />
+        <span id="gestion-parc" className="block -mt-24 pt-24 invisible pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
           <span className="inline-block text-xs uppercase tracking-wider font-bold text-[#1A3A6A] bg-[#1A3A6A]/8 px-3.5 py-1 rounded-full mb-3">
             Service 2
@@ -182,7 +193,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               href={whatsappGestionUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#1A3A6A] hover:bg-[#234c89] text-white px-7 py-3.5 rounded-xl font-bold text-sm shadow-sm transition-all cursor-pointer hover:scale-[1.02]"
+              className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20BA5A] text-white px-7 py-3.5 rounded-xl font-bold text-sm shadow-sm transition-all cursor-pointer hover:scale-[1.02]"
             >
               <FAIcon name="fa-brands fa-whatsapp" size={16} color="#FFFFFF" />
               <span>Discuter de mon besoin sur WhatsApp</span>
@@ -191,8 +202,8 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
         </div>
       </section>
 
-      {/* 3.4 — GALERIE PHOTO EN DIAPORAMA SUR DEUX LIGNES */}
-      <OffersGallerySlideshow />
+      {/* 3.4 — NOTRE FLOTTE & GALERIE DES MODÈLES AVEC PHOTOS */}
+      <FleetShowcase onNavigate={onNavigate} targetAnchor={targetAnchor} />
 
       {/* 3.5 — SECTION COMPARATIVE HAUT DE GAMME & BIEN PRÉSENTABLE */}
       <section className="py-16 sm:py-24 bg-gradient-to-b from-slate-50 via-slate-50/50 to-white border-t border-slate-100">
@@ -477,7 +488,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                   href={whatsappGestionUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 px-4 rounded-xl font-bold text-xs sm:text-sm transition-all cursor-pointer shadow-xs text-center flex items-center justify-center gap-2"
+                  className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white py-3 px-4 rounded-xl font-bold text-xs sm:text-sm transition-all cursor-pointer shadow-xs text-center flex items-center justify-center gap-2"
                 >
                   <FAIcon name="fa-brands fa-whatsapp" size={14} color="#FFFFFF" />
                   <span>Échanger sur WhatsApp →</span>
@@ -700,7 +711,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                         href={whatsappGestionUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white py-2.5 px-4 rounded-xl text-xs font-bold transition-all cursor-pointer shadow-xs"
+                        className="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20BA5A] text-white py-2.5 px-4 rounded-xl text-xs font-bold transition-all cursor-pointer shadow-xs"
                       >
                         <FAIcon name="fa-brands fa-whatsapp" size={14} color="#FFFFFF" />
                         <span>Discuter sur WhatsApp</span>
@@ -715,7 +726,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
       </section>
 
       {/* 3.6 — SIMULATEUR INTÉGRÉ ICI */}
-      <section className="py-16 sm:py-24 bg-[#0F2444] text-white scroll-mt-24 border-t border-[#1A3A6A]/40">
+      <section id="simulateur" className="py-16 sm:py-24 bg-[#0F2444] text-white scroll-mt-20 border-t border-[#1A3A6A]/40">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <span className="text-xs uppercase tracking-widest font-bold text-white bg-white/15 px-4 py-1.5 rounded-full inline-block">
@@ -728,7 +739,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               Sélectionnez vos critères de mobilité pour obtenir instantanément une estimation indicative personnalisée.
             </p>
           </div>
-          <Simulator id="simulateur" />
+          <Simulator id="simulateur-form" />
         </div>
       </section>
 

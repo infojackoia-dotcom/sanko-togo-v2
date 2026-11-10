@@ -2,7 +2,7 @@ import React from 'react';
 import { PageId } from '../types';
 import { FAIcon } from '../components/FAIcon';
 import { PartnersCarousel } from '../components/PartnersCarousel';
-import { FleetShowcase } from '../components/FleetShowcase';
+import { OffersGallerySlideshow } from '../components/OffersGallerySlideshow';
 import { BrochureLeadModule } from '../components/BrochureLeadModule';
 
 interface AboutPageProps {
@@ -162,8 +162,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, targetAnchor }
         </div>
       </section>
 
-      {/* 2.5 — NOTRE FLOTTE & GALERIE DES MODÈLES AVEC PHOTOS */}
-      <FleetShowcase onNavigate={onNavigate} targetAnchor={targetAnchor} />
+      {/* 2.5 — NOTRE FLOTTE EN IMAGE (GALERIE PHOTO) */}
+      <OffersGallerySlideshow />
 
       {/* 2.6 — ILS NOUS FONT CONFIANCE — FOND BLANC AVEC CARTES BLEUES ARRONDIES */}
       <section className="py-16 sm:py-20 bg-white border-t border-slate-100 overflow-hidden">

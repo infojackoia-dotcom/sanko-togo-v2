@@ -162,7 +162,7 @@ export const Simulator: React.FC<SimulatorProps> = ({
     message += `• Chauffeur professionnel dédié : Inclus\n`;
 
     if (zone === 'interieur' && overnightStays > 0) {
-      message += `• Nuitées prévues hors Lomé : ${overnightStays} nuitée(s)\n`;
+      message += `• Jours de mission hors Lomé : ${overnightStays} jour(s)\n`;
     }
 
     message += `• Budget estimé en ligne : ${estimate.formattedTotal}\n`;
@@ -535,17 +535,17 @@ export const Simulator: React.FC<SimulatorProps> = ({
             </p>
           </div>
 
-          {/* Option hébergement si mission à l'intérieur du pays */}
+          {/* Jours de mission si hors Lomé */}
           {zone === 'interieur' && (
             <div className="max-w-2xl mx-auto bg-slate-50 p-6 rounded-2xl border border-slate-200/80 text-center flex flex-col items-center">
               <div className="flex items-center justify-center gap-2 mb-1">
-                <FAIcon name="fa-solid fa-bed" size={15} className="text-[#1A3A6A]" />
+                <FAIcon name="fa-solid fa-map-location-dot" size={15} className="text-[#1A3A6A]" />
                 <span className="text-sm font-bold text-slate-900">
-                  Nuitées avec hébergement du chauffeur hors Lomé :
+                  En mission pour :
                 </span>
               </div>
               <p className="text-xs text-slate-500 mb-4 max-w-md text-center">
-                Indiquez le nombre de nuitées si la mission nécessite que le chauffeur passe la nuit sur le terrain (laisser 0 si aller-retour dans la journée).
+                Indiquez le nombre de jours de la mission hors de Lomé (laisser 0 si aller-retour dans la journée).
               </p>
 
               <div className="flex items-center justify-center gap-3">
@@ -558,13 +558,12 @@ export const Simulator: React.FC<SimulatorProps> = ({
                   <FAIcon name="fa-solid fa-minus" size={13} />
                 </button>
 
-                {/* Cadre de nuitées identique au cadre de jours */}
                 <div className="min-w-[110px] py-2.5 px-4 rounded-xl border-2 border-[#1A3A6A]/30 bg-white text-center shadow-xs flex flex-col items-center justify-center">
                   <span className="font-black text-2xl sm:text-3xl text-slate-900 leading-tight">
                     {overnightStays}
                   </span>
                   <span className="text-xs font-bold text-[#1A3A6A] uppercase tracking-wider mt-0.5">
-                    {overnightStays > 1 ? 'nuitées' : 'nuitée'}
+                    {overnightStays > 1 ? 'jours' : 'jour'}
                   </span>
                 </div>
 
@@ -628,7 +627,7 @@ export const Simulator: React.FC<SimulatorProps> = ({
               </span>
               {zone === 'interieur' && overnightStays > 0 && (
                 <span className="bg-white px-3 py-1 rounded-lg border border-slate-200">
-                  {overnightStays} nuitée(s) chauffeur
+                  En mission : {overnightStays} jour(s) hors Lomé
                 </span>
               )}
             </div>
@@ -654,6 +653,30 @@ export const Simulator: React.FC<SimulatorProps> = ({
               <span>
                 « Voici une estimation globale de votre budget : <strong>{estimate.formattedTotal}</strong> pour la mise à disposition d'un véhicule récent avec chauffeur professionnel dédié. Un conseiller <strong>SANKO TOGO</strong> reste disponible pour finaliser votre dossier. »
               </span>
+            </div>
+
+            {/* Note tarifaire personnalisable */}
+            <div className="mt-4 w-full rounded-2xl border border-amber-200 bg-amber-50/80 p-4 sm:p-5 flex items-start gap-3 text-left">
+              <FAIcon name="fa-solid fa-circle-info" size={18} className="text-amber-500 shrink-0 mt-0.5" />
+              <div>
+                <p className="text-sm font-bold text-amber-900 mb-1">
+                  Ce tarif peut être revu selon vos besoins spécifiques
+                </p>
+                <p className="text-xs text-amber-800 leading-relaxed">
+                  Cette estimation est basée sur notre grille tarifaire standard. Les conditions exactes — durée, volume de la flotte, spécificités de la mission — peuvent donner lieu à une offre personnalisée.{' '}
+                  <strong>Écrivez-nous pour une discussion plus approfondie</strong>, afin que nous puissions mieux comprendre vos besoins et vous proposer la solution la plus adaptée.
+                </p>
+                <a
+                  href={generateWhatsAppUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 mt-3 bg-[#25D366] hover:bg-[#20BA5A] text-white px-4 py-2.5 rounded-xl text-xs font-bold shadow-xs transition-all cursor-pointer"
+                >
+                  <FAIcon name="fa-brands fa-whatsapp" size={15} color="#FFFFFF" />
+                  <span>Discuter de mon projet avec un conseiller SANKO</span>
+                  <FAIcon name="fa-solid fa-arrow-right" size={11} color="#FFFFFF" />
+                </a>
+              </div>
             </div>
           </div>
 
@@ -710,7 +733,7 @@ export const Simulator: React.FC<SimulatorProps> = ({
               href={generateWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#1A3A6A] hover:bg-[#234c89] text-white px-7 py-3.5 rounded-xl font-bold text-sm shadow-md transition-all cursor-pointer hover:scale-[1.01]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20BA5A] text-white px-7 py-3.5 rounded-xl font-bold text-sm shadow-md transition-all cursor-pointer hover:scale-[1.01]"
             >
               <FAIcon name="fa-brands fa-whatsapp" size={18} color="#FFFFFF" />
               <span>Recevoir cette estimation sur WhatsApp</span>

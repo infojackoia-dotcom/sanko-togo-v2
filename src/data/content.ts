@@ -17,12 +17,30 @@ export const WHATSAPP_CONFIG = {
 };
 
 /**
-/**
  * SIMULATEUR DE BUDGET — GRILLE TARIFAIRE OFFICIELLE SANKO SARL
  * Tarifs journaliers (F CFA) applicables à Lomé et Hors Lomé.
  * Chauffeur professionnel inclus dans le forfait journalier.
  */
 export const CHAUFFEUR_OVERNIGHT_COST = 15000; // Hébergement / Nuitée chauffeur hors Lomé : 15 000 F CFA
+
+/**
+ * TARIFS MENSUELS FIXES — Moyenne durée (tier2) et Longue durée (tier3)
+ * Ces montants s'appliquent directement par mois, sans calcul journalier.
+ * Catégories : berline | suv | 4x4
+ */
+export const MONTHLY_RATES: Record<string, { tier2: number; tier3: number }> = {
+  berline: { tier2: 900_000, tier3: 800_000 },
+  suv:     { tier2: 1_200_000, tier3: 1_000_000 },
+  '4x4':   { tier2: 2_000_000, tier3: 1_600_000 },
+};
+
+/** Détermine la catégorie mensuelle à partir de l'id du véhicule */
+function getMonthlyCategory(vehicleId: string): keyof typeof MONTHLY_RATES {
+  if (vehicleId.startsWith('berline')) return 'berline';
+  if (vehicleId === 'suv-rav4') return 'suv';
+  // suv-prado, pickup-hilux → 4x4
+  return '4x4';
+}
 
 export const VEHICLE_OPTIONS: VehicleOption[] = [
   {
@@ -229,9 +247,17 @@ export function calculateEstimate(
     const days = Math.max(1, duration);
     rentalTotal = appliedDailyRate * days;
   } else {
-    // Calcul mensuel sur base 30 jours (standard commercial)
+    // Tarifs mensuels fixes selon la grille officielle (moyenne / longue durée)
     const months = Math.max(1, duration);
-    const monthlyRate = appliedDailyRate * 30;
+    const cat = getMonthlyCategory(vehicle.id);
+    // Bus : pas de grille mensuelle fixe → fallback journalier × 30
+    let monthlyRate: number;
+    if (cat === 'berline' || cat === 'suv' || cat === '4x4') {
+      const tierKey2 = rentalType === 'moyenne' ? 'tier2' : 'tier3';
+      monthlyRate = MONTHLY_RATES[cat][tierKey2];
+    } else {
+      monthlyRate = appliedDailyRate * 30;
+    }
     rentalTotal = monthlyRate * months;
     formattedMonthlyEquivalent = `${formatter.format(monthlyRate)} FCFA / mois`;
   }

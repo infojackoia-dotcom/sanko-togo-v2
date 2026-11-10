@@ -220,7 +220,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                         href={whatsappDirectUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-full text-xs font-bold shadow-xs transition-colors"
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20BA5A] text-white px-5 py-2.5 rounded-full text-xs font-bold shadow-xs transition-colors"
                       >
                         <FAIcon name="fa-brands fa-whatsapp" size={15} color="#FFFFFF" />
                         <span>Doubler sur WhatsApp</span>
@@ -382,7 +382,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                   href={whatsappDirectUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute bottom-4 right-4 z-10 w-12 h-12 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+                  className="absolute bottom-4 right-4 z-10 w-12 h-12 rounded-full bg-[#25D366] hover:bg-[#20BA5A] text-white flex items-center justify-center shadow-lg hover:scale-110 transition-all"
                   aria-label="Contacter SANKO Togo sur WhatsApp"
                 >
                   <FAIcon name="fa-brands fa-whatsapp" size={24} color="#FFFFFF" />

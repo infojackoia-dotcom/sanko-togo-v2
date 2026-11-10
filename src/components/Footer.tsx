@@ -36,20 +36,17 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-[#1A3A6A] hover:bg-[#142f56] text-white px-8 py-4 rounded-full font-extrabold text-sm sm:text-base shadow-md hover:shadow-lg transition-all group cursor-pointer"
+                className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20BA5A] text-white px-8 py-4 rounded-full font-extrabold text-sm sm:text-base shadow-md hover:shadow-lg transition-all group cursor-pointer"
               >
                 <span>Discuter sur WhatsApp</span>
-                <span className="w-8 h-8 rounded-full bg-white text-[#1A3A6A] flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <FAIcon name="fa-brands fa-whatsapp" size={14} color="#1A3A6A" />
+                <span className="w-8 h-8 rounded-full bg-white text-[#25D366] flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <FAIcon name="fa-brands fa-whatsapp" size={15} color="#25D366" />
                 </span>
               </a>
 
               <button
                 type="button"
-                onClick={() => {
-                  onNavigate('services', 'simulateur');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
+                onClick={() => onNavigate('services', 'simulateur')}
                 className="inline-flex items-center gap-3 bg-[#1A3A6A] hover:bg-[#142f56] text-white px-8 py-4 rounded-full font-extrabold text-sm sm:text-base shadow-md hover:shadow-lg transition-all group cursor-pointer"
               >
                 <span>Simuler votre budget</span>
@@ -104,7 +101,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <FAIcon name="fa-brands fa-whatsapp" size={16} color="#cbd5e1" />
+                <FAIcon name="fa-brands fa-whatsapp" size={16} color="#25D366" />
                 <a
                   href={whatsappUrl}
                   target="_blank"

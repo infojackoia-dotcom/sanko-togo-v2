@@ -18,7 +18,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
     'Bonjour Sanko Togo, je souhaite discuter de nos besoins de mobilité d\'organisation.'
   )}`;
 
-  const [showRentalDetails, setShowRentalDetails] = useState<boolean>(false);
 
   // Quick contact form state for the "Let's Talk" section
   const [contactForm, setContactForm] = useState({
@@ -115,10 +114,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="animate-zoom-arriere-slow inline-flex items-center justify-center gap-3 bg-white hover:bg-slate-50 text-[#1A3A6A] px-8 py-4 rounded-full font-bold text-sm sm:text-base shadow-md cursor-pointer group"
+              className="animate-zoom-arriere-slow inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20BA5A] text-white px-8 py-4 rounded-full font-bold text-sm sm:text-base shadow-md cursor-pointer group transition-all"
             >
               <span>Discuter sur WhatsApp</span>
-              <span className="w-7 h-7 rounded-full bg-[#1A3A6A] text-white flex items-center justify-center">
+              <span className="w-7 h-7 rounded-full bg-white/20 text-white flex items-center justify-center">
                 <FAIcon name="fa-brands fa-whatsapp" size={14} color="#FFFFFF" />
               </span>
             </a>
@@ -161,170 +160,109 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
             {/* OFFRE 1 : Location de véhicules */}
-            <div
-              className={`bg-white rounded-3xl p-8 border transition-all duration-300 shadow-2xs ${
-                showRentalDetails
-                  ? 'border-[#1A3A6A] ring-2 ring-[#1A3A6A]/15'
-                  : 'border-slate-200/80 hover:border-[#1A3A6A]'
-              }`}
-            >
-              {/* Card Header — Clickable to toggle details */}
-              <div
-                onClick={() => setShowRentalDetails(!showRentalDetails)}
-                className="cursor-pointer group flex flex-col justify-between"
-              >
-                <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 rounded-2xl bg-[#1A3A6A]/10 text-[#1A3A6A] flex items-center justify-center transition-all group-hover:bg-[#1A3A6A] group-hover:text-white">
-                    <FAIcon name="fa-solid fa-car-side" size={22} />
-                  </div>
-                  <button
-                    type="button"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setShowRentalDetails(!showRentalDetails);
-                    }}
-                    className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#1A3A6A]/10 text-[#1A3A6A] hover:bg-[#1A3A6A] hover:text-white transition-all cursor-pointer"
-                  >
-                    <span>{showRentalDetails ? 'Masquer le détail' : 'Voir le détail des durées'}</span>
-                    <FAIcon
-                      name={showRentalDetails ? 'fa-solid fa-chevron-up' : 'fa-solid fa-chevron-down'}
-                      size={11}
-                    />
-                  </button>
-                </div>
-
-                <h3 className="text-2xl font-bold text-slate-900 group-hover:text-[#1A3A6A] transition-colors mb-2 leading-snug">
-                  Location de véhicules
-                </h3>
-
-                <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                  Une solution complète et personnalisée pour vos déplacements et missions au Togo, avec une flotte rigoureusement suivie et des chauffeurs professionnels.
-                </p>
-
-                {/* Formules teaser pills */}
-                <div className="flex flex-wrap gap-2 mb-2">
-                  <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-slate-100 text-slate-700">
-                    Location Longue Durée
-                  </span>
-                  <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-slate-100 text-slate-700">
-                    Moyenne Durée
-                  </span>
-                  <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-slate-100 text-slate-700">
-                    Courte Durée
-                  </span>
+            <div className="bg-white rounded-3xl p-8 border border-slate-200/80 hover:border-[#1A3A6A] transition-all duration-300 shadow-2xs group flex flex-col">
+              <div className="flex items-start justify-between mb-6">
+                <div className="w-14 h-14 rounded-2xl bg-[#1A3A6A]/10 text-[#1A3A6A] flex items-center justify-center transition-all group-hover:bg-[#1A3A6A] group-hover:text-white">
+                  <FAIcon name="fa-solid fa-car-side" size={22} />
                 </div>
               </div>
 
-              {/* DETAILS SECTION: Appears upon clicking the offer */}
-              {showRentalDetails ? (
-                <div className="pt-6 mt-4 border-t border-slate-100 space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs uppercase tracking-wider font-extrabold text-[#1A3A6A]">
-                      Détail des durées de location :
+              <h3 className="text-2xl font-bold text-slate-900 group-hover:text-[#1A3A6A] transition-colors mb-2 leading-snug">
+                Location de véhicules
+              </h3>
+
+              {/* DETAILS SECTION: Always visible */}
+              <div className="pt-6 mt-4 border-t border-slate-100 space-y-4 flex-1 flex flex-col">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs uppercase tracking-wider font-extrabold text-[#1A3A6A]">
+                    Détail des durées de location :
+                  </span>
+                  <span className="text-[11px] text-slate-400 font-medium">3 formules disponibles</span>
+                </div>
+
+                {/* Formule 1: Location Longue Durée */}
+                <div
+                  onClick={() => onNavigate('services', 'service-lld')}
+                  className="p-4 rounded-2xl bg-slate-50 hover:bg-[#1A3A6A]/5 border border-slate-200/80 hover:border-[#1A3A6A] transition-all cursor-pointer group/item"
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1.5">
+                    <div className="flex items-center gap-2.5">
+                      <span className="w-8 h-8 rounded-lg bg-[#1A3A6A] text-white flex items-center justify-center shrink-0">
+                        <FAIcon name="fa-solid fa-calendar-check" size={14} color="#FFFFFF" />
+                      </span>
+                      <h4 className="font-bold text-base text-slate-900 group-hover/item:text-[#1A3A6A]">
+                        Location Longue Durée (LLD)
+                      </h4>
+                    </div>
+                    <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-[#1A3A6A]/10 text-[#1A3A6A] self-start sm:self-auto">
+                      + 6 mois à plusieurs années
                     </span>
-                    <span className="text-[11px] text-slate-400 font-medium">3 formules disponibles</span>
                   </div>
+                  <p className="text-xs text-slate-600 leading-relaxed sm:pl-10">
+                    Véhicules neufs ou récents, contrat pérenne, maintenance intégrale, véhicule relais en moins de 2h à Lomé et facturation conforme aux audits.
+                  </p>
+                </div>
 
-                  {/* Formule 1: Location Longue Durée */}
-                  <div
-                    onClick={() => onNavigate('services', 'service-lld')}
-                    className="p-4 rounded-2xl bg-slate-50 hover:bg-[#1A3A6A]/5 border border-slate-200/80 hover:border-[#1A3A6A] transition-all cursor-pointer group/item"
-                  >
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1.5">
-                      <div className="flex items-center gap-2.5">
-                        <span className="w-8 h-8 rounded-lg bg-[#1A3A6A] text-white flex items-center justify-center shrink-0">
-                          <FAIcon name="fa-solid fa-calendar-check" size={14} color="#FFFFFF" />
-                        </span>
-                        <h4 className="font-bold text-base text-slate-900 group-hover/item:text-[#1A3A6A]">
-                          Location Longue Durée (LLD)
-                        </h4>
-                      </div>
-                      <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-[#1A3A6A]/10 text-[#1A3A6A] self-start sm:self-auto">
-                        + 6 mois à plusieurs années
+                {/* Formule 2: Location Moyenne Durée */}
+                <div
+                  onClick={() => onNavigate('services', 'simulateur')}
+                  className="p-4 rounded-2xl bg-slate-50 hover:bg-[#1A3A6A]/5 border border-slate-200/80 hover:border-[#1A3A6A] transition-all cursor-pointer group/item"
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1.5">
+                    <div className="flex items-center gap-2.5">
+                      <span className="w-8 h-8 rounded-lg bg-[#1A3A6A] text-white flex items-center justify-center shrink-0">
+                        <FAIcon name="fa-solid fa-calendar-days" size={14} color="#FFFFFF" />
                       </span>
+                      <h4 className="font-bold text-base text-slate-900 group-hover/item:text-[#1A3A6A]">
+                        Location Moyenne Durée (LMD)
+                      </h4>
                     </div>
-                    <p className="text-xs text-slate-600 leading-relaxed sm:pl-10">
-                      Véhicules neufs ou récents, contrat pérenne, maintenance intégrale, véhicule relais en moins de 2h à Lomé et facturation conforme aux audits.
-                    </p>
+                    <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-[#1A3A6A]/10 text-[#1A3A6A] self-start sm:self-auto">
+                      1 à 6 mois
+                    </span>
                   </div>
+                  <p className="text-xs text-slate-600 leading-relaxed sm:pl-10">
+                    Flexibilité absolue pour missions d'ONG, projets semestriels, audits de bailleurs de fonds et déploiements d'experts techniques.
+                  </p>
+                </div>
 
-                  {/* Formule 2: Location Moyenne Durée */}
-                  <div
+                {/* Formule 3: Location Courte Durée */}
+                <div
+                  onClick={() => onNavigate('services', 'service-courte')}
+                  className="p-4 rounded-2xl bg-slate-50 hover:bg-[#1A3A6A]/5 border border-slate-200/80 hover:border-[#1A3A6A] transition-all cursor-pointer group/item"
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1.5">
+                    <div className="flex items-center gap-2.5">
+                      <span className="w-8 h-8 rounded-lg bg-[#1A3A6A] text-white flex items-center justify-center shrink-0">
+                        <FAIcon name="fa-solid fa-clock" size={14} color="#FFFFFF" />
+                      </span>
+                      <h4 className="font-bold text-base text-slate-900 group-hover/item:text-[#1A3A6A]">
+                        Location Courte Durée (LCD)
+                      </h4>
+                    </div>
+                    <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-[#1A3A6A]/10 text-[#1A3A6A] self-start sm:self-auto">
+                      1 à 30 jours
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-600 leading-relaxed sm:pl-10">
+                    Réactivité immédiate pour transferts aéroport, visites de délégations, ateliers ou urgences opérationnelles avec chauffeur.
+                  </p>
+                </div>
+
+                {/* Action button */}
+                <div className="pt-2 flex flex-col sm:flex-row items-center gap-3 mt-auto">
+                  <button
+                    type="button"
                     onClick={() => onNavigate('services', 'simulateur')}
-                    className="p-4 rounded-2xl bg-slate-50 hover:bg-[#1A3A6A]/5 border border-slate-200/80 hover:border-[#1A3A6A] transition-all cursor-pointer group/item"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-[#1A3A6A] hover:bg-[#234c89] text-white py-3 px-5 rounded-xl font-bold text-sm transition-all cursor-pointer"
                   >
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1.5">
-                      <div className="flex items-center gap-2.5">
-                        <span className="w-8 h-8 rounded-lg bg-[#1A3A6A] text-white flex items-center justify-center shrink-0">
-                          <FAIcon name="fa-solid fa-calendar-days" size={14} color="#FFFFFF" />
-                        </span>
-                        <h4 className="font-bold text-base text-slate-900 group-hover/item:text-[#1A3A6A]">
-                          Location Moyenne Durée (LMD)
-                        </h4>
-                      </div>
-                      <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-[#1A3A6A]/10 text-[#1A3A6A] self-start sm:self-auto">
-                        1 à 6 mois
-                      </span>
-                    </div>
-                    <p className="text-xs text-slate-600 leading-relaxed sm:pl-10">
-                      Flexibilité absolue pour missions d'ONG, projets semestriels, audits de bailleurs de fonds et déploiements d'experts techniques.
-                    </p>
-                  </div>
-
-                  {/* Formule 3: Location Courte Durée */}
-                  <div
-                    onClick={() => onNavigate('services', 'service-courte')}
-                    className="p-4 rounded-2xl bg-slate-50 hover:bg-[#1A3A6A]/5 border border-slate-200/80 hover:border-[#1A3A6A] transition-all cursor-pointer group/item"
-                  >
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1.5">
-                      <div className="flex items-center gap-2.5">
-                        <span className="w-8 h-8 rounded-lg bg-[#1A3A6A] text-white flex items-center justify-center shrink-0">
-                          <FAIcon name="fa-solid fa-clock" size={14} color="#FFFFFF" />
-                        </span>
-                        <h4 className="font-bold text-base text-slate-900 group-hover/item:text-[#1A3A6A]">
-                          Location Courte Durée (LCD)
-                        </h4>
-                      </div>
-                      <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-[#1A3A6A]/10 text-[#1A3A6A] self-start sm:self-auto">
-                        1 à 30 jours
-                      </span>
-                    </div>
-                    <p className="text-xs text-slate-600 leading-relaxed sm:pl-10">
-                      Réactivité immédiate pour transferts aéroport, visites de délégations, ateliers ou urgences opérationnelles avec chauffeur.
-                    </p>
-                  </div>
-
-                  {/* Action inside expanded card */}
-                  <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
-                    <button
-                      type="button"
-                      onClick={() => onNavigate('services', 'simulateur')}
-                      className="w-full inline-flex items-center justify-center gap-2 bg-[#1A3A6A] hover:bg-[#234c89] text-white py-3 px-5 rounded-xl font-bold text-sm transition-all cursor-pointer"
-                    >
-                      <FAIcon name="fa-solid fa-calculator" size={14} color="#FFFFFF" />
-                      <span>Simuler votre budget de location</span>
-                    </button>
-                  </div>
+                    <FAIcon name="fa-solid fa-calculator" size={14} color="#FFFFFF" />
+                    <span>Simuler votre budget de location</span>
+                  </button>
                 </div>
-              ) : (
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <span
-                    onClick={() => setShowRentalDetails(true)}
-                    className="text-xs font-bold text-[#1A3A6A] group-hover:underline cursor-pointer inline-flex items-center gap-1.5"
-                  >
-                    <span>Cliquer pour voir le détail (Longue, Moyenne & courte Durée)</span>
-                    <FAIcon name="fa-solid fa-chevron-down" size={10} color="#1A3A6A" />
-                  </span>
-                  <span
-                    onClick={() => setShowRentalDetails(true)}
-                    className="w-9 h-9 rounded-full bg-[#1A3A6A]/10 group-hover:bg-[#1A3A6A] group-hover:text-white text-[#1A3A6A] flex items-center justify-center transition-all cursor-pointer"
-                  >
-                    <FAIcon name="fa-solid fa-arrow-right" size={12} />
-                  </span>
-                </div>
-              )}
+              </div>
             </div>
 
             {/* OFFRE 2 : Gestion de parc automobile */}
@@ -339,7 +277,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   Gestion de parc automobile
                 </h3>
                 <p className="text-sm text-slate-600 leading-relaxed mb-6">
-                  La gestion complète de votre flotte confiée à des experts : maintenance préventive, suivi télématique en temps réel, gestion du carburant, assurances et conformité aux audits.
+                  De nos années d'expérience, nous sommes capables de vous fournir une gestion entière de votre parc automobile. Ce service vous permet, soit une gestion entière de votre parc, soit la mise à disposition de chauffeurs professionnels et compétents.
                 </p>
 
                 <div className="space-y-3 mb-6 bg-slate-50 p-5 rounded-2xl border border-slate-100">
@@ -362,14 +300,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center gap-3 justify-between">
+              <div className="pt-4 border-t border-slate-100 flex flex-col gap-3 w-full">
                 <button
                   type="button"
                   onClick={() => onNavigate('services', 'service-gestion')}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#1A3A6A] hover:bg-[#234c89] text-white px-5 py-3 rounded-xl font-bold text-xs shadow-xs transition-all cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-[#1A3A6A] hover:bg-[#234c89] text-white px-5 py-3 rounded-xl font-bold text-sm shadow-xs transition-all cursor-pointer"
                 >
                   <span>En savoir plus sur la gestion de parc</span>
-                  <FAIcon name="fa-solid fa-arrow-right" size={11} color="#FFFFFF" />
+                  <FAIcon name="fa-solid fa-arrow-right" size={12} color="#FFFFFF" />
                 </button>
 
                 <a
@@ -378,9 +316,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-[#1A3A6A] px-4 py-3 rounded-xl font-bold text-xs transition-all cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20BA5A] text-white px-5 py-3 rounded-xl font-bold text-sm transition-all cursor-pointer shadow-xs"
                 >
-                  <FAIcon name="fa-brands fa-whatsapp" size={14} color="#1A3A6A" />
+                  <FAIcon name="fa-brands fa-whatsapp" size={16} color="#FFFFFF" />
                   <span>Discuter de votre flotte</span>
                 </a>
               </div>
@@ -407,7 +345,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       <FleetCategories onNavigate={onNavigate} />
 
       {/* 10. INTERACTIVE SIMULATOR */}
-      <section id="simulateur" className="py-20 sm:py-24 bg-[#0F2444] text-white border-t border-[#1A3A6A]/40">
+      <section id="simulateur-accueil" className="py-20 sm:py-24 bg-[#0F2444] text-white border-t border-[#1A3A6A]/40 scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-xs uppercase tracking-widest font-bold text-white bg-white/15 px-4 py-1.5 rounded-full inline-block">
@@ -547,7 +485,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                         href={directFormWhatsappUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-bold text-sm shadow-sm transition-all"
+                        className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20BA5A] text-white px-6 py-3 rounded-full font-bold text-sm shadow-sm transition-all"
                       >
                         <FAIcon name="fa-brands fa-whatsapp" size={18} color="#FFFFFF" />
                         <span>Transmettre sur WhatsApp</span>

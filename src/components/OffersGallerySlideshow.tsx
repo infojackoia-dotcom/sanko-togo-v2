@@ -7,24 +7,27 @@ export interface GalleryPhotoItem {
   alt: string;
 }
 
-// Exactement 6 photos pour la Ligne 1 (Format Carré)
+// Ligne 1 : Véhicules et Chauffeurs (Format Carré)
 export const ROW_1_PHOTOS: GalleryPhotoItem[] = [
   { id: 'landcruiser-prado-250', url: '/gallery/landcruiser-prado-250-togo.jpg', alt: 'Nouveau Toyota Land Cruiser 250 Togo' },
+  { id: 'corolla-cross-gold-front', url: '/gallery/corolla-cross-gold-front.jpg', alt: 'Toyota Corolla Cross Gold Face Avant' },
   { id: 'hilux-concession', url: '/gallery/hilux-concession-togo.jpg', alt: 'Toyota Hilux Double Cabine Togo' },
-  { id: 'cross-road', url: '/gallery/corolla-cross-road.jpg', alt: 'Toyota Corolla Cross en mission' },
+  { id: 'chauffeur-landcruiser-pro', url: '/gallery/chauffeur-landcruiser-pro.jpg', alt: 'Chauffeur Professionnel Sanko Togo' },
+  { id: 'corolla-cross-white-front', url: '/gallery/corolla-cross-white-front.jpg', alt: 'Toyota Corolla Cross Blanc Vue Avant' },
+  { id: 'toyota-fortuner', url: '/gallery/toyota-fortuner.jpg', alt: 'Toyota Fortuner SUV 4x4' },
   { id: 'corolla-champagne', url: '/gallery/corolla-champagne-side.jpg', alt: 'Toyota Corolla Berline' },
-  { id: 'hilux-road', url: '/gallery/hilux-front-road.jpg', alt: 'Toyota Hilux Tout-Terrain' },
-  { id: 'starlet-side', url: '/gallery/starlet-black-side.jpg', alt: 'Toyota Starlet Berline Compacte' },
 ];
 
-// Exactement 6 photos pour la Ligne 2 (Format Carré)
+// Ligne 2 : Vues Arrière, Profils et Habitacles (Format Carré)
 export const ROW_2_PHOTOS: GalleryPhotoItem[] = [
+  { id: 'corolla-cross-white-rear', url: '/gallery/corolla-cross-white-rear.jpg', alt: 'Toyota Corolla Cross Vue Arrière' },
+  { id: 'chauffeur-mission-togo', url: '/gallery/chauffeur-mission-togo.jpg', alt: 'Chauffeur Expérimenté SANKO TOGO' },
+  { id: 'landcruiser-250-front-angle', url: '/gallery/landcruiser-250-front-angle.jpg', alt: 'Toyota Land Cruiser 250 Gros Plan' },
+  { id: 'corolla-cross-gold-rear', url: '/gallery/corolla-cross-gold-rear.jpg', alt: 'Toyota Corolla Cross Gold Vue Arrière' },
   { id: 'chauffeur-polo-sanko', url: '/gallery/chauffeur-polo-sanko.jpg', alt: 'Chauffeur Professionnel Sanko Togo' },
+  { id: 'minibus-hiace', url: '/gallery/toyota-hiace-minibus.jpg', alt: 'Toyota HiAce Minibus 15 Places SANKO TOGO' },
+  { id: 'starlet-side', url: '/gallery/starlet-black-side.jpg', alt: 'Toyota Starlet Berline Compacte' },
   { id: 'toyota-cockpit', url: '/gallery/toyota-cockpit-interior.jpg', alt: 'Poste de conduite & Volant Toyota' },
-  { id: 'cross-side', url: '/gallery/corolla-cross-side.jpg', alt: 'Toyota Corolla Cross Profil' },
-  { id: 'chauffeur-pro', url: '/chauffeur-pro.jpg', alt: 'Chauffeur Professionnel en service' },
-  { id: 'flotte-hilux', url: '/flotte-hilux.jpg', alt: 'Flotte Hilux en convoi tout-terrain' },
-  { id: 'parc-automobile-sanko', url: '/gallery/parc-automobile-sanko.jpg', alt: 'Parc automobile et flotte SANKO TOGO' },
 ];
 
 const ALL_PHOTOS: GalleryPhotoItem[] = [...ROW_1_PHOTOS, ...ROW_2_PHOTOS];

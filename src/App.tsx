@@ -16,55 +16,64 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState<PageId>('accueil');
   const [targetAnchor, setTargetAnchor] = useState<string | undefined>(undefined);
 
-  // Handle URL hash routing on initial load and popstate
-  useEffect(() => {
-    const handleHash = () => {
-      const hash = window.location.hash.replace('#', '');
-      if (
-        [
-          'accueil',
-          'a-propos',
-          'services',
-          'blog',
-          'contact',
-          'politique-confidentialite',
-          'conditions-generales',
-        ].includes(hash)
-      ) {
-        setCurrentPage(hash as PageId);
-        setTargetAnchor(undefined);
-      } else if (hash === 'simulateur') {
-        setCurrentPage('services');
-        setTargetAnchor('simulateur');
-      } else if (hash === 'notre-flotte' || hash.startsWith('flotte-')) {
-        setCurrentPage('a-propos');
-        setTargetAnchor(hash);
+    // Handle URL hash routing on initial load and popstate
+    useEffect(() => {
+      const handleHash = () => {
+        const hash = window.location.hash.replace('#', '');
+        if (
+          [
+            'accueil',
+            'a-propos',
+            'services',
+            'blog',
+            'contact',
+            'politique-confidentialite',
+            'conditions-generales',
+          ].includes(hash)
+        ) {
+          setCurrentPage(hash as PageId);
+          setTargetAnchor(undefined);
+        } else if (
+          [
+            'simulateur',
+            'service-gestion',
+            'service-2',
+            'service-lld',
+            'service-courte',
+            'tarifs',
+          ].includes(hash) ||
+          hash === 'notre-flotte' ||
+          hash.startsWith('flotte-')
+        ) {
+          setCurrentPage('services');
+          setTargetAnchor(hash);
+        }
+      };
+
+      handleHash();
+      window.addEventListener('popstate', handleHash);
+      return () => window.removeEventListener('popstate', handleHash);
+    }, []);
+
+    const handleNavigate = (page: PageId, anchor?: string) => {
+      const isPageChange = page !== currentPage;
+      setCurrentPage(page);
+      setTargetAnchor(anchor);
+
+      // Update browser history hash
+      if (anchor) {
+        window.history.pushState(null, '', `#${anchor}`);
+        if (!isPageChange) {
+          const el = document.getElementById(anchor);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      } else {
+        window.history.pushState(null, '', `#${page}`);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     };
-
-    handleHash();
-    window.addEventListener('popstate', handleHash);
-    return () => window.removeEventListener('popstate', handleHash);
-  }, []);
-
-  const handleNavigate = (page: PageId, anchor?: string) => {
-    setCurrentPage(page);
-    setTargetAnchor(anchor);
-
-    // Update browser history hash
-    if (anchor) {
-      window.history.pushState(null, '', `#${anchor}`);
-      setTimeout(() => {
-        const el = document.getElementById(anchor);
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 80);
-    } else {
-      window.history.pushState(null, '', `#${page}`);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-slate-800 selection:bg-[#1A3A6A] selection:text-white font-sans antialiased">

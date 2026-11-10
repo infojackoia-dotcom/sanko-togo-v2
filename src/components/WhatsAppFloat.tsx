@@ -40,7 +40,7 @@ export const WhatsAppFloat: React.FC = () => {
         title="Discuter avec nous directement."
         onFocus={() => setIsHovered(true)}
         onBlur={() => setIsHovered(false)}
-        className="w-14 h-14 sm:w-15 sm:h-15 rounded-full bg-[#1A3A6A] hover:bg-[#234c89] active:bg-[#142e54] text-white shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 border-2 border-white ring-2 ring-[#1A3A6A]/15 cursor-pointer shrink-0"
+        className="w-14 h-14 sm:w-15 sm:h-15 rounded-full bg-[#25D366] hover:bg-[#20BA5A] active:bg-[#1DA851] text-white shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 border-2 border-white ring-2 ring-[#25D366]/25 cursor-pointer shrink-0"
       >
         <FAIcon name="fa-brands fa-whatsapp" size={28} color="#FFFFFF" />
       </a>
