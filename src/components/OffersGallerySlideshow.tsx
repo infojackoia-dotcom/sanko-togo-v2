@@ -19,6 +19,7 @@ export const ROW_1_PHOTOS: GalleryPhotoItem[] = [
 
 // Ligne 2 : Vues Arrière, Profils et Habitacles (Format Carré)
 export const ROW_2_PHOTOS: GalleryPhotoItem[] = [
+  { id: 'corolla-cross-white-side', url: '/gallery/corolla-cross-white-side.jpg', alt: 'Toyota Corolla Cross Profil Blanc' },
   { id: 'corolla-cross-white-rear', url: '/gallery/corolla-cross-white-rear.jpg', alt: 'Toyota Corolla Cross Vue Arrière' },
   { id: 'chauffeur-mission-togo', url: '/gallery/chauffeur-mission-togo.jpg', alt: 'Chauffeur Expérimenté SANKO TOGO' },
   { id: 'landcruiser-250-front-angle', url: '/gallery/landcruiser-250-front-angle.jpg', alt: 'Toyota Land Cruiser 250 Gros Plan' },

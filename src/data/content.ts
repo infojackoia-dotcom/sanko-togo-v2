@@ -333,7 +333,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt: 'Trafic urbain, exigences protocolaires, réglementation locale et gestion de crise : le guide pratique pour vos équipes en poste.',
     date: '10 Avril 2026',
     readTime: '4 min de lecture',
-    image: '/gallery/corolla-cross-road.jpg',
+    image: '/gallery/corolla-cross-white-side.jpg',
     content: [
       "Carrefour diplomatique et économique majeur en Afrique de l'Ouest, Lomé concentre de nombreuses représentations diplomatiques, sièges régionaux et délégations temporaires.",
       "Pour assurer une mobilité fluide entre le quartier administratif, la zone portuaire et les représentations consulaires, l'anticipation des pics de trafic et la parfaite connaissance des axes de délestage sont déterminantes.",

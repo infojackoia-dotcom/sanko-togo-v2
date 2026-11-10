@@ -20,7 +20,7 @@ export const FleetCategories: React.FC<FleetCategoriesProps> = ({ onNavigate }) 
       name: 'SUV',
       subtitle: 'Polyvalence & Confort',
       icon: 'fa-solid fa-car',
-      image: '/gallery/corolla-cross-road.jpg',
+      image: '/gallery/corolla-cross-white-side.jpg',
     },
     {
       id: '4x4',
