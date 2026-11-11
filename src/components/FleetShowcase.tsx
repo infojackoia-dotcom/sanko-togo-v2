@@ -18,6 +18,7 @@ export interface FleetVehicleItem {
   subIcon: string;
   name: string;
   badge: string;
+  price: string;
   photos: VehiclePhoto[];
   capacity: string;
   ac: string;
@@ -27,104 +28,57 @@ export interface FleetVehicleItem {
 }
 
 export const FLEET_VEHICLES: FleetVehicleItem[] = [
-  // ================= 1. TOYOTA FORTUNER =================
+  // ================= 1. TOYOTA STARLET =================
   {
-    id: 'toyota-fortuner',
-    category: '4x4',
-    categoryLabel: '4x4 Baroudeur & Prestige',
-    subLabel: '4x4',
+    id: 'toyota-starlet',
+    category: 'berline',
+    categoryLabel: 'Citadine & Compacte',
+    subLabel: 'Citadine',
     subIcon: 'fa-solid fa-car-side',
-    name: 'Toyota Fortuner',
-    badge: '4x4 Baroudeur & Confort',
+    name: 'Toyota Starlet',
+    badge: 'Agilité & Économie',
+    price: 'À partir de 30.000 F',
     photos: [
-      { url: '/gallery/toyota-fortuner-real.jpg', label: 'Toyota Fortuner 4x4 Blanc' },
+      { url: '/gallery/starlet-black-side.jpg', label: 'Vue Réelle Profil Côté' },
       { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
     ],
-    capacity: '7 places modulables',
-    ac: 'Climatisation bizone grand froid',
-    transmission: '4x4 Automatique séquentielle',
-    description: 'SUV 4x4 robuste et élégant par excellence, offrant une garde au sol protectrice, un habitacle haut de gamme et un confort souverain en milieu urbain comme sur les pistes de l’intérieur du Togo.',
+    capacity: '5 places',
+    ac: 'Climatisation continue',
+    transmission: 'Automatique / Manuelle',
+    description: 'Véhicule compact moderne et agile, parfait pour naviguer aisément dans la circulation urbaine de Lomé à coût maîtrisé.',
     highlights: [
-      'Garde au sol élevée et motricité 4x4 tout-terrain permanente',
-      'Habitacle spacieux 7 places avec finitions premium et coffre modulable',
-      'Chauffeur professionnel qualifié pour missions de terrain et protocole',
+      'Ultra maniable pour les déplacements urbains denses',
+      'Consommation optimisée pour liaisons quotidiennes',
+      'Parfaite pour courses administratives et personnel d’appui',
     ],
   },
 
-  // ================= 2. TOYOTA HILUX =================
+  // ================= 2. TOYOTA COROLLA BERLINE =================
   {
-    id: 'toyota-hilux',
-    category: 'pickup',
-    categoryLabel: 'Pick-up Double Cabine',
-    subLabel: 'Pick-up',
-    subIcon: 'fa-solid fa-truck-pickup',
-    name: 'Toyota Hilux',
-    badge: 'Missions Terrain & Pistes',
-    photos: [
-      { url: '/gallery/hilux-concession-togo.jpg', label: 'Vue Réelle Double Cabine Togo' },
-      { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
-    ],
-    capacity: '5 places + Benne cargo',
-    ac: 'Clim grand froid renforcée',
-    transmission: '4x4 avec réducteur court',
-    description: 'Le standard absolu des missions de développement, ONG et projets en milieu rural dans les Savanes, la Kara et les Plateaux. Capacité de franchissement éprouvée et benne sécurisée.',
-    highlights: [
-      'Capacité de franchissement extrême sur toutes pistes togolaises',
-      'Grande benne avec bâche étanche pour transport de fret et outillage',
-      'Équipement de sécurité terrain complet et double roue de secours',
-    ],
-  },
-
-  // ================= 3. TOYOTA LAND CRUISER 250 =================
-  {
-    id: 'toyota-land-cruiser-250',
-    category: '4x4',
-    categoryLabel: '4x4 Exécutif & Prestige',
-    subLabel: '4x4',
+    id: 'toyota-corolla-l6',
+    category: 'berline',
+    categoryLabel: 'Berline Confort',
+    subLabel: 'Berline',
     subIcon: 'fa-solid fa-car-side',
-    name: 'Toyota LAND CRUISER 250',
-    badge: 'Prestige Tout-Terrain',
+    name: 'Toyota Corolla Berline',
+    badge: 'Mobilité Urbaine & Affaires',
+    price: 'À partir de 35.000 F',
     photos: [
-      { url: '/gallery/landcruiser-prado-250-togo.jpg', label: 'Nouveau Toyota Land Cruiser 250 Togo' },
-      { url: '/gallery/landcruiser-250-front-angle.jpg', label: 'Calandre & Optiques Avant' },
-      { url: '/gallery/chauffeur-landcruiser-pro.jpg', label: 'Chauffeur Professionnel au Volant' },
+      { url: '/gallery/corolla-champagne-side.jpg', label: 'Vue Réelle Profil Côté' },
       { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
     ],
-    capacity: '7 places VIP',
-    ac: 'Clim multi-zone intégrale',
-    transmission: '4x4 Permanent Automatique',
-    description: 'Le sommet du prestige et du confort tout-terrain pour les chefs d’agences internationales, ambassadeurs, délégations ministérielles et missions de haut niveau au Togo.',
+    capacity: '5 places',
+    ac: 'Clim automatique',
+    transmission: 'Boîte automatique',
+    description: 'La référence mondiale en matière de fiabilité et de sobriété, parfaite pour les cadres, consultants et transferts réguliers à Lomé.',
     highlights: [
-      'Dernière génération Toyota Land Cruiser 250 avec design néo-rétro',
-      'Confort souverain sur bitume comme sur pistes dégradées',
-      'Chauffeur d’élite formé à la conduite sécuritaire et protocolaire',
+      'Grande douceur de conduite et habitacle silencieux',
+      'Idéale pour missions d’experts et rendez-vous quotidiens',
+      'Excellente efficience et ponctualité exemplaire',
     ],
   },
 
-  // ================= 4. TOYOTA MINI BUS =================
-  {
-    id: 'toyota-mini-bus',
-    category: 'minibus',
-    categoryLabel: 'Minibus 15 Places',
-    subLabel: 'Bus et minibus',
-    subIcon: 'fa-solid fa-van-shuttle',
-    name: 'Toyota Mini Bus',
-    badge: 'Transport de Groupe',
-    photos: [
-      { url: '/gallery/toyota-hiace-minibus.jpg', label: 'Toyota HiAce Minibus (15 places)' },
-    ],
-    capacity: '15 places assises',
-    ac: 'Clim multi-diffuseurs arrière',
-    transmission: 'Boîte mécanique renforcée',
-    description: 'Minibus grand confort doté de 15 vrais sièges individuels avec ceintures, idéal pour ateliers, délégations d’experts, séminaires régionaux et navettes aéroport.',
-    highlights: [
-      '15 vrais sièges individuels confortables avec ceintures de sécurité',
-      'Diffuseurs de climatisation dédiés pour chaque rangée de passagers',
-      'Chauffeur expérimenté dédié au transport collectif de personnes',
-    ],
-  },
-
-  // ================= 5. TOYOTA COROLLA CROSS SUV =================
+  // ================= 3. TOYOTA COROLLA CROSS =================
   {
     id: 'toyota-corolla-cross',
     category: 'suv',
@@ -133,6 +87,7 @@ export const FLEET_VEHICLES: FleetVehicleItem[] = [
     subIcon: 'fa-solid fa-car',
     name: 'Toyota Corolla Cross',
     badge: 'Confort Urbain & Route',
+    price: 'À partir de 40.000 F',
     photos: [
       { url: '/gallery/corolla-cross-white-side.jpg', label: 'Vue Profil Côté' },
       { url: '/gallery/corolla-cross-white-front.jpg', label: 'Vue Avant 3/4' },
@@ -151,51 +106,129 @@ export const FLEET_VEHICLES: FleetVehicleItem[] = [
     ],
   },
 
-  // ================= 6. TOYOTA COROLLA BERLINE =================
+  // ================= 4. TOYOTA RUSH =================
   {
-    id: 'toyota-corolla-l6',
-    category: 'berline',
-    categoryLabel: 'Berline Confort',
-    subLabel: 'Berline',
-    subIcon: 'fa-solid fa-car-side',
-    name: 'Toyota Corolla Berline',
-    badge: 'Mobilité Urbaine & Affaires',
+    id: 'toyota-rush',
+    category: 'suv',
+    categoryLabel: 'SUV 7 Places',
+    subLabel: 'SUV',
+    subIcon: 'fa-solid fa-car',
+    name: 'Toyota RUSH',
+    badge: 'Espace & Polyvalence',
+    price: 'À partir de 40.000 F',
     photos: [
-      { url: '/gallery/corolla-champagne-side.jpg', label: 'Vue Réelle Profil Côté' },
+      { url: '/gallery/toyota-rush-real.jpg', label: 'Vue Réelle Toyota RUSH' },
       { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
     ],
-    capacity: '5 places',
-    ac: 'Clim automatique',
+    capacity: '7 places modulables',
+    ac: 'Climatisation intégrale multi-zones',
     transmission: 'Boîte automatique',
-    description: 'La référence mondiale en matière de fiabilité et de sobriété, parfaite pour les cadres, consultants et transferts réguliers à Lomé.',
+    description: 'SUV compact 7 places moderne et polyvalent, combinant une garde au sol protectrice, un habitacle spacieux et une grande modularité pour vos équipes à Lomé et en région.',
     highlights: [
-      'Grande douceur de conduite et habitacle silencieux',
-      'Idéale pour missions d’experts et rendez-vous quotidiens',
-      'Excellente efficience et ponctualité exemplaire',
+      'Configuration 7 places modulables ou grand espace de chargement',
+      'Garde au sol haute idéale pour le réseau routier et urbain togolais',
+      'Climatisation efficace sur l’ensemble des rangées passagers',
     ],
   },
 
-  // ================= 7. TOYOTA STARLET =================
+  // ================= 5. TOYOTA HILUX =================
   {
-    id: 'toyota-starlet',
-    category: 'berline',
-    categoryLabel: 'Citadine & Compacte',
-    subLabel: 'Citadine',
-    subIcon: 'fa-solid fa-car-side',
-    name: 'Toyota Starlet',
-    badge: 'Agilité & Économie',
+    id: 'toyota-hilux',
+    category: 'pickup',
+    categoryLabel: 'Pick-up Double Cabine',
+    subLabel: 'Pick-up',
+    subIcon: 'fa-solid fa-truck-pickup',
+    name: 'Toyota Hilux',
+    badge: 'Missions Terrain & Pistes',
+    price: 'À partir de 45.000 F',
     photos: [
-      { url: '/gallery/starlet-black-side.jpg', label: 'Vue Réelle Profil Côté' },
+      { url: '/gallery/hilux-concession-togo.jpg', label: 'Vue Réelle Double Cabine Togo' },
       { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
     ],
-    capacity: '5 places',
-    ac: 'Climatisation continue',
-    transmission: 'Automatique / Manuelle',
-    description: 'Véhicule compact moderne et agile, parfait pour naviguer aisément dans la circulation urbaine de Lomé à coût maîtrisé.',
+    capacity: '5 places + Benne cargo',
+    ac: 'Clim grand froid renforcée',
+    transmission: '4x4 avec réducteur court',
+    description: 'Le standard absolu des missions de développement, ONG et projets en milieu rural dans les Savanes, la Kara et les Plateaux. Capacité de franchissement éprouvée et benne sécurisée.',
     highlights: [
-      'Ultra maniable pour les déplacements urbains denses',
-      'Consommation optimisée pour liaisons quotidiennes',
-      'Parfaite pour courses administratives et personnel d’appui',
+      'Capacité de franchissement extrême sur toutes pistes togolaises',
+      'Grande benne avec bâche étanche pour transport de fret et outillage',
+      'Équipement de sécurité terrain complet et double roue de secours',
+    ],
+  },
+
+  // ================= 6. TOYOTA FORTUNER =================
+  {
+    id: 'toyota-fortuner',
+    category: '4x4',
+    categoryLabel: '4x4 Baroudeur & Prestige',
+    subLabel: '4x4',
+    subIcon: 'fa-solid fa-car-side',
+    name: 'Toyota Fortuner',
+    badge: '4x4 Baroudeur & Confort',
+    price: 'À partir de 60.000 F',
+    photos: [
+      { url: '/gallery/toyota-fortuner-real.jpg', label: 'Toyota Fortuner 4x4 Blanc' },
+      { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
+    ],
+    capacity: '7 places modulables',
+    ac: 'Climatisation bizone grand froid',
+    transmission: '4x4 Automatique séquentielle',
+    description: 'SUV 4x4 robuste et élégant par excellence, offrant une garde au sol protectrice, un habitacle haut de gamme et un confort souverain en milieu urbain comme sur les pistes de l’intérieur du Togo.',
+    highlights: [
+      'Garde au sol élevée et motricité 4x4 tout-terrain permanente',
+      'Habitacle spacieux 7 places avec finitions premium et coffre modulable',
+      'Chauffeur professionnel qualifié pour missions de terrain et protocole',
+    ],
+  },
+
+  // ================= 7. TOYOTA LAND CRUISER =================
+  {
+    id: 'toyota-land-cruiser-250',
+    category: '4x4',
+    categoryLabel: '4x4 Exécutif & Prestige',
+    subLabel: '4x4',
+    subIcon: 'fa-solid fa-car-side',
+    name: 'Toyota LAND CRUISER',
+    badge: 'Prestige Tout-Terrain',
+    price: 'À partir de 80.000 F',
+    photos: [
+      { url: '/gallery/landcruiser-prado-250-togo.jpg', label: 'Nouveau Toyota Land Cruiser 250 Togo' },
+      { url: '/gallery/landcruiser-250-front-angle.jpg', label: 'Calandre & Optiques Avant' },
+      { url: '/gallery/chauffeur-landcruiser-pro.jpg', label: 'Chauffeur Professionnel au Volant' },
+      { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
+    ],
+    capacity: '7 places VIP',
+    ac: 'Clim multi-zone intégrale',
+    transmission: '4x4 Permanent Automatique',
+    description: 'Le sommet du prestige et du confort tout-terrain pour les chefs d’agences internationales, ambassadeurs, délégations ministérielles et missions de haut niveau au Togo.',
+    highlights: [
+      'Dernière génération Toyota Land Cruiser avec design de référence',
+      'Confort souverain sur bitume comme sur pistes dégradées',
+      'Chauffeur d’élite formé à la conduite sécuritaire et protocolaire',
+    ],
+  },
+
+  // ================= 8. TOYOTA MINI BUS =================
+  {
+    id: 'toyota-mini-bus',
+    category: 'minibus',
+    categoryLabel: 'Minibus 15 Places',
+    subLabel: 'Bus et minibus',
+    subIcon: 'fa-solid fa-van-shuttle',
+    name: 'Toyota Mini Bus',
+    badge: 'Transport de Groupe',
+    price: 'À partir de 120.000 F',
+    photos: [
+      { url: '/gallery/toyota-hiace-minibus.jpg', label: 'Toyota HiAce Minibus (15 places)' },
+    ],
+    capacity: '15 places assises',
+    ac: 'Clim multi-diffuseurs arrière',
+    transmission: 'Boîte mécanique renforcée',
+    description: 'Minibus grand confort doté de 15 vrais sièges individuels avec ceintures, idéal pour ateliers, délégations d’experts, séminaires régionaux et navettes aéroport.',
+    highlights: [
+      '15 vrais sièges individuels confortables avec ceintures de sécurité',
+      'Diffuseurs de climatisation dédiés pour chaque rangée de passagers',
+      'Chauffeur expérimenté dédié au transport collectif de personnes',
     ],
   },
 ];
@@ -221,15 +254,20 @@ const VehicleCardItem: React.FC<VehicleCardItemProps> = ({ vehicle, onOpenDetail
       </div>
 
       {/* Floating White Content Card overlapping image */}
-      <div className="bg-white rounded-2xl p-4 sm:p-5 -mt-8 sm:-mt-10 relative z-10 mx-1 sm:mx-1.5 shadow-sm">
-        <h3 className="font-bold text-slate-900 text-base sm:text-[17px] mb-1.5 leading-tight tracking-tight">
+      <div className="bg-white rounded-2xl p-4 sm:p-5 -mt-8 sm:-mt-10 relative z-10 mx-1 sm:mx-1.5 shadow-sm flex flex-col items-center text-center">
+        <h3 className="font-bold text-slate-900 text-base sm:text-[17px] mb-1 leading-tight tracking-tight text-center">
           {vehicle.name}
         </h3>
 
         {/* Subtitle / Category line with icon */}
-        <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-500 font-medium mb-4">
+        <div className="flex items-center justify-center gap-2 text-xs sm:text-sm text-slate-500 font-medium mb-3">
           <FAIcon name={vehicle.subIcon} size={13} color="#1A3A6A" />
           <span>{vehicle.subLabel}</span>
+        </div>
+
+        {/* Starting Price Tag centered before Details button */}
+        <div className="text-center font-bold text-xs sm:text-sm text-[#1A3A6A] mb-3.5 bg-slate-50 px-3.5 py-1.5 rounded-full border border-slate-200/80 w-full">
+          {vehicle.price}
         </div>
 
         {/* Navy Blue Pill Button "Détails" */}
@@ -295,9 +333,9 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onNavigate, target
     { key: 'minibus', label: 'Bus et minibus', icon: 'fa-solid fa-van-shuttle', count: FLEET_VEHICLES.filter((v) => v.category === 'minibus').length },
   ];
 
-  const handleWhatsAppInquiry = (vehicleName: string, category: string) => {
+  const handleWhatsAppInquiry = (vehicleName: string, category: string, price: string) => {
     const text = encodeURIComponent(
-      `Bonjour SANKO TOGO, je consulte votre flotte sur votre site et je souhaite obtenir des informations et un devis pour le modèle suivant :\n\n- Modèle : ${vehicleName} (${category})\n\nPouvez-vous m'indiquer les disponibilités et les conditions tarifaires ? Merci.`
+      `Bonjour SANKO TOGO, je consulte votre flotte sur votre site et je souhaite obtenir des informations et un devis pour le modèle suivant :\n\n- Modèle : ${vehicleName} (${category})\n- Tarif indicatif : ${price}\n\nPouvez-vous m'indiquer les disponibilités et les conditions tarifaires ? Merci.`
     );
     window.open(`https://wa.me/${WHATSAPP_CONFIG.phone}?text=${text}`, '_blank');
   };
@@ -444,12 +482,15 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onNavigate, target
             {/* Modal Header */}
             <div className="p-6 pb-4 border-b border-slate-100 flex items-center justify-between sticky top-0 bg-white/95 backdrop-blur-md z-20">
               <div>
-                <div className="flex items-center gap-2 mb-1">
+                <div className="flex items-center gap-2 mb-1.5 flex-wrap">
                   <span className="bg-[#1A3A6A] text-white text-[11px] font-bold px-3 py-0.5 rounded-full">
                     {selectedVehicle.categoryLabel}
                   </span>
                   <span className="bg-slate-100 text-slate-700 text-[11px] font-semibold px-2.5 py-0.5 rounded-full">
                     {selectedVehicle.badge}
+                  </span>
+                  <span className="bg-emerald-50 text-emerald-700 border border-emerald-200/80 text-[11px] font-bold px-2.5 py-0.5 rounded-full">
+                    {selectedVehicle.price}
                   </span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
@@ -460,7 +501,7 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onNavigate, target
               <button
                 type="button"
                 onClick={handleCloseModal}
-                className="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 flex items-center justify-center transition-colors cursor-pointer"
+                className="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 flex items-center justify-center transition-colors cursor-pointer shrink-0 ml-3"
                 aria-label="Fermer"
               >
                 <FAIcon name="fa-solid fa-xmark" size={16} />
@@ -559,7 +600,7 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onNavigate, target
             <div className="p-6 pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center gap-3 bg-slate-50/70">
               <button
                 type="button"
-                onClick={() => handleWhatsAppInquiry(selectedVehicle.name, selectedVehicle.categoryLabel)}
+                onClick={() => handleWhatsAppInquiry(selectedVehicle.name, selectedVehicle.categoryLabel, selectedVehicle.price)}
                 className="w-full sm:flex-1 bg-[#25D366] hover:bg-[#20BA5A] text-white py-3 px-4 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer flex items-center justify-center gap-2 shadow-sm"
               >
                 <FAIcon name="fa-brands fa-whatsapp" size={16} color="#FFFFFF" />
