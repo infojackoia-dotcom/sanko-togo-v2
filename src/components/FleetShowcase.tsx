@@ -78,7 +78,57 @@ export const FLEET_VEHICLES: FleetVehicleItem[] = [
     ],
   },
 
-  // ================= 3. TOYOTA COROLLA CROSS =================
+  // ================= 3. TOYOTA STARLET CROSS =================
+  {
+    id: 'toyota-starlet-cross',
+    category: 'suv',
+    categoryLabel: 'Crossover & SUV Urbain',
+    subLabel: 'SUV',
+    subIcon: 'fa-solid fa-car',
+    name: 'Toyota Starlet Cross',
+    badge: 'Crossover & Polyvalence',
+    price: 'À partir de 35.000 F',
+    photos: [
+      { url: '/gallery/starlet-cross.jpg', label: 'Toyota Starlet Cross Vue Avant 3/4' },
+      { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
+    ],
+    capacity: '5 places',
+    ac: 'Climatisation automatique',
+    transmission: 'Boîte automatique / Manuelle',
+    description: 'Crossover compact moderne au style surélevé, alliant grande agilité en ville, garde au sol protectrice et habitabilité optimisée pour Lomé et ses environs.',
+    highlights: [
+      'Garde au sol haute idéale pour les voiries urbaines et périurbaines',
+      'Consommation maîtrisée pour déplacements quotidiens et missions',
+      'Habitacle connecté et ergonomique avec confort passager soigné',
+    ],
+  },
+
+  // ================= 4. TOYOTA URBAN CRUISER =================
+  {
+    id: 'toyota-urban-cruiser',
+    category: 'suv',
+    categoryLabel: 'SUV Compact Urbain',
+    subLabel: 'SUV',
+    subIcon: 'fa-solid fa-car',
+    name: 'Toyota Urban Cruiser',
+    badge: 'Confort Urbain & Route',
+    price: 'À partir de 40.000 F',
+    photos: [
+      { url: '/gallery/urban-cruiser.jpg', label: 'Toyota Urban Cruiser Vue Avant 3/4' },
+      { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
+    ],
+    capacity: '5 places',
+    ac: 'Climatisation auto régulée',
+    transmission: 'Boîte automatique',
+    description: 'SUV compact au tempérament dynamique, offrant une assise surélevée, une excellente insonorisation et un confort sans compromis sur route comme en ville.',
+    highlights: [
+      'Position de conduite surélevée et excellente visibilité périphérique',
+      'Espace généreux aux places arrière et grand volume de coffre',
+      'Suspension confortable adaptée aux reliefs routiers du Togo',
+    ],
+  },
+
+  // ================= 5. TOYOTA COROLLA CROSS =================
   {
     id: 'toyota-corolla-cross',
     category: 'suv',
@@ -106,7 +156,7 @@ export const FLEET_VEHICLES: FleetVehicleItem[] = [
     ],
   },
 
-  // ================= 4. TOYOTA RUSH =================
+  // ================= 6. TOYOTA RUSH =================
   {
     id: 'toyota-rush',
     category: 'suv',
@@ -131,7 +181,82 @@ export const FLEET_VEHICLES: FleetVehicleItem[] = [
     ],
   },
 
-  // ================= 5. TOYOTA HILUX =================
+  // ================= 7. SUZUKI GRAND VITARA =================
+  {
+    id: 'suzuki-grand-vitara',
+    category: 'suv',
+    categoryLabel: 'SUV Polyvalent Moderne',
+    subLabel: 'SUV',
+    subIcon: 'fa-solid fa-car',
+    name: 'Suzuki Grand Vitara',
+    badge: 'Polyvalence & Technologie',
+    price: 'À partir de 40.000 F',
+    photos: [
+      { url: '/gallery/suzuki-grand-vitara.jpg', label: 'Suzuki Grand Vitara Vue Avant 3/4' },
+      { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
+    ],
+    capacity: '5 places',
+    ac: 'Clim auto bizone',
+    transmission: 'Boîte automatique',
+    description: 'SUV moderne et robuste doté d’une motorisation efficiente et d’une grande polyvalence, parfait pour les missions d’experts et délégations à Lomé et en région.',
+    highlights: [
+      'Garde au sol élevée et remarquable motricité sur routes et pistes',
+      'Efficience énergétique remarquable pour vos missions de longue durée',
+      'Équipements de sécurité complets et confort de suspension feutré',
+    ],
+  },
+
+  // ================= 8. TOYOTA RAV4 =================
+  {
+    id: 'toyota-rav4',
+    category: 'suv',
+    categoryLabel: 'SUV Premium & Standing',
+    subLabel: 'SUV',
+    subIcon: 'fa-solid fa-car',
+    name: 'Toyota RAV4',
+    badge: 'Référence Mondiale SUV',
+    price: 'À partir de 45.000 F',
+    photos: [
+      { url: '/gallery/toyota-rav4.jpg', label: 'Toyota RAV4 Vue Avant 3/4' },
+      { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
+    ],
+    capacity: '5 places spacieuses',
+    ac: 'Climatisation bizone grand confort',
+    transmission: 'Boîte automatique séquentielle',
+    description: 'Le SUV de référence mondiale alliant standing, espace généreux et tenue de route irréprochable pour missions de cadres, délégations et voyages d’affaires.',
+    highlights: [
+      'Habitacle spacieux haut de gamme pour directeurs et consultants',
+      'Tenue de route exceptionnelle et motricité sans faille',
+      'Grand volume de coffre pour bagages et matériel de mission',
+    ],
+  },
+
+  // ================= 9. SUZUKI ACROSS =================
+  {
+    id: 'suzuki-across',
+    category: 'suv',
+    categoryLabel: 'Grand SUV Exécutif',
+    subLabel: 'SUV',
+    subIcon: 'fa-solid fa-car',
+    name: 'Suzuki Across',
+    badge: 'Prestige & Haute Performance',
+    price: 'À partir de 50.000 F',
+    photos: [
+      { url: '/gallery/suzuki-across.jpg', label: 'Suzuki Across Vue Avant 3/4' },
+      { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
+    ],
+    capacity: '5 places VIP',
+    ac: 'Clim multi-zone intégrale',
+    transmission: 'Boîte automatique intégrale E-Four',
+    description: 'Grand SUV haut de gamme spacieux à transmission intégrale électronique, garantissant une sérénité totale, un silence de roulement exceptionnel et une sécurité maximale pour délégations officielles.',
+    highlights: [
+      'Transmission intégrale 4x4 électronique souveraine',
+      'Standing prestige et finitions intérieures luxueuses',
+      'Systèmes d’assistance à la conduite de dernière génération',
+    ],
+  },
+
+  // ================= 10. TOYOTA HILUX =================
   {
     id: 'toyota-hilux',
     category: 'pickup',
@@ -156,7 +281,32 @@ export const FLEET_VEHICLES: FleetVehicleItem[] = [
     ],
   },
 
-  // ================= 6. TOYOTA FORTUNER =================
+  // ================= 11. MITSUBISHI L200 =================
+  {
+    id: 'mitsubishi-l200',
+    category: 'pickup',
+    categoryLabel: 'Pick-up Double Cabine 4x4',
+    subLabel: 'Pick-up',
+    subIcon: 'fa-solid fa-truck-pickup',
+    name: 'Mitsubishi L200',
+    badge: 'Robustesse & Franchissement',
+    price: 'À partir de 45.000 F',
+    photos: [
+      { url: '/gallery/mitsubishi-l200.jpg', label: 'Mitsubishi L200 Double Cabine 4x4' },
+      { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
+    ],
+    capacity: '5 places + Benne cargo',
+    ac: 'Clim grand froid renforcée',
+    transmission: '4x4 avec réducteur Super Select',
+    description: 'Pick-up double cabine 4x4 redoutable d’endurance, réputé pour sa capacité de charge et sa motricité tout-terrain sur toutes les pistes difficiles du Togo.',
+    highlights: [
+      'Transmission 4WD Super Select ultra polyvalente tout-terrain',
+      'Grande benne spacieuse avec arrimage sécurisé pour matériel',
+      'Châssis renforcé idéal pour projets, ONG et missions rurales',
+    ],
+  },
+
+  // ================= 12. TOYOTA FORTUNER =================
   {
     id: 'toyota-fortuner',
     category: '4x4',
@@ -181,7 +331,7 @@ export const FLEET_VEHICLES: FleetVehicleItem[] = [
     ],
   },
 
-  // ================= 7. TOYOTA PRADO =================
+  // ================= 13. TOYOTA PRADO =================
   {
     id: 'toyota-prado-250',
     category: '4x4',
@@ -208,7 +358,7 @@ export const FLEET_VEHICLES: FleetVehicleItem[] = [
     ],
   },
 
-  // ================= 8. TOYOTA HIACE =================
+  // ================= 14. TOYOTA HIACE =================
   {
     id: 'toyota-hiace',
     category: 'minibus',

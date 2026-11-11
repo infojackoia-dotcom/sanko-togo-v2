@@ -10,8 +10,11 @@ export interface GalleryPhotoItem {
 // Ligne 1 : Véhicules et Chauffeurs (Format Carré)
 export const ROW_1_PHOTOS: GalleryPhotoItem[] = [
   { id: 'landcruiser-prado-250', url: '/gallery/landcruiser-prado-250-togo.jpg', alt: 'Nouveau Toyota Prado 250 Togo' },
+  { id: 'toyota-rav4', url: '/gallery/toyota-rav4.jpg', alt: 'Toyota RAV4 SUV Blanc' },
+  { id: 'starlet-cross', url: '/gallery/starlet-cross.jpg', alt: 'Toyota Starlet Cross Crossover' },
   { id: 'corolla-cross-gold-front', url: '/gallery/corolla-cross-gold-front.jpg', alt: 'Toyota Corolla Cross Gold Face Avant' },
   { id: 'hilux-concession', url: '/gallery/hilux-concession-togo.jpg', alt: 'Toyota Hilux Double Cabine Togo' },
+  { id: 'mitsubishi-l200', url: '/gallery/mitsubishi-l200.jpg', alt: 'Mitsubishi L200 Double Cabine 4x4' },
   { id: 'chauffeur-landcruiser-pro', url: '/gallery/chauffeur-landcruiser-pro.jpg', alt: 'Chauffeur Professionnel Sanko Togo' },
   { id: 'corolla-cross-white-front', url: '/gallery/corolla-cross-white-front.jpg', alt: 'Toyota Corolla Cross Blanc Vue Avant' },
   { id: 'corolla-champagne', url: '/gallery/corolla-champagne-side.jpg', alt: 'Toyota Corolla Berline' },
@@ -19,6 +22,9 @@ export const ROW_1_PHOTOS: GalleryPhotoItem[] = [
 
 // Ligne 2 : Vues Arrière, Profils et Habitacles (Format Carré)
 export const ROW_2_PHOTOS: GalleryPhotoItem[] = [
+  { id: 'urban-cruiser', url: '/gallery/urban-cruiser.jpg', alt: 'Toyota Urban Cruiser SUV Bleu' },
+  { id: 'suzuki-across', url: '/gallery/suzuki-across.jpg', alt: 'Suzuki Across SUV Exécutif' },
+  { id: 'suzuki-grand-vitara', url: '/gallery/suzuki-grand-vitara.jpg', alt: 'Suzuki Grand Vitara SUV' },
   { id: 'corolla-cross-white-side', url: '/gallery/corolla-cross-white-side.jpg', alt: 'Toyota Corolla Cross Profil Blanc' },
   { id: 'corolla-cross-white-rear', url: '/gallery/corolla-cross-white-rear.jpg', alt: 'Toyota Corolla Cross Vue Arrière' },
   { id: 'chauffeur-mission-togo', url: '/gallery/chauffeur-mission-togo.jpg', alt: 'Chauffeur Expérimenté SANKO TOGO' },
