@@ -62,8 +62,8 @@ export const FleetCategories: React.FC<FleetCategoriesProps> = ({ onNavigate }) 
               className="bg-white rounded-3xl p-4 sm:p-5 border border-slate-200/80 hover:border-[#1A3A6A] card-hover flex flex-col justify-between cursor-pointer shadow-2xs group"
             >
               <div>
-                {/* Photo réelle du véhicule issue de la galerie */}
-                <div className="relative w-full h-44 rounded-2xl overflow-hidden mb-4 bg-slate-100">
+                {/* Photo réelle du véhicule issue de la galerie - aspect 16:10 pour préserver l'intégrité du véhicule */}
+                <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden mb-4 bg-slate-100">
                   <img
                     src={cat.image}
                     alt={cat.name}

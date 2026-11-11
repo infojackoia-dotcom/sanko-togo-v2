@@ -181,18 +181,18 @@ export const FLEET_VEHICLES: FleetVehicleItem[] = [
     ],
   },
 
-  // ================= 7. TOYOTA LAND CRUISER =================
+  // ================= 7. TOYOTA PRADO =================
   {
-    id: 'toyota-land-cruiser-250',
+    id: 'toyota-prado-250',
     category: '4x4',
     categoryLabel: '4x4 Exécutif & Prestige',
     subLabel: '4x4',
     subIcon: 'fa-solid fa-car-side',
-    name: 'Toyota LAND CRUISER',
+    name: 'Toyota PRADO',
     badge: 'Prestige Tout-Terrain',
     price: 'À partir de 80.000 F',
     photos: [
-      { url: '/gallery/landcruiser-prado-250-togo.jpg', label: 'Nouveau Toyota Land Cruiser 250 Togo' },
+      { url: '/gallery/landcruiser-prado-250-togo.jpg', label: 'Nouveau Toyota Prado 250 Togo' },
       { url: '/gallery/landcruiser-250-front-angle.jpg', label: 'Calandre & Optiques Avant' },
       { url: '/gallery/chauffeur-landcruiser-pro.jpg', label: 'Chauffeur Professionnel au Volant' },
       { url: '/gallery/toyota-cockpit-interior.jpg', label: 'Habitacle & Confort' },
@@ -202,20 +202,20 @@ export const FLEET_VEHICLES: FleetVehicleItem[] = [
     transmission: '4x4 Permanent Automatique',
     description: 'Le sommet du prestige et du confort tout-terrain pour les chefs d’agences internationales, ambassadeurs, délégations ministérielles et missions de haut niveau au Togo.',
     highlights: [
-      'Dernière génération Toyota Land Cruiser avec design de référence',
+      'Dernière génération Toyota Prado avec design de référence',
       'Confort souverain sur bitume comme sur pistes dégradées',
       'Chauffeur d’élite formé à la conduite sécuritaire et protocolaire',
     ],
   },
 
-  // ================= 8. TOYOTA MINI BUS =================
+  // ================= 8. TOYOTA HIACE =================
   {
-    id: 'toyota-mini-bus',
+    id: 'toyota-hiace',
     category: 'minibus',
     categoryLabel: 'Minibus 15 Places',
-    subLabel: 'Bus et minibus',
+    subLabel: 'Mini Bus',
     subIcon: 'fa-solid fa-van-shuttle',
-    name: 'Toyota Mini Bus',
+    name: 'Toyota Hiace',
     badge: 'Transport de Groupe',
     price: 'À partir de 120.000 F',
     photos: [
@@ -243,8 +243,8 @@ const VehicleCardItem: React.FC<VehicleCardItemProps> = ({ vehicle, onOpenDetail
 
   return (
     <div className="bg-[#F1F3F6] rounded-3xl p-2.5 sm:p-3 pb-3.5 sm:pb-4 flex flex-col justify-between group border border-slate-200/50 hover:shadow-md transition-all duration-300">
-      {/* Top Image Container */}
-      <div className="rounded-2xl overflow-hidden aspect-[4/3] w-full relative bg-slate-200">
+      {/* Top Image Container - ratio 16:10 pour afficher intégralement les véhicules sans coupure */}
+      <div className="rounded-2xl overflow-hidden aspect-[16/10] w-full relative bg-slate-200 shadow-2xs">
         <img
           src={primaryPhoto}
           alt={vehicle.name}
@@ -253,28 +253,30 @@ const VehicleCardItem: React.FC<VehicleCardItemProps> = ({ vehicle, onOpenDetail
         />
       </div>
 
-      {/* Floating White Content Card overlapping image */}
-      <div className="bg-white rounded-2xl p-4 sm:p-5 -mt-8 sm:-mt-10 relative z-10 mx-1 sm:mx-1.5 shadow-sm flex flex-col items-center text-center">
-        <h3 className="font-bold text-slate-900 text-base sm:text-[17px] mb-1 leading-tight tracking-tight text-center">
-          {vehicle.name}
-        </h3>
+      {/* Carte blanche de contenu positionnée sous l'image sans la recouvrir */}
+      <div className="bg-white rounded-2xl p-4 sm:p-5 mt-2.5 sm:mt-3 relative z-10 mx-0.5 sm:mx-1 shadow-xs flex flex-col items-center text-center flex-1 justify-between">
+        <div className="w-full flex flex-col items-center">
+          <h3 className="font-bold text-slate-900 text-base sm:text-[17px] mb-1 leading-tight tracking-tight text-center">
+            {vehicle.name}
+          </h3>
 
-        {/* Subtitle / Category line with icon */}
-        <div className="flex items-center justify-center gap-2 text-xs sm:text-sm text-slate-500 font-medium mb-3">
-          <FAIcon name={vehicle.subIcon} size={13} color="#1A3A6A" />
-          <span>{vehicle.subLabel}</span>
-        </div>
+          {/* Subtitle / Category line with icon */}
+          <div className="flex items-center justify-center gap-2 text-xs sm:text-sm text-slate-500 font-medium mb-3">
+            <FAIcon name={vehicle.subIcon} size={13} color="#1A3A6A" />
+            <span>{vehicle.subLabel}</span>
+          </div>
 
-        {/* Starting Price Tag centered before Details button */}
-        <div className="text-center font-bold text-xs sm:text-sm text-[#1A3A6A] mb-3.5 bg-slate-50 px-3.5 py-1.5 rounded-full border border-slate-200/80 w-full">
-          {vehicle.price}
+          {/* Starting Price Tag centered before Details button */}
+          <div className="text-center font-bold text-xs sm:text-sm text-[#1A3A6A] mb-3.5 bg-slate-50 px-3.5 py-1.5 rounded-full border border-slate-200/80 w-full">
+            {vehicle.price}
+          </div>
         </div>
 
         {/* Navy Blue Pill Button "Détails" */}
         <button
           type="button"
           onClick={() => onOpenDetails(vehicle)}
-          className="w-full bg-[#1A3A6A] hover:bg-[#234c89] text-white font-bold py-2.5 sm:py-3 rounded-full text-xs sm:text-sm text-center shadow-xs transition-colors cursor-pointer block"
+          className="w-full bg-[#1A3A6A] hover:bg-[#234c89] text-white font-bold py-2.5 sm:py-3 rounded-full text-xs sm:text-sm text-center shadow-xs transition-colors cursor-pointer block mt-auto"
         >
           Détails
         </button>
@@ -330,7 +332,7 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onNavigate, target
     { key: 'pickup', label: 'Pick-up', icon: 'fa-solid fa-truck-pickup', count: FLEET_VEHICLES.filter((v) => v.category === 'pickup').length },
     { key: 'suv', label: 'SUV', icon: 'fa-solid fa-car', count: FLEET_VEHICLES.filter((v) => v.category === 'suv').length },
     { key: 'berline', label: 'Berline', icon: 'fa-solid fa-car-side', count: FLEET_VEHICLES.filter((v) => v.category === 'berline').length },
-    { key: 'minibus', label: 'Bus et minibus', icon: 'fa-solid fa-van-shuttle', count: FLEET_VEHICLES.filter((v) => v.category === 'minibus').length },
+    { key: 'minibus', label: 'Mini Bus', icon: 'fa-solid fa-van-shuttle', count: FLEET_VEHICLES.filter((v) => v.category === 'minibus').length },
   ];
 
   const handleWhatsAppInquiry = (vehicleName: string, category: string, price: string) => {
@@ -361,7 +363,7 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onNavigate, target
             Nos différents modèles de véhicules
           </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
-            Découvrez nos véhicules récents, parfaitement entretenus et disponibles avec chauffeur professionnel pour vos missions au Togo.
+            Découvrez nos véhicules neufs, parfaitement entretenus et disponibles avec chauffeur professionnel pour vos missions au Togo.
           </p>
         </div>
 
@@ -441,7 +443,7 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onNavigate, target
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
               <div className="bg-white/10 rounded-2xl p-4 border border-white/10">
                 <FAIcon name="fa-solid fa-shield-halved" size={20} className="text-emerald-400 mb-2" />
-                <span className="font-bold text-xs sm:text-sm block">Véhicules récents</span>
+                <span className="font-bold text-xs sm:text-sm block">Véhicules neufs</span>
                 <span className="text-[11px] text-slate-300">Moins de 4 ans</span>
               </div>
 
@@ -531,7 +533,7 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onNavigate, target
                         key={idx}
                         type="button"
                         onClick={() => setModalPhotoIndex(idx)}
-                        className={`relative w-20 sm:w-24 shrink-0 aspect-[4/3] rounded-xl overflow-hidden border-2 transition-all cursor-pointer ${
+                        className={`relative w-20 sm:w-24 shrink-0 aspect-[16/10] rounded-xl overflow-hidden border-2 transition-all cursor-pointer ${
                           idx === modalPhotoIndex
                             ? 'border-[#1A3A6A] scale-102 shadow-xs'
                             : 'border-transparent opacity-70 hover:opacity-100'

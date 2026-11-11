@@ -9,7 +9,7 @@ export interface GalleryPhotoItem {
 
 // Ligne 1 : Véhicules et Chauffeurs (Format Carré)
 export const ROW_1_PHOTOS: GalleryPhotoItem[] = [
-  { id: 'landcruiser-prado-250', url: '/gallery/landcruiser-prado-250-togo.jpg', alt: 'Nouveau Toyota Land Cruiser 250 Togo' },
+  { id: 'landcruiser-prado-250', url: '/gallery/landcruiser-prado-250-togo.jpg', alt: 'Nouveau Toyota Prado 250 Togo' },
   { id: 'corolla-cross-gold-front', url: '/gallery/corolla-cross-gold-front.jpg', alt: 'Toyota Corolla Cross Gold Face Avant' },
   { id: 'hilux-concession', url: '/gallery/hilux-concession-togo.jpg', alt: 'Toyota Hilux Double Cabine Togo' },
   { id: 'chauffeur-landcruiser-pro', url: '/gallery/chauffeur-landcruiser-pro.jpg', alt: 'Chauffeur Professionnel Sanko Togo' },
@@ -22,7 +22,7 @@ export const ROW_2_PHOTOS: GalleryPhotoItem[] = [
   { id: 'corolla-cross-white-side', url: '/gallery/corolla-cross-white-side.jpg', alt: 'Toyota Corolla Cross Profil Blanc' },
   { id: 'corolla-cross-white-rear', url: '/gallery/corolla-cross-white-rear.jpg', alt: 'Toyota Corolla Cross Vue Arrière' },
   { id: 'chauffeur-mission-togo', url: '/gallery/chauffeur-mission-togo.jpg', alt: 'Chauffeur Expérimenté SANKO TOGO' },
-  { id: 'landcruiser-250-front-angle', url: '/gallery/landcruiser-250-front-angle.jpg', alt: 'Toyota Land Cruiser 250 Gros Plan' },
+  { id: 'landcruiser-250-front-angle', url: '/gallery/landcruiser-250-front-angle.jpg', alt: 'Toyota Prado 250 Gros Plan' },
   { id: 'chauffeur-polo-sanko', url: '/gallery/chauffeur-polo-sanko.jpg', alt: 'Chauffeur Professionnel Sanko Togo' },
   { id: 'minibus-hiace', url: '/gallery/toyota-hiace-minibus.jpg', alt: 'Toyota HiAce Minibus 15 Places SANKO TOGO' },
   { id: 'starlet-side', url: '/gallery/starlet-black-side.jpg', alt: 'Toyota Starlet Berline Compacte' },
@@ -88,7 +88,7 @@ export const OffersGallerySlideshow: React.FC = () => {
           Notre flotte en image
         </h2>
         <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          Découvrez en images réelles nos véhicules récents, et nos chauffeurs professionnels déployés au Togo.
+          Découvrez en images réelles nos véhicules neufs, et nos chauffeurs professionnels déployés au Togo.
         </p>
 
         {/* Bouton pause/lecture du diaporama */}

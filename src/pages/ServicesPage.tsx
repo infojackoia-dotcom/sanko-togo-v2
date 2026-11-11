@@ -103,7 +103,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             Une mobilité flexible et stable, sans les contraintes de la propriété.
           </p>
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-8 max-w-2xl">
-            Que votre mission s'étende sur quelques jours, plusieurs mois ou plusieurs années, nous mettons à votre disposition des véhicules récents et parfaitement entretenus, sous contrat flexible et adapté à votre durée d'engagement. Vous bénéficiez d'une mobilité clé en main, sans immobiliser de capital ni gérer la logistique d'entretien.
+            Que votre mission s'étende sur quelques jours, plusieurs mois ou plusieurs années, nous mettons à votre disposition des véhicules neufs et parfaitement entretenus, sous contrat flexible et adapté à votre durée d'engagement. Vous bénéficiez d'une mobilité clé en main, sans immobiliser de capital ni gérer la logistique d'entretien.
           </p>
 
           <div className="w-full max-w-xl mx-auto bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200/80 mb-8 shadow-xs">
